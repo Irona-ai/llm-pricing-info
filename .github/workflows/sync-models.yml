@@ -2,41 +2,59 @@ name: Sync LLM models to Supabase
 
 on:
   push:
-    # only trigger when your JSON changes
     branches:
+      - develop
       - main
     paths:
       - model_pricing.json
+    workflow_dispatch:
 
 jobs:
-  sync:
+  sync-staging:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        env: [staging, production]
-
-    # pick up two sets of secrets (SUPABASE_STAGING_* and SUPABASE_PRODUCTION_*)
+    environment: staging
     env:
-      SUPABASE_URL: ${{ secrets['SUPABASE_' + matrix.env.toUpperCase() + '_URL'] }}
-      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets['SUPABASE_' + matrix.env.toUpperCase() + '_SERVICE_ROLE_KEY'] }}
-
+      SUPABASE_URL:               ${{ secrets.SUPABASE_STAGING_URL }}
+      SUPABASE_SERVICE_ROLE_KEY:  ${{ secrets.SUPABASE_STAGING_SERVICE_ROLE_KEY }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Python 3.10
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: 3.10
 
       - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install supabase
+        run: pip install supabase
 
-      - name: Run sync script
-        run: |
-          python scripts/sync_models.py \
-            --json path/to/models.json \
-            --schema prisma/schema.prisma \
-            --env ${{ matrix.env }}
+      - name: Sync to staging
+        run: python scripts/sync_models.py \
+               --json model_pricing.json \
+               --env staging
+
+  sync-production:
+    if: github.ref == 'refs/heads/main'
+    needs: sync-staging
+    runs-on: ubuntu-latest
+    environment: production
+    env:
+      SUPABASE_URL:               ${{ secrets.SUPABASE_PRODUCTION_URL }}
+      SUPABASE_SERVICE_ROLE_KEY:  ${{ secrets.SUPABASE_PRODUCTION_SERVICE_ROLE_KEY }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.10
+
+      - name: Install dependencies
+        run: pip install supabase
+
+      - name: Sync to production
+        run: python scripts/sync_models.py \
+               --json model_pricing.json \
+               --env production
