@@ -62,19 +62,55 @@ def extract_date(model_name: str):
     return None
 
 
-def upsert_provider(sb: Client, provider_name: str):
+def upsert_provider(sb: Client, provider_name: str, cfg: dict):
     """
-    Upsert a Provider row, returning its Supabase ID.
+    Ensure a Provider exists; update icon/apiEndpoint if needed; return its ID.
     """
-    endpoint = os.getenv(f"{provider_name.upper()}_API_ENDPOINT", "")
-    data = {"name": provider_name, "apiEndpoint": endpoint}
+    # Attempt to fetch existing provider by name
     try:
-        res = sb.table("Provider").upsert(data, on_conflict="name").execute()
-        provider_id = res.data[0]["id"]
-        logger.info(f"Provider '{provider_name}' upserted (ID: {provider_id})")
-        return provider_id
+        res = sb.table("Provider")
+                 .select("id, apiEndpoint, icon")
+                 .eq("name", provider_name)
+                 .maybe_single()
+                 .execute()
+        existing = res.data
     except Exception as e:
-        logger.error(f"Failed to upsert provider '{provider_name}': {e}")
+        logger.error(f"Error querying Provider '{provider_name}': {e}")
+        return None
+
+    icon_url = cfg.get("icon", "")
+    endpoint = os.getenv(f"{provider_name.upper()}_API_ENDPOINT", "")
+
+    if existing:
+        provider_id = existing.get("id")
+        updates = {}
+        # Only update if values differ
+        if endpoint and existing.get("apiEndpoint") != endpoint:
+            updates["apiEndpoint"] = endpoint
+        if icon_url and existing.get("icon") != icon_url:
+            updates["icon"] = icon_url
+        if updates:
+            try:
+                sb.table("Provider")
+                  .update(updates)
+                  .eq("id", provider_id)
+                  .execute()
+                logger.info(f"Updated Provider '{provider_name}': {list(updates.keys())}")
+            except Exception as e:
+                logger.error(f"Failed to update Provider '{provider_name}': {e}")
+        else:
+            logger.info(f"No change for Provider '{provider_name}'")
+        return provider_id
+
+    # Insert new provider
+    data = {"name": provider_name, "apiEndpoint": endpoint, "icon": icon_url}
+    try:
+        insert_res = sb.table("Provider").insert(data).execute()
+        new_id = insert_res.data[0].get("id")
+        logger.info(f"Created Provider '{provider_name}' (ID: {new_id})")
+        return new_id
+    except Exception as e:
+        logger.error(f"Failed to create Provider '{provider_name}': {e}")
         return None
 
 
@@ -95,7 +131,7 @@ def sync_model(sb: Client, provider_id: str, key: str, cfg: dict, models_filter:
         logger.warning(f"No price info for '{full_name}', skipping")
         return
 
-    # Determine depreciation
+    # Deprecation archive flag
     dep_str = cfg.get("depreciationDate", {}).get(key)
     is_archived = False
     if dep_str:
@@ -125,15 +161,13 @@ def sync_model(sb: Client, provider_id: str, key: str, cfg: dict, models_filter:
     }
 
     try:
-        existing = (
-            sb.table("Model")
-              .select("*")
-              .eq("apiString", rec["apiString"])
-              .maybe_single()
-              .execute()
-        ).data
+        existing = sb.table("Model")
+                     .select("*")
+                     .eq("apiString", rec["apiString"])
+                     .maybe_single()
+                     .execute().data
     except Exception as e:
-        logger.error(f"Failed to fetch existing for '{full_name}': {e}")
+        logger.error(f"Failed to fetch model '{full_name}': {e}")
         return
 
     if existing is None:
@@ -142,23 +176,22 @@ def sync_model(sb: Client, provider_id: str, key: str, cfg: dict, models_filter:
             sb.table("Model").insert(rec).execute()
             logger.info(f"Created model '{full_name}'")
         except Exception as e:
-            logger.error(f"Failed to create '{full_name}': {e}")
+            logger.error(f"Failed to create model '{full_name}': {e}")
         return
 
-    # Compute updates
-    updates = {}
-    for field, desired in rec.items():
-        if existing.get(field) != desired:
-            updates[field] = desired
-
+    updates = {
+        field: val
+        for field, val in rec.items()
+        if existing.get(field) != val
+    }
     if updates:
         try:
             sb.table("Model").update(updates).eq("apiString", rec["apiString"]).execute()
-            logger.info(f"Updated '{full_name}': {list(updates.keys())}")
+            logger.info(f"Updated model '{full_name}': {list(updates.keys())}")
         except Exception as e:
-            logger.error(f"Failed to update '{full_name}': {e}")
+            logger.error(f"Failed to update model '{full_name}': {e}")
     else:
-        logger.info(f"No changes for '{full_name}'")
+        logger.info(f"No changes for model '{full_name}'")
 
 
 # ------------------------------------------------------------------
@@ -188,7 +221,7 @@ def main():
 
     # Sync each provider
     for provider, cfg in data.items():
-        pid = upsert_provider(sb, provider)
+        pid = upsert_provider(sb, provider, cfg)
         if not pid:
             logger.error(f"Skipping provider '{provider}' due to earlier error")
             continue

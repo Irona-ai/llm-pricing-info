@@ -1,4 +1,4 @@
-﻿{
+{
     "openai": {
         "icon": "https://svgl.app/library/openai.svg",
         "models": [
@@ -219,6 +219,30 @@
             "chatgpt-4o-latest": {
                 "input": 5,
                 "output": 15
+            },
+            "gpt-4.1": {
+                "input": 2,
+                "output": 8
+            },
+            "gpt-4.1-mini": {
+                "input": 0.5,
+                "output": 1.6
+            },
+            "gpt-4.1-nano": {
+                "input": 0.1,
+                "output": 0.4
+            },
+            "gpt-4.1-2025-04-14": {
+                "input": 2,
+                "output": 8
+            },
+            "gpt-4.1-mini-2025-04-14": {
+                "input": 0.5,
+                "output": 1.6
+            },
+            "gpt-4.1-nano-2025-04-14": {
+                "input": 0.1,
+                "output": 0.4
             }
         },
         "name": {
@@ -244,7 +268,13 @@
             "claude-3-5-haiku-20241022",
             "claude-3-5-sonnet-20240620",
             "claude-3-5-sonnet-20241022",
-            "claude-3-5-sonnet-latest"
+            "claude-3-5-sonnet-latest",
+            "claude-3-7-sonnet-latest",
+            "claude-3-7-sonnet-20250219",
+            "claude-opus-4-20250514",
+            "claude-sonnet-4-20250514",
+            "claude-opus-4-0",
+            "claude-sonnet-4-0"
         ],
         "api_key": "ANTHROPIC_API_KEY",
         "support_media_inputs": {
@@ -272,6 +302,30 @@
             "claude-3-5-sonnet-latest": [
                 "image",
                 "pdf"
+            ],
+            "claude-3-7-sonnet-latest": [
+                "image",
+                "pdf"
+            ],
+            "claude-3-7-sonnet-20250219": [
+                "image",
+                "pdf"
+            ],
+            "claude-opus-4-20250514": [
+                "image",
+                "pdf"
+            ],
+            "claude-sonnet-4-20250514": [
+                "image",
+                "pdf"
+            ],
+            "claude-opus-4-0": [
+                "image",
+                "pdf"
+            ],
+            "claude-sonnet-4-0": [
+                "image",
+                "pdf"
             ]
         },
         "support_tools": [
@@ -281,7 +335,13 @@
             "claude-3-5-sonnet-20240620",
             "claude-3-5-sonnet-20241022",
             "claude-3-5-haiku-20241022",
-            "claude-3-5-sonnet-latest"
+            "claude-3-5-sonnet-latest",
+            "claude-3-7-sonnet-latest",
+            "claude-3-7-sonnet-20250219",
+            "claude-opus-4-20250514",
+            "claude-sonnet-4-20250514",
+            "claude-opus-4-0",
+            "claude-sonnet-4-0"
         ],
         "support_response_model": [
             "claude-2.1",
@@ -294,7 +354,13 @@
             "claude-3-haiku-20240307": "anthropic/claude-3-haiku",
             "claude-3-5-sonnet-20240620": "anthropic/claude-3.5-sonnet-20240620",
             "claude-3-5-sonnet-latest": "anthropic/claude-3.5-sonnet",
-            "claude-3-5-haiku-20241022": "anthropic/claude-3.5-haiku"
+            "claude-3-5-haiku-20241022": "anthropic/claude-3.5-haiku",
+            "claude-3-7-sonnet-latest": "anthropic/claude-3.7-sonnet",
+            "claude-3-7-sonnet-20250219": "anthropic/claude-3.7-sonnet",
+            "claude-opus-4-20250514": "anthropic/claude-opus-4",
+            "claude-sonnet-4-20250514": "anthropic/claude-sonnet-4",
+            "claude-opus-4-0": "anthropic/claude-opus-4",
+            "claude-sonnet-4-0": "anthropic/claude-sonnet-4"
         },
         "price": {
             "claude-2.1": {
@@ -326,6 +392,30 @@
                 "output": 15
             },
             "claude-3-5-sonnet-latest": {
+                "input": 3,
+                "output": 15
+            },
+            "claude-3-7-sonnet-latest": {
+                "input": 3,
+                "output": 15
+            },
+            "claude-3-7-sonnet-20250219": {
+                "input": 3,
+                "output": 15
+            },
+            "claude-opus-4-20250514": {
+                "input": 15,
+                "output": 75
+            },
+            "claude-sonnet-4-20250514": {
+                "input": 3,
+                "output": 15
+            },
+            "claude-opus-4-0": {
+                "input": 15,
+                "output": 75
+            },
+            "claude-sonnet-4-0": {
                 "input": 3,
                 "output": 15
             }
@@ -383,7 +473,10 @@
             "gemini-1.0-pro-latest": "google/gemini-pro",
             "gemini-1.5-pro-latest": "google/gemini-pro-1.5",
             "gemini-1.5-pro-exp-0801": "google/gemini-pro-1.5-exp",
-            "gemini-1.5-flash-latest": "google/gemini-flash-1.5"
+            "gemini-1.5-flash-latest": "google/gemini-flash-1.5",
+            "gemini-2.0-flash": "google/gemini-2.0-flash",
+            "gemini-2.5-flash": "google/gemini-2.5-flash",
+            "gemini-2.5-pro": "google/gemini-2.5-pro"
         },
         "price": {
             "gemini-pro": {
@@ -415,7 +508,7 @@
                 "output": 0.6
             },
             "gemini-2.5-pro": {
-                "input": 1.25,
+                "input": 2,
                 "output": 10
             }
         },
@@ -650,23 +743,23 @@
     "perplexity": {
         "icon": "https://svgl.app/library/perplexity.svg",
         "models": [
-            "llama-3.1-sonar-large-128k-online"
+            "sonar"
         ],
         "api_key": "PPLX_API_KEY",
         "openrouter_identifier": {
-            "llama-3.1-sonar-large-128k-online": "perplexity/llama-3.1-sonar-large-128k-online"
+            "sonar": "perplexity/sonar"
         },
         "price": {
-            "llama-3.1-sonar-large-128k-online": {
+            "sonar": {
                 "input": 1,
                 "output": 1
             }
         },
         "name": {
-            "llama-3.1-sonar-large-128k-online": "Perplexity"
+            "sonar": "Perplexity"
         },
         "availableForChatApp": {
-            "llama-3.1-sonar-large-128k-online": "Free"
+            "sonar": "Free"
         }
     },
     "replicate": {
