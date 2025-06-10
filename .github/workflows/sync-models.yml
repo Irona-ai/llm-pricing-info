@@ -17,9 +17,9 @@ on:
 
 jobs:
   sync-staging:
-    # Run on pushes to develop, or manual runs when `env==staging`
+    # auto on develop pushes, or manual when env=staging
     if: >
-      (github.event_name == 'push'   && github.ref == 'refs/heads/develop')
+      (github.event_name == 'push' && github.ref == 'refs/heads/develop')
       || (github.event_name == 'workflow_dispatch' && github.event.inputs.env == 'staging')
     runs-on: ubuntu-latest
     environment: staging
@@ -29,24 +29,20 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
-        with: { python-version: '3.10' }
+        with:
+          python-version: '3.10'
       - run: pip install supabase
       - name: Sync to staging
         run: |
           python scripts/sync_models.py \
             --json model_pricing.json \
-            --env staging \
-            ${  
-              github.event_name == 'workflow_dispatch' && github.event.inputs.models
-                ? '--models ' + github.event.inputs.models.join(' ')
-                : ''
-            }
+            --env staging
 
   sync-production:
     needs: sync-staging
-    # Run on pushes to main, or manual runs when `env==production`
+    # auto on main pushes, or manual when env=production
     if: >
-      (github.event_name == 'push'   && github.ref == 'refs/heads/main')
+      (github.event_name == 'push' && github.ref == 'refs/heads/main')
       || (github.event_name == 'workflow_dispatch' && github.event.inputs.env == 'production')
     runs-on: ubuntu-latest
     environment: production
@@ -56,15 +52,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
-        with: { python-version: '3.10' }
+        with:
+          python-version: '3.10'
       - run: pip install supabase
       - name: Sync to production
         run: |
           python scripts/sync_models.py \
             --json model_pricing.json \
-            --env production \
-            ${  
-              github.event_name == 'workflow_dispatch' && github.event.inputs.models
-                ? '--models ' + github.event.inputs.models.join(' ')
-                : ''
-            }
+            --env production
