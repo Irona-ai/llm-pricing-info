@@ -16,9 +16,7 @@ logger.setLevel(logging.INFO)
 # Console handler
 ch = logging.StreamHandler()
 ch.setLevel(logging.INFO)
-formatter = logging.Formatter(
-    "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
-)
+formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
 ch.setFormatter(formatter)
 logger.addHandler(ch)
 
@@ -26,24 +24,25 @@ logger.addHandler(ch)
 # Helpers
 # ------------------------------------------------------------------
 
+
 def parse_args():
     parser = argparse.ArgumentParser(
         description="Sync models.json into Supabase with optional filtering"
     )
+    parser.add_argument("--json", required=True, help="Path to your models.json file")
     parser.add_argument(
-        "--json", required=True,
-        help="Path to your models.json file"
+        "--env",
+        required=True,
+        choices=["staging", "production"],
+        help="Environment to sync against",
     )
     parser.add_argument(
-        "--env", required=True, choices=["staging", "production"],
-        help="Environment to sync against"
-    )
-    parser.add_argument(
-        "--models", nargs="*",
+        "--models",
+        nargs="*",
         help=(
             "Optional list of models to sync, in 'provider/model' format. "
             "If omitted, all models are synced."
-        )
+        ),
     )
     return parser.parse_args()
 
@@ -68,11 +67,13 @@ def upsert_provider(sb: Client, provider_name: str, cfg: dict):
     """
     # Attempt to fetch existing provider by name
     try:
-        res = sb.table("Provider")
-                 .select("id, apiEndpoint, icon")
-                 .eq("name", provider_name)
-                 .maybe_single()
-                 .execute()
+        res = (
+            sb.table("Provider")
+            .select("id, apiEndpoint, icon")
+            .eq("name", provider_name)
+            .maybe_single()
+            .execute()
+        )
         existing = res.data
     except Exception as e:
         logger.error(f"Error querying Provider '{provider_name}': {e}")
@@ -91,11 +92,10 @@ def upsert_provider(sb: Client, provider_name: str, cfg: dict):
             updates["icon"] = icon_url
         if updates:
             try:
-                sb.table("Provider")
-                  .update(updates)
-                  .eq("id", provider_id)
-                  .execute()
-                logger.info(f"Updated Provider '{provider_name}': {list(updates.keys())}")
+                (sb.table("Provider").update(updates).eq("id", provider_id).execute())
+                logger.info(
+                    f"Updated Provider '{provider_name}': {list(updates.keys())}"
+                )
             except Exception as e:
                 logger.error(f"Failed to update Provider '{provider_name}': {e}")
         else:
@@ -161,11 +161,14 @@ def sync_model(sb: Client, provider_id: str, key: str, cfg: dict, models_filter:
     }
 
     try:
-        existing = sb.table("Model")
-                     .select("*")
-                     .eq("apiString", rec["apiString"])
-                     .maybe_single()
-                     .execute().data
+        existing = (
+            sb.table("Model")
+            .select("*")
+            .eq("apiString", rec["apiString"])
+            .maybe_single()
+            .execute()
+            .data
+        )
     except Exception as e:
         logger.error(f"Failed to fetch model '{full_name}': {e}")
         return
@@ -179,14 +182,12 @@ def sync_model(sb: Client, provider_id: str, key: str, cfg: dict, models_filter:
             logger.error(f"Failed to create model '{full_name}': {e}")
         return
 
-    updates = {
-        field: val
-        for field, val in rec.items()
-        if existing.get(field) != val
-    }
+    updates = {field: val for field, val in rec.items() if existing.get(field) != val}
     if updates:
         try:
-            sb.table("Model").update(updates).eq("apiString", rec["apiString"]).execute()
+            sb.table("Model").update(updates).eq(
+                "apiString", rec["apiString"]
+            ).execute()
             logger.info(f"Updated model '{full_name}': {list(updates.keys())}")
         except Exception as e:
             logger.error(f"Failed to update model '{full_name}': {e}")
@@ -211,27 +212,25 @@ def main():
         return
     sb = create_client(url, key)
 
-    # Load JSON with BOM support
     try:
-        with open(args.json, 'r', encoding='utf-8-sig') as f:
+        with open(args.json, "r", encoding="utf-8-sig") as f:
             data = json.load(f)
     except Exception as e:
         logger.error(f"Failed to read JSON file '{args.json}': {e}")
         return
 
-    # Sync each provider
     for provider, cfg in data.items():
         pid = upsert_provider(sb, provider, cfg)
         if not pid:
             logger.error(f"Skipping provider '{provider}' due to earlier error")
             continue
 
-        # Attach provider name for full_name
-        cfg['provider'] = provider
-        for model_key in cfg.get('models', []):
+        cfg["provider"] = provider
+        for model_key in cfg.get("models", []):
             sync_model(sb, pid, model_key, cfg, models_filter)
 
     logger.info(f"[{args.env}] sync complete.")
+
 
 if __name__ == "__main__":
     main()
