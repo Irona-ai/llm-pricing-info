@@ -65,19 +65,17 @@ def upsert_provider(sb: Client, provider_name: str, cfg: dict):
     """
     Ensure a Provider exists; update icon/apiEndpoint if needed; return its ID.
     """
-    # Attempt to fetch existing provider by name
+    # Fetch existing provider
     try:
-        res = (
-            sb.table("Provider")
-            .select("id, apiEndpoint, icon")
-            .eq("name", provider_name)
-            .maybe_single()
-            .execute()
-        )
-        existing = res.data
+        res = (sb.table("Provider")
+                 .select("id, apiEndpoint, icon")
+                 .eq("name", provider_name)
+                 .maybe_single()
+                 .execute())
+        existing = res.data if res and hasattr(res, 'data') else None
     except Exception as e:
         logger.error(f"Error querying Provider '{provider_name}': {e}")
-        return None
+        existing = None
 
     icon_url = cfg.get("icon", "")
     endpoint = os.getenv(f"{provider_name.upper()}_API_ENDPOINT", "")
@@ -120,7 +118,7 @@ def sync_model(sb: Client, provider_id: str, key: str, cfg: dict, models_filter:
     """
     full_name = f"{cfg['provider']}/{key}"
 
-    # Apply model filter if provided
+    # Filter models if specified
     if models_filter and full_name not in models_filter:
         logger.info(f"Skipping {full_name} (not in filter)")
         return
@@ -142,13 +140,14 @@ def sync_model(sb: Client, provider_id: str, key: str, cfg: dict, models_filter:
         except ValueError:
             logger.warning(f"Invalid depreciationDate for '{full_name}': {dep_str}")
 
-    # Build desired record
+    # Build record
+    date_val = extract_date(key)
     rec = {
         "apiString": key,
         "providerId": provider_id,
         "name": cfg.get("name", {}).get(key, key),
-        "costPerMillionTokenInput": price_info.get("input"),
-        "costPerMillionTokenOutput": price_info.get("output"),
+        "costPerMillionTokenInput": price_info["input"],
+        "costPerMillionTokenOutput": price_info["output"],
         "capabilities": cfg.get("support_media_inputs", {}).get(key, []),
         "availableForChatApp": (
             cfg.get("availableForChatApp", {}).get(key)
@@ -156,22 +155,24 @@ def sync_model(sb: Client, provider_id: str, key: str, cfg: dict, models_filter:
             else None
         ),
         "description": cfg.get("description", {}).get(key, ""),
-        "releaseDate": extract_date(key),
+        "releaseDate": date_val.isoformat() if date_val else None,
         "isArchived": is_archived,
     }
 
+    # Fetch existing model
     try:
-        existing = (
-            sb.table("Model")
-            .select("*")
-            .eq("apiString", rec["apiString"])
-            .maybe_single()
-            .execute()
-            .data
-        )
+        resp = (sb.table("Model")
+                 .select("*")
+                 .eq("apiString", rec["apiString"])
+                 .maybe_single()
+                 .execute())
+        existing = resp.data if resp and hasattr(resp, 'data') else None
+        if resp and getattr(resp, 'error', None):
+            logger.error(f"Error fetching model '{full_name}': {resp.error}")
+            existing = None
     except Exception as e:
         logger.error(f"Failed to fetch model '{full_name}': {e}")
-        return
+        existing = None
 
     if existing is None:
         # Insert
@@ -185,9 +186,9 @@ def sync_model(sb: Client, provider_id: str, key: str, cfg: dict, models_filter:
     updates = {field: val for field, val in rec.items() if existing.get(field) != val}
     if updates:
         try:
-            sb.table("Model").update(updates).eq(
+            (sb.table("Model").update(updates).eq(
                 "apiString", rec["apiString"]
-            ).execute()
+            ).execute())
             logger.info(f"Updated model '{full_name}': {list(updates.keys())}")
         except Exception as e:
             logger.error(f"Failed to update model '{full_name}': {e}")
