@@ -6,7 +6,7 @@ on:
     branches:
       - main
     paths:
-      - path/to/models.json
+      - model_pricing.json
 
 jobs:
   sync:
