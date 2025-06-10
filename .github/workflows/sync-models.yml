@@ -7,54 +7,64 @@ on:
       - main
     paths:
       - model_pricing.json
-    workflow_dispatch:
+
+  workflow_dispatch:
+    inputs:
+      env:
+        description: 'Which environment to sync?'
+        required: true
+        default: 'staging'
 
 jobs:
   sync-staging:
-    if: github.ref == 'refs/heads/main'
+    # Run on pushes to develop, or manual runs when `env==staging`
+    if: >
+      (github.event_name == 'push'   && github.ref == 'refs/heads/develop')
+      || (github.event_name == 'workflow_dispatch' && github.event.inputs.env == 'staging')
     runs-on: ubuntu-latest
     environment: staging
     env:
       SUPABASE_URL:               ${{ secrets.SUPABASE_STAGING_URL }}
       SUPABASE_SERVICE_ROLE_KEY:  ${{ secrets.SUPABASE_STAGING_SERVICE_ROLE_KEY }}
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: 3.10
-
-      - name: Install dependencies
-        run: pip install supabase
-
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with: { python-version: '3.10' }
+      - run: pip install supabase
       - name: Sync to staging
-        run: python scripts/sync_models.py \
-               --json model_pricing.json \
-               --env staging
+        run: |
+          python scripts/sync_models.py \
+            --json model_pricing.json \
+            --env staging \
+            ${  
+              github.event_name == 'workflow_dispatch' && github.event.inputs.models
+                ? '--models ' + github.event.inputs.models.join(' ')
+                : ''
+            }
 
   sync-production:
-    if: github.ref == 'refs/heads/main'
     needs: sync-staging
+    # Run on pushes to main, or manual runs when `env==production`
+    if: >
+      (github.event_name == 'push'   && github.ref == 'refs/heads/main')
+      || (github.event_name == 'workflow_dispatch' && github.event.inputs.env == 'production')
     runs-on: ubuntu-latest
     environment: production
     env:
       SUPABASE_URL:               ${{ secrets.SUPABASE_PRODUCTION_URL }}
       SUPABASE_SERVICE_ROLE_KEY:  ${{ secrets.SUPABASE_PRODUCTION_SERVICE_ROLE_KEY }}
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: 3.10
-
-      - name: Install dependencies
-        run: pip install supabase
-
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with: { python-version: '3.10' }
+      - run: pip install supabase
       - name: Sync to production
-        run: python scripts/sync_models.py \
-               --json model_pricing.json \
-               --env production
+        run: |
+          python scripts/sync_models.py \
+            --json model_pricing.json \
+            --env production \
+            ${  
+              github.event_name == 'workflow_dispatch' && github.event.inputs.models
+                ? '--models ' + github.event.inputs.models.join(' ')
+                : ''
+            }
