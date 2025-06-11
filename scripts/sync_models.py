@@ -152,8 +152,8 @@ def sync_model(sb: Client, provider_id: str, key: str, cfg: dict, models_filter:
         "id": str(uuid.uuid4()),  # Ensure ID is always new for this initial build
         "apiString": key,
         "providerId": provider_id,
-        "created_at": current_time_iso,  # Add created_at for new records
-        "updated_at": current_time_iso,  # Add updated_at for new records
+        "createdAt": current_time_iso,  # Add created_at for new records
+        "updatedAt": current_time_iso,  # Add updated_at for new records
         "name": cfg.get("name", {}).get(key, key),
         "costPerMillionTokenInput": price_info["input"],
         "costPerMillionTokenOutput": price_info["output"],
