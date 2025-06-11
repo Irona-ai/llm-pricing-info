@@ -165,6 +165,7 @@ def sync_model(sb: Client, provider_id: str, key: str, cfg: dict, models_filter:
         ),  # Ensure plural 'descriptions'
         "releaseDate": date_val.isoformat() if date_val else None,
         "isArchived": is_archived,
+        "updatedAt": datetime.now().isoformat(),
     }
 
     # Fetch existing model
