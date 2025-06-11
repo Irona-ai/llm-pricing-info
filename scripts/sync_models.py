@@ -6,6 +6,8 @@ import re
 import logging
 from datetime import datetime, date
 from supabase import create_client, Client
+import uuid
+import json  # For logging payload
 
 # ------------------------------------------------------------------
 # Configure logging
@@ -67,12 +69,14 @@ def upsert_provider(sb: Client, provider_name: str, cfg: dict):
     """
     # Fetch existing provider
     try:
-        res = (sb.table("Provider")
-                 .select("id, apiEndpoint, icon")
-                 .eq("name", provider_name)
-                 .maybe_single()
-                 .execute())
-        existing = res.data if res and hasattr(res, 'data') else None
+        res = (
+            sb.table("Provider")
+            .select("id, apiEndpoint, icon")
+            .eq("name", provider_name)
+            .maybe_single()
+            .execute()
+        )
+        existing = res.data if res and hasattr(res, "data") else None
     except Exception as e:
         logger.error(f"Error querying Provider '{provider_name}': {e}")
         existing = None
@@ -142,7 +146,9 @@ def sync_model(sb: Client, provider_id: str, key: str, cfg: dict, models_filter:
 
     # Build record
     date_val = extract_date(key)
+    model_id = str(uuid.uuid4())  # Generate ID client-side
     rec = {
+        "id": model_id,  # Use client-generated ID
         "apiString": key,
         "providerId": provider_id,
         "name": cfg.get("name", {}).get(key, key),
@@ -154,51 +160,64 @@ def sync_model(sb: Client, provider_id: str, key: str, cfg: dict, models_filter:
             if cfg.get("availableForChatApp", {}).get(key) in ["Free", "Pro"]
             else None
         ),
-        "description": cfg.get("description", {}).get(key, ""),
+        "description": cfg.get("descriptions", {}).get(
+            key, ""
+        ),  # Ensure plural 'descriptions'
         "releaseDate": date_val.isoformat() if date_val else None,
         "isArchived": is_archived,
     }
 
     # Fetch existing model
     try:
-        resp = (sb.table("Model")
-                 .select("*")
-                 .eq("apiString", rec["apiString"])
-                 .maybe_single()
-                 .execute())
-        existing = resp.data if resp and hasattr(resp, 'data') else None
-        if resp and getattr(resp, 'error', None):
+        resp = (
+            sb.table("Model")
+            .select("*")
+            .eq("apiString", rec["apiString"])
+            .maybe_single()
+            .execute()
+        )
+        existing = resp.data if resp and hasattr(resp, "data") else None
+        if resp and getattr(resp, "error", None):
             logger.error(f"Error fetching model '{full_name}': {resp.error}")
             existing = None
     except Exception as e:
         logger.error(f"Failed to fetch model '{full_name}': {e}")
         existing = None
 
-    if existing is None:
-        # Insert
+    if existing:
+        # Update existing model
+        updates = {
+            field: val
+            for field, val in rec.items()
+            if field != "id" and existing.get(field) != val
+        }
+        if updates:
+            try:
+                (
+                    sb.table("Model")
+                    .update(updates)
+                    .eq("apiString", rec["apiString"])
+                    .execute()
+                )
+                logger.info(f"Updated model '{full_name}': {list(updates.keys())}")
+            except Exception as e:
+                logger.error(f"Failed to update model '{full_name}': {e}")
+        else:
+            logger.info(f"No changes for model '{full_name}'")
+    else:
+        # Create new model
         try:
+            logger.info(f"Creating new model '{full_name}'")
             sb.table("Model").insert(rec).execute()
-            logger.info(f"Created model '{full_name}'")
+            logger.info(f"Successfully created model '{full_name}'")
         except Exception as e:
             logger.error(f"Failed to create model '{full_name}': {e}")
-        return
-
-    updates = {field: val for field, val in rec.items() if existing.get(field) != val}
-    if updates:
-        try:
-            (sb.table("Model").update(updates).eq(
-                "apiString", rec["apiString"]
-            ).execute())
-            logger.info(f"Updated model '{full_name}': {list(updates.keys())}")
-        except Exception as e:
-            logger.error(f"Failed to update model '{full_name}': {e}")
-    else:
-        logger.info(f"No changes for model '{full_name}'")
 
 
 # ------------------------------------------------------------------
 # Main
 # ------------------------------------------------------------------
+
 
 def main():
     args = parse_args()
