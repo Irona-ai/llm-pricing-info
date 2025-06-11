@@ -249,13 +249,24 @@
             "gpt-4o-mini": "GPT-4o Mini",
             "gpt-4o": "GPT-4o",
             "o1-mini": "O1 Mini",
-            "chatgpt-4o-latest": "ChatGPT-4o"
+            "chatgpt-4o-latest": "ChatGPT-4o",
+            "gpt-4.1-nano": "GPT-4.1 Nano"
         },
         "availableForChatApp": {
             "gpt-4o-mini": "Free",
             "gpt-4o": "Pro",
             "o1-mini": "Pro",
-            "chatgpt-4o-latest": "Pro"
+            "chatgpt-4o-latest": "Pro",
+            "gpt-4.1-nano": "Free",
+            "gpt-4.1": "Pro"
+        },
+        "descriptions": {
+            "gpt-4o-mini": "Faster, less precise GPT-4o",
+            "gpt-4o": "OpenAI's Flagship; versatile & intelligent",
+            "o1-mini": "OpenAI's previous small reasoning model",
+            "chatgpt-4o-latest": "",
+            "gpt-4.1-nano": "Fastest Model in GPT-4.1 series",
+            "gpt-4.1": "OpenAI's Flagship Model"
         }
     },
     "anthropic": {
@@ -423,16 +434,24 @@
         "name": {
             "claude-3-haiku-20240307": "Claude-3 Haiku",
             "claude-3-5-haiku-20241022": "Claude-3.5 Haiku",
-            "claude-3-5-sonnet-latest": "Claude-3.5 Sonnet-v2"
+            "claude-3-5-sonnet-latest": "Claude-3.5 Sonnet-v2",
+            "claude-sonnet-4-20250514": "Claude-4 Sonnet"
         },
         "availableForChatApp": {
             "claude-3-haiku-20240307": "Free",
             "claude-3-5-haiku-20241022": "Pro",
-            "claude-3-5-sonnet-latest": "Pro"
+            "claude-3-5-sonnet-latest": "Pro",
+            "claude-sonnet-4-20250514": "Pro"
         },
         "alias": {
             "claude-3-5-haiku-20241022": "claude-3-5-haiku",
             "claude-3-5-sonnet-latest": "claude-3-5-sonnet"
+        },
+        "descriptions": {
+            "claude-3-haiku-20240307": "Anthropic's previous fastest model",
+            "claude-3-5-haiku-20241022": "Anthropic's fastest model",
+            "claude-3-5-sonnet-latest": "Anthropic's previous flagship model",
+            "claude-sonnet-4-20250514": "Anthropic's Flagship Model"
         }
     },
     "google": {
@@ -525,6 +544,13 @@
             "gemini-2.0-flash": "Free",
             "gemini-2.5-flash": "Free",
             "gemini-2.5-pro": "Pro"
+        },
+        "descriptions": {
+            "gemini-1.5-flash-latest": "Faster & less precise Gemini-1.5 Pro",
+            "gemini-1.5-pro-latest": "Google's previous flagship model",
+            "gemini-2.0-flash": "Google's latest stable model",
+            "gemini-2.5-flash": "Google's latest fastest model",
+            "gemini-2.5-pro": "Google's newest experimental model"
         }
     },
     "cohere": {
@@ -733,11 +759,16 @@
             }
         },
         "name": {
-            "Meta-Llama-3.1-70B-Instruct-Turbo": "Llama-3.1 70B"
+            "Meta-Llama-3.1-70B-Instruct-Turbo": "Llama-3.1 70B",
+            "DeepSeek-R1": "DeepSeek R1"
         },
         "availableForChatApp": {
             "Meta-Llama-3.1-70B-Instruct-Turbo": "Free",
             "DeepSeek-R1": "Pro"
+        },
+        "descriptions": {
+            "Meta-Llama-3.1-70B-Instruct-Turbo": "Meta's 70B flagship model",
+            "DeepSeek-R1": "DeepSeek's Reasoning Model"
         }
     },
     "perplexity": {
@@ -760,6 +791,9 @@
         },
         "availableForChatApp": {
             "sonar": "Free"
+        },
+        "descriptions": {
+            "sonar": "Perplexity's latest reasoning & search Model"
         }
     },
     "replicate": {
