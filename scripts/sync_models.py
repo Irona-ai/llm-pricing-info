@@ -152,8 +152,8 @@ def sync_model(sb: Client, provider_id: str, key: str, cfg: dict, models_filter:
         "id": str(uuid.uuid4()),  # Ensure ID is always new for this initial build
         "apiString": key,
         "providerId": provider_id,
-        "createdAt": current_time_iso,  # Add created_at for new records
-        "updatedAt": current_time_iso,  # Add updated_at for new records
+        "createdAt": current_time_iso,  # Add createdAt for new records
+        "updatedAt": current_time_iso,  # Add updatedAt for new records
         "name": cfg.get("name", {}).get(key, key),
         "costPerMillionTokenInput": price_info["input"],
         "costPerMillionTokenOutput": price_info["output"],
@@ -190,17 +190,17 @@ def sync_model(sb: Client, provider_id: str, key: str, cfg: dict, models_filter:
     if existing:
         # Update existing model
         # Fields to exclude from the direct comparison for triggering an update
-        # 'id' is the primary key, 'created_at' and 'updated_at' are auto-managed or managed specifically
-        excluded_from_comparison = ["id", "created_at", "updated_at"]
+        # 'id' is the primary key, 'createdAt' and 'updatedAt' are auto-managed or managed specifically
+        excluded_from_comparison = ["id", "createdAt", "updatedAt"]
         updates = {
             field: val
             for field, val in rec.items()
             if field not in excluded_from_comparison and existing.get(field) != val
         }
         if updates:
-            updates["updated_at"] = (
+            updates["updatedAt"] = (
                 datetime.utcnow().isoformat() + "Z"
-            )  # Add/update updated_at timestamp
+            )  # Add/update updatedAt timestamp
             try:
                 (
                     sb.table("Model")
