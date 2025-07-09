@@ -860,13 +860,6 @@
     },
     "bedrock": {
     "models": [
-      "anthropic.claude-3-5-sonnet-20241022-v2:0",
-      "anthropic.claude-3-5-haiku-20241022-v2:0",
-      "anthropic.claude-3-opus-20240229-v1:0",
-      "meta.llama3-1-405b-instruct-v1:0",
-      "meta.llama3-1-70b-instruct-v1:0",
-      "meta.llama3-1-8b-instruct-v1:0",
-      "amazon.titan-text-premier-v1:0",
       "us.deepseek.r1-v1:0"
     ],
     "source": "https://aws.amazon.com/bedrock/pricing/",
@@ -876,38 +869,17 @@
       "aws_secret_access_key": "AWS_SECRET_ACCESS_KEY",
       "aws_region": "AWS_REGION"
     },
-    "support_tools": [
-      "anthropic.claude-3-5-sonnet-20241022-v2:0",
-      "anthropic.claude-3-5-haiku-20241022-v2:0",
-      "anthropic.claude-3-opus-20240229-v1:0"
-    ],
-    "support_response_model": [
-      "anthropic.claude-3-5-sonnet-20241022-v2:0",
-      "anthropic.claude-3-opus-20240229-v1:0"
-    ],
     "openrouter_identifier": {
-      "us.deepseek.r1-v1:0": "bedrock/us.deepseek.r1-v1:0",
-      "anthropic.claude-3-5-sonnet-20241022-v2:0": "bedrock/anthropic.claude-3-5-sonnet-20241022-v2:0",
-      "anthropic.claude-3-5-haiku-20241022-v2:0": "bedrock/anthropic.claude-3-5-haiku-20241022-v2:0"
+      "us.deepseek.r1-v1:0": "bedrock/us.deepseek.r1-v1:0"
     },
     "price": {
       "anthropic.claude-3-5-sonnet-20241022-v2:0": {
-        "input": 3,
-        "output": 15
-      },
-      "anthropic.claude-3-5-haiku-20241022-v2:0": {
-        "input": 1,
-        "output": 5
-      },
-      "meta.llama3-1-70b-instruct-v1:0": {
-        "input": 2.65,
-        "output": 3.5
-      }
+        "input": 1.35,
+        "output": 5.4
+      } 
     },
     "name": {
-      "us.deepseek.r1-v1:0": "DeepSeek R1 (Bedrock)",
-      "anthropic.claude-3-5-sonnet-20241022-v2:0": "Claude 3.5 Sonnet (Bedrock)",
-      "anthropic.claude-3-5-haiku-20241022-v2:0": "Claude 3.5 Haiku (Bedrock)"
+      "us.deepseek.r1-v1:0": "DeepSeek R1 (Bedrock)"
     }
     }
 }
