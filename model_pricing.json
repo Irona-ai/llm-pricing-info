@@ -28,8 +28,20 @@
             "o1-mini-2024-09-12",
             "chatgpt-4o-latest"
         ],
+        "source": "https://platform.openai.com/docs/models",
+        "support_web_search":[
+            "gpt-4o-2024-05-13",
+            "gpt-4o-2024-08-06",
+            "gpt-4o-mini"
+        ],
         "api_key": "OPENAI_API_KEY",
         "support_media_inputs": {
+            "gpt-4-turbo":[
+                "image"
+            ],
+            "gpt-4-turbo-2024-04-09": [
+                "image"
+            ],
             "gpt-4o": [
                 "image",
                 "pdf"
@@ -466,6 +478,9 @@
             "gemini-2.5-flash",
             "gemini-2.5-pro"
         ],
+        "support_web_search":[
+           "gemini-2.0-flash"
+        ],
         "api_key": "GOOGLE_GENERATIVE_AI_API_KEY",
         "support_tools": [
             "gemini-pro",
@@ -845,52 +860,27 @@
     },
     "bedrock": {
     "models": [
-      "anthropic.claude-3-5-sonnet-20241022-v2:0",
-      "anthropic.claude-3-5-haiku-20241022-v2:0",
-      "anthropic.claude-3-opus-20240229-v1:0",
-      "meta.llama3-1-405b-instruct-v1:0",
-      "meta.llama3-1-70b-instruct-v1:0",
-      "meta.llama3-1-8b-instruct-v1:0",
-      "amazon.titan-text-premier-v1:0",
       "us.deepseek.r1-v1:0"
     ],
+    "source": "https://aws.amazon.com/bedrock/pricing/",
+    "source_1": "https://docs.aws.amazon.com/bedrock/latest/userguide/inference-profiles-support.html",
     "bedrock_api_keys": {
       "aws_access_key_id": "AWS_ACCESS_KEY_ID",
       "aws_secret_access_key": "AWS_SECRET_ACCESS_KEY",
       "aws_region": "AWS_REGION"
     },
-    "support_tools": [
-      "anthropic.claude-3-5-sonnet-20241022-v2:0",
-      "anthropic.claude-3-5-haiku-20241022-v2:0",
-      "anthropic.claude-3-opus-20240229-v1:0"
-    ],
-    "support_response_model": [
-      "anthropic.claude-3-5-sonnet-20241022-v2:0",
-      "anthropic.claude-3-opus-20240229-v1:0"
-    ],
     "openrouter_identifier": {
-      "us.deepseek.r1-v1:0": "bedrock/us.deepseek.r1-v1:0",
-      "anthropic.claude-3-5-sonnet-20241022-v2:0": "bedrock/anthropic.claude-3-5-sonnet-20241022-v2:0",
-      "anthropic.claude-3-5-haiku-20241022-v2:0": "bedrock/anthropic.claude-3-5-haiku-20241022-v2:0"
+      "us.deepseek.r1-v1:0": "bedrock/us.deepseek.r1-v1:0"
     },
     "price": {
-      "anthropic.claude-3-5-sonnet-20241022-v2:0": {
-        "input": 3,
-        "output": 15
-      },
-      "anthropic.claude-3-5-haiku-20241022-v2:0": {
-        "input": 1,
-        "output": 5
-      },
-      "meta.llama3-1-70b-instruct-v1:0": {
-        "input": 2.65,
-        "output": 3.5
+      "us.deepseek.r1-v1:0": {
+        "input": 1.35,
+        "output": 5.4
       }
+   
     },
     "name": {
-      "us.deepseek.r1-v1:0": "DeepSeek R1 (Bedrock)",
-      "anthropic.claude-3-5-sonnet-20241022-v2:0": "Claude 3.5 Sonnet (Bedrock)",
-      "anthropic.claude-3-5-haiku-20241022-v2:0": "Claude 3.5 Haiku (Bedrock)"
+      "us.deepseek.r1-v1:0": "DeepSeek R1 (Bedrock)"
     }
     }
 }
