@@ -1,6 +1,8 @@
 {
     "openai": {
         "icon": "https://svgl.app/library/openai.svg",
+        "source": "https://platform.openai.com/docs/models",
+        "source_1": "https://ai-sdk.dev/providers/ai-sdk-providers/openai",
         "models": [
             "gpt-3.5-turbo",
             "gpt-3.5-turbo-0125",
@@ -15,7 +17,7 @@
             "gpt-4o-mini-2024-07-18",
             "gpt-4-turbo-preview",
             "gpt-4-0125-preview",
-            "gpt-4-1106-preview",
+            "gpt-4-1106-vision-preview",
             "gpt-4.1",
             "gpt-4.1-2025-04-14",
             "gpt-4.1-mini",
@@ -28,11 +30,16 @@
             "o1-mini-2024-09-12",
             "chatgpt-4o-latest"
         ],
-        "source": "https://platform.openai.com/docs/models",
         "support_web_search":[
+            "gpt-4o",
             "gpt-4o-2024-05-13",
             "gpt-4o-2024-08-06",
-            "gpt-4o-mini"
+            "gpt-4o-mini",
+            "gpt-4o-mini-2024-07-18",
+            "gpt-4.1",
+            "gpt-4.1-2025-04-14",
+            "gpt-4.1-mini",
+            "gpt-4.1-mini-2025-04-14"
         ],
         "api_key": "OPENAI_API_KEY",
         "support_media_inputs": {
@@ -40,6 +47,21 @@
                 "image"
             ],
             "gpt-4-turbo-2024-04-09": [
+                "image"
+            ],
+            "gpt-4-1106-vision-preview": [
+                "image"
+            ],
+            "gpt-4.1": [
+                "image"
+            ],
+            "gpt-4.1-2025-04-14": [
+                "image"
+            ],
+            "gpt-4.1-mini": [
+                "image"
+            ],
+            "gpt-4.1-mini-2025-04-14": [
                 "image"
             ],
             "gpt-4o": [
@@ -62,25 +84,20 @@
                 "image",
                 "pdf"
             ],
-            "o1-preview": [
-                "image",
-                "pdf"
+            "gpt-4.1-nano": [
+                "image"
             ],
-            "o1-preview-2024-09-12": [
-                "image",
-                "pdf"
+            "gpt-4.1-nano-2025-04-14": [
+                "image"
             ],
             "o1-mini": [
-                "image",
-                "pdf"
+                "image"
             ],
             "o1-mini-2024-09-12": [
-                "image",
-                "pdf"
+                "image"     
             ],
             "chatgpt-4o-latest": [
-                "image",
-                "pdf"
+                "image"
             ]
         },
         "support_tools": [
@@ -97,7 +114,7 @@
             "gpt-4o-mini-2024-07-18",
             "gpt-4-turbo-preview",
             "gpt-4-0125-preview",
-            "gpt-4-1106-preview",
+            "gpt-4-1106-vision-preview",
             "gpt-4.1",
             "gpt-4.1-2025-04-14",
             "gpt-4.1-mini",
@@ -119,7 +136,7 @@
             "gpt-4o-mini-2024-07-18",
             "gpt-4-turbo-preview",
             "gpt-4-0125-preview",
-            "gpt-4-1106-preview",
+            "gpt-4-1106-vision-preview",
             "o1-preview",
             "o1-preview-2024-09-12",
             "o1-mini",
@@ -142,7 +159,7 @@
             "gpt-4o-mini": "openai/gpt-4o-mini",
             "gpt-4o-mini-2024-07-18": "openai/gpt-4o-mini-2024-07-18",
             "gpt-4-turbo-preview": "openai/gpt-4-turbo-preview",
-            "gpt-4-1106-preview": "openai/gpt-4-1106-preview",
+            "gpt-4-1106-vision-preview": "openai/gpt-4-1106-vision-preview",
             "o1-preview": "openai/o1-preview",
             "o1-preview-2024-09-12": "openai/o1-preview-2024-09-12",
             "o1-mini": "openai/o1-mini",
@@ -181,8 +198,8 @@
                 "output": 30
             },
             "gpt-4o": {
-                "input": 5,
-                "output": 15
+                "input": 2.5,
+                "output": 10
             },
             "gpt-4o-2024-05-13": {
                 "input": 5,
@@ -208,7 +225,7 @@
                 "input": 10,
                 "output": 30
             },
-            "gpt-4-1106-preview": {
+            "gpt-4-1106-vision-preview": {
                 "input": 10,
                 "output": 30
             },
@@ -237,7 +254,7 @@
                 "output": 8
             },
             "gpt-4.1-mini": {
-                "input": 0.5,
+                "input": 0.4,
                 "output": 1.6
             },
             "gpt-4.1-nano": {
@@ -249,7 +266,7 @@
                 "output": 8
             },
             "gpt-4.1-mini-2025-04-14": {
-                "input": 0.5,
+                "input": 0.4,
                 "output": 1.6
             },
             "gpt-4.1-nano-2025-04-14": {
@@ -283,6 +300,10 @@
     },
     "anthropic": {
         "icon": "https://svgl.app/library/claude-ai-icon.svg",
+        "source": "https://docs.anthropic.com/en/docs/about-claude/models/overview",
+        "source_1": "https://ai-sdk.dev/providers/ai-sdk-providers/anthropic",
+        "source_2": "https://www.prompthub.us/models/claude-2-1",
+        "source_3": "https://docs.anthropic.com/en/docs/build-with-claude/pdf-support",
         "models": [
             "claude-2.1",
             "claude-3-opus-20240229",
@@ -292,12 +313,14 @@
             "claude-3-5-sonnet-20240620",
             "claude-3-5-sonnet-20241022",
             "claude-3-5-sonnet-latest",
-            "claude-3-7-sonnet-latest",
             "claude-3-7-sonnet-20250219",
+            "claude-3-7-sonnet-latest",
             "claude-opus-4-20250514",
-            "claude-sonnet-4-20250514",
             "claude-opus-4-0",
+            "claude-sonnet-4-20250514",
             "claude-sonnet-4-0"
+            
+            
         ],
         "api_key": "ANTHROPIC_API_KEY",
         "support_media_inputs": {
@@ -352,6 +375,7 @@
             ]
         },
         "support_tools": [
+            "claude-2.1",
             "claude-3-opus-20240229",
             "claude-3-sonnet-20240229",
             "claude-3-haiku-20240307",
@@ -403,8 +427,8 @@
                 "output": 1.25
             },
             "claude-3-5-haiku-20241022": {
-                "input": 1,
-                "output": 5
+                "input": 0.80,
+                "output": 4
             },
             "claude-3-5-sonnet-20240620": {
                 "input": 3,
@@ -468,6 +492,9 @@
     },
     "google": {
         "icon": "https://svgl.app/library/gemini.svg",
+        "source": "https://ai.google.dev/gemini-api/docs/models",
+        "source_1": "https://ai-sdk.dev/providers/ai-sdk-providers/google-generative-ai",
+        "source_2": "https://ai.google.dev/gemini-api/docs/pricing",
         "models": [
             "gemini-pro",
             "gemini-1.0-pro-latest",
@@ -479,9 +506,30 @@
             "gemini-2.5-pro"
         ],
         "support_web_search":[
-           "gemini-2.0-flash"
+           "gemini-1.5-flash-latest",
+           "gemini-2.0-flash",
+           "gemini-2.5-flash",
+           "gemini-2.5-pro"
         ],
         "api_key": "GOOGLE_GENERATIVE_AI_API_KEY",
+        "support_media_inputs": {
+            "gemini-1.5-pro-latest": [
+                "image"
+            ],
+            "gemini-1.5-flash-latest": [
+                "image"
+            ],
+            "gemini-2.0-flash": [
+                "image"
+             ],
+              "gemini-2.5-flash":[
+                "image"
+            ],
+            "gemini-2.5-pro":[
+                "image",
+                "pdf"
+            ]
+        },
         "support_tools": [
             "gemini-pro",
             "gemini-1.0-pro-latest",
@@ -522,8 +570,8 @@
                 "output": 1.5
             },
             "gemini-1.5-pro-latest": {
-                "input": 1.75,
-                "output": 10.5
+                "input": 1.25,
+                "output": 10
             },
             "gemini-1.5-pro-exp-0801": {
                 "input": 1.75,
@@ -534,15 +582,15 @@
                 "output": 1.05
             },
             "gemini-2.0-flash": {
-                "input": 0.1,
-                "output": 0.4
+                "input": 0.15,
+                "output": 0.60
             },
             "gemini-2.5-flash": {
                 "input": 0.15,
                 "output": 0.6
             },
             "gemini-2.5-pro": {
-                "input": 2,
+                "input": 1.25,
                 "output": 10
             }
         },
@@ -570,6 +618,8 @@
     },
     "cohere": {
         "icon": "https://svgl.app/library/cohere.svg",
+        "source": "https://cohere.com/pricing",
+        "source_1":"https://ai-sdk.dev/providers/ai-sdk-providers/cohere",
         "models": [
             "command-r",
             "command-r-plus"
@@ -600,6 +650,7 @@
     },
     "mistral": {
         "icon": "https://svgl.app/library/mistral-ai_logo.svg",
+        "source": "https://docs.mistral.ai/getting-started/models/models_overview/",
         "models": [
             "mistral-large-latest",
             "mistral-large-2402",
@@ -694,6 +745,8 @@
     },
     "togetherai": {
         "icon": "https://svgl.app/library/meta.svg",
+        "source": "https://www.together.ai/pricing",
+        "source_1": "https://docs.together.ai/docs/batch-inference#model-availability",
         "models": [
             "Mistral-7B-Instruct-v0.2",
             "Mixtral-8x7B-Instruct-v0.1",
@@ -769,7 +822,7 @@
                 "output": 15
             },
             "DeepSeek-R1": {
-                "input": 7,
+                "input": 3,
                 "output": 7
             }
         },
@@ -788,6 +841,7 @@
     },
     "perplexity": {
         "icon": "https://svgl.app/library/perplexity.svg",
+        "source": "https://ai-sdk.dev/providers/ai-sdk-providers/perplexity",
         "models": [
             "sonar"
         ],
@@ -813,6 +867,8 @@
     },
     "replicate": {
         "icon": "https://svgl.app/library/replicate_light.svg",
+        "source": "https://replicate.com/explore",
+        "source_1": "https://replicate.com/pricing",
         "models": [
             "mistral-7b-instruct-v0.2",
             "mixtral-8x7b-instruct-v0.1",
