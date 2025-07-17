@@ -1,8 +1,10 @@
 {
     "openai": {
         "icon": "https://svgl.app/library/openai.svg",
-        "source": "https://platform.openai.com/docs/models",
-        "source_1": "https://ai-sdk.dev/providers/ai-sdk-providers/openai",
+        "sources": [
+            "https://platform.openai.com/docs/models",
+            "https://ai-sdk.dev/providers/ai-sdk-providers/openai"
+        ],
         "models": [
             "gpt-3.5-turbo",
             "gpt-3.5-turbo-0125",
@@ -30,20 +32,9 @@
             "o1-mini-2024-09-12",
             "chatgpt-4o-latest"
         ],
-        "support_web_search":[
-            "gpt-4o",
-            "gpt-4o-2024-05-13",
-            "gpt-4o-2024-08-06",
-            "gpt-4o-mini",
-            "gpt-4o-mini-2024-07-18",
-            "gpt-4.1",
-            "gpt-4.1-2025-04-14",
-            "gpt-4.1-mini",
-            "gpt-4.1-mini-2025-04-14"
-        ],
         "api_key": "OPENAI_API_KEY",
-        "support_media_inputs": {
-            "gpt-4-turbo":[
+        "capabilities": {
+            "gpt-4-turbo": [
                 "image"
             ],
             "gpt-4-turbo-2024-04-09": [
@@ -53,48 +44,67 @@
                 "image"
             ],
             "gpt-4.1": [
-                "image"
+                "image",
+                "search"
             ],
             "gpt-4.1-2025-04-14": [
-                "image"
+                "image",
+                "search"
             ],
             "gpt-4.1-mini": [
-                "image"
+                "image",
+                "search"
             ],
             "gpt-4.1-mini-2025-04-14": [
-                "image"
+                "image",
+                "search"
             ],
             "gpt-4o": [
                 "image",
-                "pdf"
+                "search"
             ],
             "gpt-4o-2024-05-13": [
                 "image",
-                "pdf"
+                "search"
             ],
             "gpt-4o-2024-08-06": [
                 "image",
-                "pdf"
+                "search"
             ],
             "gpt-4o-mini": [
                 "image",
-                "pdf"
+                "search"
             ],
             "gpt-4o-mini-2024-07-18": [
                 "image",
-                "pdf"
+                "search"
             ],
             "gpt-4.1-nano": [
-                "image"
+                "image",
+                "image-gen",
+                "file-search",
+                "mcp",
+                "code-interpreter"
             ],
             "gpt-4.1-nano-2025-04-14": [
-                "image"
+                "image",
+                "image-gen",
+                "file-search",
+                "mcp",
+                "code-interpreter"
             ],
             "o1-mini": [
-                "image"
+                "image",
+                "file-search",
+                "mcp",
+                "code-interpreter"
+
             ],
             "o1-mini-2024-09-12": [
-                "image"     
+                "image",
+                "file-search",
+                "mcp",
+                "code-interpreter"
             ],
             "chatgpt-4o-latest": [
                 "image"
@@ -301,10 +311,12 @@
     },
     "anthropic": {
         "icon": "https://svgl.app/library/claude-ai-icon.svg",
-        "source": "https://docs.anthropic.com/en/docs/about-claude/models/overview",
-        "source_1": "https://ai-sdk.dev/providers/ai-sdk-providers/anthropic",
-        "source_2": "https://www.prompthub.us/models/claude-2-1",
-        "source_3": "https://docs.anthropic.com/en/docs/build-with-claude/pdf-support",
+        "sources": [
+            "https://docs.anthropic.com/en/docs/about-claude/models/overview",
+            "https://ai-sdk.dev/providers/ai-sdk-providers/anthropic",
+            "https://www.prompthub.us/models/claude-2-1",
+            "https://docs.anthropic.com/en/docs/build-with-claude/pdf-support"
+        ],
         "models": [
             "claude-2.1",
             "claude-3-opus-20240229",
@@ -320,11 +332,9 @@
             "claude-opus-4-0",
             "claude-sonnet-4-20250514",
             "claude-sonnet-4-0"
-            
-            
         ],
         "api_key": "ANTHROPIC_API_KEY",
-        "support_media_inputs": {
+        "capabilities": {
             "claude-3-opus-20240229": [
                 "image"
             ],
@@ -344,35 +354,43 @@
             ],
             "claude-3-5-sonnet-20241022": [
                 "image",
-                "pdf"
+                "pdf",
+                "computer-use"
             ],
             "claude-3-5-sonnet-latest": [
                 "image",
-                "pdf"
+                "pdf",
+                "computer-use"
             ],
             "claude-3-7-sonnet-latest": [
                 "image",
-                "pdf"
+                "pdf",
+                "computer-use"
             ],
             "claude-3-7-sonnet-20250219": [
                 "image",
-                "pdf"
+                "pdf",
+                "computer-use"
             ],
             "claude-opus-4-20250514": [
                 "image",
-                "pdf"
+                "pdf",
+                "computer-use"
             ],
             "claude-sonnet-4-20250514": [
                 "image",
-                "pdf"
+                "pdf",
+                "computer-use"
             ],
             "claude-opus-4-0": [
                 "image",
-                "pdf"
+                "pdf",
+                "computer-use"
             ],
             "claude-sonnet-4-0": [
                 "image",
-                "pdf"
+                "pdf",
+                "computer-use"
             ]
         },
         "support_tools": [
@@ -493,9 +511,11 @@
     },
     "google": {
         "icon": "https://svgl.app/library/gemini.svg",
-        "source": "https://ai.google.dev/gemini-api/docs/models",
-        "source_1": "https://ai-sdk.dev/providers/ai-sdk-providers/google-generative-ai",
-        "source_2": "https://ai.google.dev/gemini-api/docs/pricing",
+        "sources": [
+            "https://ai.google.dev/gemini-api/docs/models",
+            "https://ai-sdk.dev/providers/ai-sdk-providers/google-generative-ai",
+            "https://ai.google.dev/gemini-api/docs/pricing"
+        ],
         "models": [
             "gemini-pro",
             "gemini-1.0-pro-latest",
@@ -506,29 +526,29 @@
             "gemini-2.5-flash",
             "gemini-2.5-pro"
         ],
-        "support_web_search":[
-           "gemini-1.5-flash-latest",
-           "gemini-2.0-flash",
-           "gemini-2.5-flash",
-           "gemini-2.5-pro"
-        ],
         "api_key": "GOOGLE_GENERATIVE_AI_API_KEY",
-        "support_media_inputs": {
+        "capabilities": {
             "gemini-1.5-pro-latest": [
                 "image"
             ],
             "gemini-1.5-flash-latest": [
-                "image"
+                "image",
+                "search"
             ],
             "gemini-2.0-flash": [
-                "image"
-             ],
-              "gemini-2.5-flash":[
-                "image"
-            ],
-            "gemini-2.5-pro":[
                 "image",
-                "pdf"
+                "pdf",
+                "search"
+            ],
+            "gemini-2.5-flash": [
+                "image",
+                "pdf",
+                "search"
+            ],
+            "gemini-2.5-pro": [
+                "image",
+                "pdf",
+                "search"
             ]
         },
         "support_tools": [
@@ -619,8 +639,10 @@
     },
     "cohere": {
         "icon": "https://svgl.app/library/cohere.svg",
-        "source": "https://cohere.com/pricing",
-        "source_1":"https://ai-sdk.dev/providers/ai-sdk-providers/cohere",
+        "sources": [
+            "https://cohere.com/pricing",
+            "https://ai-sdk.dev/providers/ai-sdk-providers/cohere"
+        ],
         "models": [
             "command-r",
             "command-r-plus"
@@ -651,7 +673,7 @@
     },
     "mistral": {
         "icon": "https://svgl.app/library/mistral-ai_logo.svg",
-        "source": "https://docs.mistral.ai/getting-started/models/models_overview/",
+        "sources": "https://docs.mistral.ai/getting-started/models/models_overview/",
         "models": [
             "mistral-large-latest",
             "mistral-large-2402",
@@ -749,8 +771,10 @@
     },
     "togetherai": {
         "icon": "https://svgl.app/library/meta.svg",
-        "source": "https://www.together.ai/pricing",
-        "source_1": "https://docs.together.ai/docs/batch-inference#model-availability",
+        "sources": [
+            "https://www.together.ai/pricing",
+            "https://docs.together.ai/docs/batch-inference#model-availability"
+        ],
         "models": [
             "Mistral-7B-Instruct-v0.2",
             "Mixtral-8x7B-Instruct-v0.1",
@@ -845,11 +869,14 @@
     },
     "perplexity": {
         "icon": "https://svgl.app/library/perplexity.svg",
-        "source": "https://ai-sdk.dev/providers/ai-sdk-providers/perplexity",
+        "sources": "https://ai-sdk.dev/providers/ai-sdk-providers/perplexity",
         "models": [
             "sonar"
         ],
         "api_key": "PERPLEXITY_API_KEY",
+        "capabilities": [
+            "search"
+        ],
         "openrouter_identifier": {
             "sonar": "perplexity/sonar"
         },
@@ -871,8 +898,7 @@
     },
     "replicate": {
         "icon": "https://svgl.app/library/replicate_light.svg",
-        "source": "https://replicate.com/explore",
-        "source_1": "https://replicate.com/pricing",
+        "sources": "https://replicate.com/explore",
         "models": [
             "mistral-7b-instruct-v0.2",
             "mixtral-8x7b-instruct-v0.1",
@@ -919,27 +945,29 @@
         }
     },
     "bedrock": {
-    "models": [
-      "us.deepseek.r1-v1:0"
-    ],
-    "source": "https://aws.amazon.com/bedrock/pricing/",
-    "source_1": "https://docs.aws.amazon.com/bedrock/latest/userguide/inference-profiles-support.html",
-    "bedrock_api_keys": {
-      "aws_access_key_id": "AWS_ACCESS_KEY_ID",
-      "aws_secret_access_key": "AWS_SECRET_ACCESS_KEY",
-      "aws_region": "AWS_REGION"
-    },
-    "openrouter_identifier": {
-      "us.deepseek.r1-v1:0": "bedrock/us.deepseek.r1-v1:0"
-    },
-    "price": {
-      "us.deepseek.r1-v1:0": {
-        "input": 1.35,
-        "output": 5.4
-      } 
-    },
-    "name": {
-      "us.deepseek.r1-v1:0": "DeepSeek R1 (Bedrock)"
-    }
+        "models": [
+            "us.deepseek.r1-v1:0"
+        ],
+        "sources": [
+            "https://aws.amazon.com/bedrock/pricing/",
+            "https://docs.aws.amazon.com/bedrock/latest/userguide/inference-profiles-support.html"
+        ],
+        "bedrock_api_keys": {
+            "aws_access_key_id": "AWS_ACCESS_KEY_ID",
+            "aws_secret_access_key": "AWS_SECRET_ACCESS_KEY",
+            "aws_region": "AWS_REGION"
+        },
+        "openrouter_identifier": {
+            "us.deepseek.r1-v1:0": "bedrock/us.deepseek.r1-v1:0"
+        },
+        "price": {
+            "us.deepseek.r1-v1:0": {
+                "input": 1.35,
+                "output": 5.4
+            }
+        },
+        "name": {
+            "us.deepseek.r1-v1:0": "DeepSeek R1 (Bedrock)"
+        }
     }
 }
