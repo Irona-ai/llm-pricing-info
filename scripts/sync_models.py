@@ -149,7 +149,7 @@ def sync_model(sb: Client, provider_id: str, key: str, cfg: dict, models_filter:
     model_id = str(uuid.uuid4())  # Generate ID client-side
     current_time_iso = datetime.utcnow().isoformat()
     rec = {
-        "id": str(uuid.uuid4()),  # Ensure ID is always new for this initial build
+        "id": model_id,  # Ensure ID is always new for this initial build
         "apiString": key,
         "providerId": provider_id,
         "createdAt": current_time_iso,  # Add createdAt for new records
@@ -157,7 +157,7 @@ def sync_model(sb: Client, provider_id: str, key: str, cfg: dict, models_filter:
         "name": cfg.get("name", {}).get(key, key),
         "costPerMillionTokenInput": price_info["input"],
         "costPerMillionTokenOutput": price_info["output"],
-        "capabilities": cfg.get("support_media_inputs", {}).get(key, []),
+        "capabilities": cfg.get("capabilities", {}).get(key, []),
         "availableForChatApp": (
             cfg.get("availableForChatApp", {}).get(key)
             if cfg.get("availableForChatApp", {}).get(key) in ["Free", "Pro"]
@@ -188,6 +188,8 @@ def sync_model(sb: Client, provider_id: str, key: str, cfg: dict, models_filter:
         existing = None
 
     if existing:
+        logger.info(f"Found existing model '{full_name}'")
+        logger.info(f"Existing model: {existing}")
         # Update existing model
         # Fields to exclude from the direct comparison for triggering an update
         # 'id' is the primary key, 'createdAt' and 'updatedAt' are auto-managed or managed specifically
@@ -199,9 +201,11 @@ def sync_model(sb: Client, provider_id: str, key: str, cfg: dict, models_filter:
         }
         if updates:
             updates["updatedAt"] = (
-                datetime.utcnow().isoformat() + "Z"
+                datetime.utcnow().isoformat()
             )  # Add/update updatedAt timestamp
             try:
+                logger.info(f"Updating model with details: {updates}")
+                logger.info(f"Updating model with API string: {rec['apiString']}")
                 (
                     sb.table("Model")
                     .update(updates)

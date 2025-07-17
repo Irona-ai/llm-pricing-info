@@ -3,7 +3,7 @@ name: Sync LLM models to Supabase
 on:
   push:
     branches:
-      - develop
+      - development
       - main
     paths:
       - model_pricing.json
@@ -17,9 +17,9 @@ on:
 
 jobs:
   sync-staging:
-    # Run on develop pushes, or on any manual dispatch (so that needs: is satisfied)
+    # Run on development pushes, or on any manual dispatch (so that needs: is satisfied)
     if: >
-      (github.event_name == 'push' && github.ref == 'refs/heads/develop')
+      (github.event_name == 'push' && github.ref == 'refs/heads/development')
       || (github.event_name == 'workflow_dispatch')
     runs-on: ubuntu-latest
     environment: staging
@@ -39,7 +39,7 @@ jobs:
 
       - name: Sync to staging
         if: >
-          (github.event_name == 'push' && github.ref == 'refs/heads/develop')
+          (github.event_name == 'push' && github.ref == 'refs/heads/development')
           || (github.event_name == 'workflow_dispatch' && github.event.inputs.env == 'staging')
         run: |
           python scripts/sync_models.py \
