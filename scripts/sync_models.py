@@ -198,9 +198,9 @@ def sync_model(sb: Client, provider_id: str, key: str, cfg: dict, models_filter:
             if field not in excluded_from_comparison and existing.get(field) != val
         }
         if updates:
-            # updates["updatedAt"] = (
-            #     datetime.utcnow().isoformat() + "Z"
-            # )  # Add/update updatedAt timestamp
+            updates["updatedat"] = (
+                datetime.utcnow().isoformat() + "Z"
+            )  # Add/update updatedAt timestamp
             try:
                 (
                     sb.table("Model")
