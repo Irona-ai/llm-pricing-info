@@ -188,6 +188,8 @@ def sync_model(sb: Client, provider_id: str, key: str, cfg: dict, models_filter:
         existing = None
 
     if existing:
+        logger.info(f"Found existing model '{full_name}'")
+        logger.info(f"Existing model: {existing}")
         # Update existing model
         # Fields to exclude from the direct comparison for triggering an update
         # 'id' is the primary key, 'createdAt' and 'updatedAt' are auto-managed or managed specifically
