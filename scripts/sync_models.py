@@ -157,7 +157,7 @@ def sync_model(sb: Client, provider_id: str, key: str, cfg: dict, models_filter:
         "name": cfg.get("name", {}).get(key, key),
         "costPerMillionTokenInput": price_info["input"],
         "costPerMillionTokenOutput": price_info["output"],
-        "capabilities": cfg.get("support_media_inputs", {}).get(key, []),
+        "capabilities": cfg.get("capabilities", {}).get(key, []),
         "availableForChatApp": (
             cfg.get("availableForChatApp", {}).get(key)
             if cfg.get("availableForChatApp", {}).get(key) in ["Free", "Pro"]
