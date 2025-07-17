@@ -204,6 +204,8 @@ def sync_model(sb: Client, provider_id: str, key: str, cfg: dict, models_filter:
                 datetime.utcnow().isoformat()
             )  # Add/update updatedAt timestamp
             try:
+                logger.info(f"Updating model with details: {updates}")
+                logger.info(f"Updating model with API string: {rec['apiString']}")
                 (
                     sb.table("Model")
                     .update(updates)
