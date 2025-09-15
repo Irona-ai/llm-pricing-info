@@ -370,7 +370,8 @@
             "claude-3-7-sonnet-20250219": [
                 "image",
                 "pdf",
-                "computer-use"
+                "computer-use",
+                "reasoning"
             ],
             "claude-opus-4-20250514": [
                 "image",
@@ -380,7 +381,8 @@
             "claude-sonnet-4-20250514": [
                 "image",
                 "pdf",
-                "computer-use"
+                "computer-use",
+                "reasoning"
             ],
             "claude-opus-4-0": [
                 "image",
@@ -543,12 +545,14 @@
             "gemini-2.5-flash": [
                 "image",
                 "pdf",
-                "search"
+                "search",
+                "reasoning"
             ],
             "gemini-2.5-pro": [
                 "image",
                 "pdf",
-                "search"
+                "search",
+                "reasoning"
             ]
         },
         "support_tools": [
