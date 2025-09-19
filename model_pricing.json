@@ -688,7 +688,10 @@
             "open-mixtral-8x7b",
             "open-mixtral-8x22b",
             "open-mistral-nemo",
-            "codestral-latest"
+            "codestral-latest",
+            "magistral-small-2506",
+            "magistral-small-latest",
+            "magistral-medium-latest"
         ],
         "api_key": "MISTRAL_API_KEY",
         "support_tools": [
@@ -875,16 +878,24 @@
         "icon": "https://svgl.app/library/perplexity.svg",
         "sources": "https://ai-sdk.dev/providers/ai-sdk-providers/perplexity",
         "models": [
-            "sonar"
+            "sonar",
+            "sonar-reasoning-pro"
+            
         ],
         "api_key": "PERPLEXITY_API_KEY",
         "capabilities": {
             "sonar": [
                 "search"
+            ],
+              "sonar-reasoning-pro": [
+                "search",
+                "reasoning"
             ]
         },
         "openrouter_identifier": {
-            "sonar": "perplexity/sonar"
+            "sonar": "perplexity/sonar",
+            "sonar-reasoning-pro": "perplexity/sonar-reasoning-pro"
+
         },
         "price": {
             "sonar": {
