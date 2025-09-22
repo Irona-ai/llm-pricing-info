@@ -543,12 +543,14 @@
             "gemini-2.5-flash": [
                 "image",
                 "pdf",
-                "search"
+                "search",
+                "reasoning"
             ],
             "gemini-2.5-pro": [
                 "image",
                 "pdf",
-                "search"
+                "search",
+                "reasoning"
             ]
         },
         "support_tools": [
