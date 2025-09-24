@@ -98,7 +98,7 @@
                 "file-search",
                 "mcp",
                 "code-interpreter"
-
+                
             ],
             "o1-mini-2024-09-12": [
                 "image",
@@ -365,32 +365,38 @@
             "claude-3-7-sonnet-latest": [
                 "image",
                 "pdf",
-                "computer-use"
+                "computer-use",
+                "reasoning"
             ],
             "claude-3-7-sonnet-20250219": [
                 "image",
                 "pdf",
-                "computer-use"
+                "computer-use",
+                "reasoning"
             ],
             "claude-opus-4-20250514": [
                 "image",
                 "pdf",
-                "computer-use"
+                "computer-use",
+                "reasoning"
             ],
             "claude-sonnet-4-20250514": [
                 "image",
                 "pdf",
-                "computer-use"
+                "computer-use",
+                "reasoning"
             ],
             "claude-opus-4-0": [
                 "image",
                 "pdf",
-                "computer-use"
+                "computer-use",
+                "reasoning"
             ],
             "claude-sonnet-4-0": [
                 "image",
                 "pdf",
-                "computer-use"
+                "computer-use",
+                "reasoning"
             ]
         },
         "support_tools": [
