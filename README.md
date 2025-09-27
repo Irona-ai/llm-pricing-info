@@ -46,6 +46,7 @@ python -m json.tool model_pricing.json
 
 ## Project Structure
 
+```
 ├── .github/workflows/
 │   └── sync-models.yml          # GitHub Actions workflow
 ├── scripts/
@@ -53,7 +54,7 @@ python -m json.tool model_pricing.json
 │   └── schema.prisma            # Database schema
 ├── model_pricing.json           # Main data file with LLM pricing info
 └── README.md                    # This file
-
+```
 
 
 ## Development
