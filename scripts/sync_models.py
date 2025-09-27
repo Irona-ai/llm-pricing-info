@@ -190,19 +190,26 @@ def sync_model(sb: Client, provider_id: str, key: str, cfg: dict, models_filter:
     if existing:
         logger.info(f"Found existing model '{full_name}'")
         logger.info(f"Existing model: {existing}")
-        # Update existing model
-        # Fields to exclude from the direct comparison for triggering an update
-        # 'id' is the primary key, 'createdAt' and 'updatedAt' are auto-managed or managed specifically
         excluded_from_comparison = ["id", "createdAt", "updatedAt"]
-        updates = {
-            field: val
-            for field, val in rec.items()
-            if field not in excluded_from_comparison and existing.get(field) != val
-        }
+
+        # Compare fields, treating capabilities as a set so order doesn't matter
+        updates = {}
+        for field, val in rec.items():
+            if field in excluded_from_comparison:
+                continue
+            existing_val = existing.get(field)
+
+            if field == "capabilities":
+                existing_set = set(existing_val or [])
+                new_set = set(val or [])
+                if existing_set != new_set:
+                    updates[field] = val
+            else:
+                if existing_val != val:
+                    updates[field] = val
+
         if updates:
-            updates["updatedAt"] = (
-                datetime.utcnow().isoformat()
-            )  # Add/update updatedAt timestamp
+            updates["updatedAt"] = datetime.utcnow().isoformat() # Add/update updatedAt timestamp
             try:
                 logger.info(f"Updating model with details: {updates}")
                 logger.info(f"Updating model with API string: {rec['apiString']}")
@@ -212,11 +219,11 @@ def sync_model(sb: Client, provider_id: str, key: str, cfg: dict, models_filter:
                     .eq("apiString", rec["apiString"])
                     .execute()
                 )
-                logger.info(f"Updated model '{full_name}': {list(updates.keys())}")
+                logger.info(f"CHANGES applied to model '{full_name}': {list(updates.keys())}")
             except Exception as e:
                 logger.error(f"Failed to update model '{full_name}': {e}")
         else:
-            logger.info(f"No changes for model '{full_name}'")
+            logger.info(f"NO CHANGES for model '{full_name}'")
     else:
         # Create new model
         try:
