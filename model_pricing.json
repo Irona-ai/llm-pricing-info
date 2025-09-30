@@ -299,7 +299,8 @@
             "claude-opus-4-20250514",
             "claude-opus-4-0",
             "claude-sonnet-4-20250514",
-            "claude-sonnet-4-0"
+            "claude-sonnet-4-0",
+            "claude-opus-4-1"
         ],
         "api_key": "ANTHROPIC_API_KEY",
         "capabilities": {
@@ -360,6 +361,12 @@
                 "computer-use",
                 "reasoning"
             ],
+            "claude-opus-4-1": [
+                "image",
+                "pdf",
+                "computer-use",
+                "reasoning"
+            ],
             "claude-sonnet-4-0": [
                 "image",
                 "pdf",
@@ -380,6 +387,7 @@
             "claude-opus-4-20250514": "anthropic/claude-opus-4",
             "claude-sonnet-4-20250514": "anthropic/claude-sonnet-4",
             "claude-opus-4-0": "anthropic/claude-opus-4",
+            "claude-opus-4-1": "anthropic/claude-opus-4.1",
             "claude-sonnet-4-0": "anthropic/claude-sonnet-4"
         },
         "price": {
@@ -432,6 +440,10 @@
                 "output": 15
             },
             "claude-opus-4-0": {
+                "input": 15,
+                "output": 75
+            },
+            "claude-opus-4-1": {
                 "input": 15,
                 "output": 75
             },
