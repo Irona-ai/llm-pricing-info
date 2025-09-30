@@ -30,7 +30,10 @@
             "o1-preview-2024-09-12",
             "o1-mini",
             "o1-mini-2024-09-12",
-            "chatgpt-4o-latest"
+            "chatgpt-4o-latest",
+            "gpt-5",
+            "gpt-5-mini",
+            "gpt-5-nano"
         ],
         "api_key": "OPENAI_API_KEY",
         "capabilities": {
@@ -148,7 +151,10 @@
             "gpt-4.1-mini": "openai/gpt-4.1-mini",
             "gpt-4.1-mini-2025-04-14": "openai/gpt-4.1-mini-2025-04-14",
             "gpt-4.1-nano": "openai/gpt-4.1-nano",
-            "gpt-4.1-nano-2025-04-14": "openai/gpt-4.1-nano-2025-04-14"
+            "gpt-4.1-nano-2025-04-14": "openai/gpt-4.1-nano-2025-04-14",
+            "gpt-5": "openai/gpt-5",
+            "gpt-5-mini": "openai/gpt-5-mini",
+            "gpt-5-nano": "openai/gpt-5-nano"
         },
         "price": {
             "gpt-3.5-turbo": {
@@ -250,6 +256,18 @@
             "gpt-4.1-nano-2025-04-14": {
                 "input": 0.1,
                 "output": 0.4
+            },
+            "gpt-5": {
+                "input": 1.25,
+                "output": 10
+            },
+            "gpt-5-mini": {
+                "input": 0.25,
+                "output": 2
+            },
+            "gpt-5-nano": {
+                "input": 0.05,
+                "output": 0.4
             }
         },
         "name": {
@@ -258,7 +276,10 @@
             "o1-mini": "O1 Mini",
             "chatgpt-4o-latest": "ChatGPT-4o",
             "gpt-4.1-nano": "GPT-4.1 Nano",
-            "gpt-4.1": "GPT-4.1"
+            "gpt-4.1": "GPT-4.1",
+            "gpt-5": "GPT-5",
+            "gpt-5-mini": "GPT-5 Mini",
+            "gpt-5-nano": "GPT-5 Nano"
         },
         "availableForChatApp": {
             "gpt-4o-mini": "Free",
@@ -266,7 +287,10 @@
             "o1-mini": "Pro",
             "chatgpt-4o-latest": "Pro",
             "gpt-4.1-nano": "Free",
-            "gpt-4.1": "Pro"
+            "gpt-4.1": "Pro",
+            "gpt-5": "Pro",
+            "gpt-5-mini": "Pro",
+            "gpt-5-nano": "Free"
         },
         "descriptions": {
             "gpt-4o-mini": "Faster, less precise GPT-4o",
@@ -274,7 +298,10 @@
             "o1-mini": "OpenAI's previous small reasoning model",
             "chatgpt-4o-latest": "ChatGPT Website version of 4o series",
             "gpt-4.1-nano": "Fastest Model in GPT-4.1 series",
-            "gpt-4.1": "OpenAI's Flagship Model"
+            "gpt-4.1": "OpenAI's Flagship Model",
+            "gpt-5": "OpenAI's Next-Gen Model",
+            "gpt-5-mini": "OpenAI's Next-Gen Mini Model",
+            "gpt-5-nano": "OpenAI's Next-Gen Nano Model"
         }
     },
     "anthropic": {
