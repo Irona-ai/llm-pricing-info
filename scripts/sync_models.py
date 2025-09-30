@@ -234,9 +234,87 @@ def sync_model(sb: Client, provider_id: str, key: str, cfg: dict, models_filter:
             logger.error(f"Failed to create model '{full_name}': {e}")
 
 
-# ------------------------------------------------------------------
-# Main
-# ------------------------------------------------------------------
+# Module-level helper: archive models removed from JSON
+def archive_removed_entities(sb: Client, models_by_provider: dict):
+    """
+    Archive models when a provider or model is missing from the JSON.
+    models_by_provider: { provider_name: {"id": provider_id, "models_set": set(model_keys)} }
+    """
+    now_iso = datetime.utcnow().isoformat()
+
+    # Fetch all providers in DB
+    try:
+        res = sb.table("Provider").select("id,name").execute()
+        db_providers = res.data or []
+    except Exception as e:
+        logger.error(f"Failed to fetch providers for archival: {e}")
+        return
+
+    db_name_to_id = {p.get("name"): p.get("id") for p in db_providers}
+    json_provider_names = set(models_by_provider.keys())
+
+    # 1) Providers missing from JSON: archive all their models
+    missing_providers = set(db_name_to_id.keys()) - json_provider_names
+    for provider_name in missing_providers:
+        pid = db_name_to_id.get(provider_name)
+        try:
+            resp = (
+                sb.table("Model")
+                .select("id,isArchived")
+                .eq("providerId", pid)
+                .execute()
+            )
+            models = resp.data or []
+        except Exception as e:
+            logger.error(f"Failed fetching models for provider '{provider_name}' to archive: {e}")
+            continue
+
+        to_archive = [m for m in models if not (m.get("isArchived") is True)]
+        for m in to_archive:
+            try:
+                (
+                    sb.table("Model")
+                    .update({"isArchived": True, "updatedAt": now_iso})
+                    .eq("id", m.get("id"))
+                    .execute()
+                )
+            except Exception as e:
+                logger.error(f"Failed to archive model id={m.get('id')} for provider '{provider_name}': {e}")
+        if to_archive:
+            logger.info(f"Archived {len(to_archive)} models for removed provider '{provider_name}'")
+
+    # 2) Providers present in JSON: archive models missing from their model list
+    for provider_name, info in models_by_provider.items():
+        pid = info.get("id")
+        valid_models = set(info.get("models_set", set()))
+        try:
+            resp = (
+                sb.table("Model")
+                .select("id,apiString,isArchived")
+                .eq("providerId", pid)
+                .execute()
+            )
+            models = resp.data or []
+        except Exception as e:
+            logger.error(f"Failed fetching models for provider '{provider_name}' to diff: {e}")
+            continue
+
+        to_archive = [
+            m for m in models
+            if (m.get("apiString") not in valid_models) and not (m.get("isArchived") is True)
+        ]
+        for m in to_archive:
+            try:
+                (
+                    sb.table("Model")
+                    .update({"isArchived": True, "updatedAt": now_iso})
+                    .eq("id", m.get("id"))
+                    .execute()
+                )
+            except Exception as e:
+                logger.error(f"Failed to archive removed model '{m.get('apiString')}' for provider '{provider_name}': {e}")
+        if to_archive:
+            logger.info(f"Archived {len(to_archive)} removed models for provider '{provider_name}'")
 
 
 def main():
