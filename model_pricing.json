@@ -702,7 +702,7 @@
             "mistral-large-latest": [
                 "routing"
             ]
-        }
+        },
         "openrouter_identifier": {
             "mistral-large-latest": "mistralai/mistral-large",
             "mistral-large-2407": "mistralai/mistral-large",
@@ -801,7 +801,7 @@
                 "routing",
                 "reasoning"
             ]
-        }
+        },
         "openrouter_identifier": {
             "Llama-3-70b-chat-hf": "meta-llama/llama-3-70b-instruct",
             "Llama-3-8b-chat-hf": "meta-llama/llama-3-8b-instruct",
