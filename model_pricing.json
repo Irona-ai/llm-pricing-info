@@ -131,6 +131,7 @@
                 "image"
             ],
             "gpt-5": [
+                "reasoning",
                 "routing",
                 "image",
                 "search",
@@ -138,6 +139,7 @@
                 "image-gen"
             ],
             "gpt-5-mini": [
+                "reasoning",
                 "routing",
                 "image",
                 "search",
