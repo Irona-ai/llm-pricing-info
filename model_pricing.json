@@ -38,51 +38,64 @@
         "api_key": "OPENAI_API_KEY",
         "capabilities": {
             "gpt-4-turbo": [
+                "routing",
                 "image"
             ],
             "gpt-4-turbo-2024-04-09": [
+                "routing",
                 "image"
             ],
             "gpt-4-1106-vision-preview": [
+                "routing",
                 "image"
             ],
             "gpt-4.1": [
+                "routing",
                 "image",
                 "search"
             ],
             "gpt-4.1-2025-04-14": [
+                "routing",
                 "image",
                 "search"
             ],
             "gpt-4.1-mini": [
+                "routing",
                 "image",
                 "search"
             ],
             "gpt-4.1-mini-2025-04-14": [
+                "routing",
                 "image",
                 "search"
             ],
             "gpt-4o": [
+                "routing",
                 "image",
                 "search"
             ],
             "gpt-4o-2024-05-13": [
+                "routing",
                 "image",
                 "search"
             ],
             "gpt-4o-2024-08-06": [
+                "routing",
                 "image",
                 "search"
             ],
             "gpt-4o-mini": [
+                "routing",
                 "image",
                 "search"
             ],
             "gpt-4o-mini-2024-07-18": [
+                "routing",
                 "image",
                 "search"
             ],
             "gpt-4.1-nano": [
+                "routing",
                 "image",
                 "image-gen",
                 "file-search",
@@ -90,6 +103,7 @@
                 "code-interpreter"
             ],
             "gpt-4.1-nano-2025-04-14": [
+                "routing",
                 "image",
                 "image-gen",
                 "file-search",
@@ -97,6 +111,7 @@
                 "code-interpreter"
             ],
             "o1-mini": [
+                "routing",
                 "image",
                 "file-search",
                 "mcp",
@@ -104,26 +119,31 @@
                 
             ],
             "o1-mini-2024-09-12": [
+                "routing",
                 "image",
                 "file-search",
                 "mcp",
                 "code-interpreter"
             ],
             "chatgpt-4o-latest": [
+                "routing",
                 "image"
             ],
             "gpt-5": [
+                "routing",
                 "image",
                 "search",
                 "mcp",
                 "image-gen"
             ],
             "gpt-5-mini": [
+                "routing",
                 "image",
                 "search",
                 "mcp"
             ],
             "gpt-5-nano": [
+                "routing",
                 "image",
                 "reasoning",
                 "mcp",
@@ -332,69 +352,83 @@
         "api_key": "ANTHROPIC_API_KEY",
         "capabilities": {
             "claude-3-opus-20240229": [
+                "routing",
                 "image"
             ],
             "claude-3-sonnet-20240229": [
+                "routing",
                 "image"
             ],
             "claude-3-haiku-20240307": [
+                "routing",
                 "image"
             ],
             "claude-3-5-haiku-20241022": [
+                "routing",
                 "image",
                 "pdf"
             ],
             "claude-3-5-sonnet-20240620": [
+                "routing",
                 "image",
                 "pdf"
             ],
             "claude-3-5-sonnet-20241022": [
+                "routing",
                 "image",
                 "pdf",
                 "computer-use"
             ],
             "claude-3-5-sonnet-latest": [
+                "routing",
                 "image",
                 "pdf",
                 "computer-use"
             ],
             "claude-3-7-sonnet-latest": [
+                "routing",
                 "image",
                 "pdf",
                 "computer-use",
                 "reasoning"
             ],
             "claude-3-7-sonnet-20250219": [
+                "routing",
                 "image",
                 "pdf",
                 "computer-use",
                 "reasoning"
             ],
             "claude-opus-4-20250514": [
+                "routing",
                 "image",
                 "pdf",
                 "computer-use",
                 "reasoning"
             ],
             "claude-sonnet-4-20250514": [
+                "routing",
                 "image",
                 "pdf",
                 "computer-use",
                 "reasoning"
             ],
             "claude-opus-4-0": [
+                "routing",
                 "image",
                 "pdf",
                 "computer-use",
                 "reasoning"
             ],
             "claude-opus-4-1": [
+                "routing",
                 "image",
                 "pdf",
                 "computer-use",
                 "reasoning"
             ],
             "claude-sonnet-4-0": [
+                "routing",
                 "image",
                 "pdf",
                 "computer-use",
@@ -519,24 +553,29 @@
         "api_key": "GOOGLE_GENERATIVE_AI_API_KEY",
         "capabilities": {
             "gemini-1.5-pro-latest": [
+                "routing",
                 "image"
             ],
             "gemini-1.5-flash-latest": [
+                "routing",
                 "image",
                 "search"
             ],
             "gemini-2.0-flash": [
+                "routing",
                 "image",
                 "pdf",
                 "search"
             ],
             "gemini-2.5-flash": [
+                "routing",
                 "image",
                 "pdf",
                 "search",
                 "reasoning"
             ],
             "gemini-2.5-pro": [
+                "routing",
                 "image",
                 "pdf",
                 "search",
@@ -635,6 +674,11 @@
             "codestral-latest"
         ],
         "api_key": "MISTRAL_API_KEY",
+        "capabilities": {
+            "mistral-large-latest": [
+                "routing"
+            ]
+        }
         "openrouter_identifier": {
             "mistral-large-latest": "mistralai/mistral-large",
             "mistral-large-2407": "mistralai/mistral-large",
@@ -728,6 +772,12 @@
             "Meta-Llama-3.1-405B-Instruct-Turbo": "meta-llama",
             "DeepSeek-R1": "deepseek-ai"
         },
+        "capabilities": {
+            "DeepSeek-R1": [
+                "routing",
+                "reasoning"
+            ]
+        }
         "openrouter_identifier": {
             "Llama-3-70b-chat-hf": "meta-llama/llama-3-70b-instruct",
             "Llama-3-8b-chat-hf": "meta-llama/llama-3-8b-instruct",
@@ -804,6 +854,7 @@
         "api_key": "PERPLEXITY_API_KEY",
         "capabilities": {
             "sonar": [
+                "routing",
                 "search"
             ]
         },
@@ -915,12 +966,15 @@
         "api_key": "XAI_API_KEY",
         "capabilities": {
             "grok-3": [
+                "routing",
                 "search"
             ],
             "grok-3-mini": [
+                "routing",
                 "search"
             ],
             "grok-4": [
+                "routing",
                 "image",
                 "reasoning",
                 "search"
