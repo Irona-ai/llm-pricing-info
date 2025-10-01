@@ -33,7 +33,8 @@
             "chatgpt-4o-latest",
             "gpt-5",
             "gpt-5-mini",
-            "gpt-5-nano"
+            "gpt-5-nano",
+            "gpt-image-1"
         ],
         "api_key": "OPENAI_API_KEY",
         "capabilities": {
@@ -147,6 +148,10 @@
                 "image",
                 "reasoning",
                 "mcp",
+                "image-gen"
+            ],
+            "gpt-image-1": [
+                "image",
                 "image-gen"
             ]
         },
@@ -288,6 +293,10 @@
             "gpt-5-nano": {
                 "input": 0.05,
                 "output": 0.4
+            },
+            "gpt-image-1": {
+                "input": 0.05,
+                "output": 0.4
             }
         },
         "name": {
@@ -299,7 +308,8 @@
             "gpt-4.1": "GPT-4.1",
             "gpt-5": "GPT-5",
             "gpt-5-mini": "GPT-5 Mini",
-            "gpt-5-nano": "GPT-5 Nano"
+            "gpt-5-nano": "GPT-5 Nano",
+            "gpt-image-1": "GPT-Image 1"
         },
         "availableForChatApp": {
             "gpt-4o-mini": "Free",
@@ -310,7 +320,8 @@
             "gpt-4.1": "Pro",
             "gpt-5": "Pro",
             "gpt-5-mini": "Pro",
-            "gpt-5-nano": "Free"
+            "gpt-5-nano": "Free",
+            "gpt-image-1": "Pro"
         },
         "descriptions": {
             "gpt-4o-mini": "Faster, less precise GPT-4o",
@@ -321,7 +332,8 @@
             "gpt-4.1": "OpenAI's Flagship Model",
             "gpt-5": "OpenAI's Next-Gen Model",
             "gpt-5-mini": "OpenAI's Next-Gen Mini Model",
-            "gpt-5-nano": "OpenAI's Next-Gen Nano Model"
+            "gpt-5-nano": "OpenAI's Next-Gen Nano Model",
+            "gpt-image-1": "OpenAI's Latest Image-Creating Model"
         }
     },
     "anthropic": {
@@ -548,7 +560,8 @@
             "gemini-1.5-flash-latest",
             "gemini-2.0-flash",
             "gemini-2.5-flash",
-            "gemini-2.5-pro"
+            "gemini-2.5-pro",
+            "gemini-2.5-flash-image-preview"
         ],
         "api_key": "GOOGLE_GENERATIVE_AI_API_KEY",
         "capabilities": {
@@ -573,6 +586,10 @@
                 "pdf",
                 "search",
                 "reasoning"
+            ],
+            "gemini-2.5-flash-image-preview": [
+                "image",
+                "image-gen"
             ],
             "gemini-2.5-pro": [
                 "routing",
@@ -606,6 +623,10 @@
                 "input": 0.15,
                 "output": 0.6
             },
+            "gemini-2.5-flash-image-preview": {
+                "input": 0.15,
+                "output": 0.6
+            },
             "gemini-2.5-pro": {
                 "input": 1.25,
                 "output": 10
@@ -616,20 +637,23 @@
             "gemini-1.5-pro-latest": "Gemini-1.5 Pro",
             "gemini-2.0-flash": "Gemini-2.0 Flash",
             "gemini-2.5-flash": "Gemini-2.5 Flash",
+            "gemini-2.5-flash-image-preview": "Gemini-2.5 Flash Image",
             "gemini-2.5-pro": "Gemini-2.5 Pro"
         },
         "availableForChatApp": {
             "gemini-1.5-pro-latest": "Pro",
             "gemini-2.0-flash": "Free",
             "gemini-2.5-flash": "Free",
-            "gemini-2.5-pro": "Pro"
+            "gemini-2.5-pro": "Pro",
+            "gemini-2.5-flash-image-preview": "Pro"
         },
         "descriptions": {
             "gemini-1.5-flash-latest": "Faster & less precise Gemini-1.5 Pro",
             "gemini-1.5-pro-latest": "Google's previous flagship model",
             "gemini-2.0-flash": "Google's latest stable model",
             "gemini-2.5-flash": "Google's latest fastest model",
-            "gemini-2.5-pro": "Google's newest experimental model"
+            "gemini-2.5-pro": "Google's newest experimental model",
+            "gemini-2.5-flash-image-preview": "Google's newest img model (nanobanana)"
         }
     },
     "cohere": {
