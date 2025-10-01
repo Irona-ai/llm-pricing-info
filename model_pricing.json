@@ -899,5 +899,63 @@
         "name": {
             "us.deepseek.r1-v1:0": "DeepSeek R1 (Bedrock)"
         }
+    },
+    "xai": {
+        "icon": "https://svgl.app/library/xai_light.svg",
+        "sources": [
+            "https://docs.x.ai/docs/models",
+            "https://vercel.com/docs/ai/xai",
+            "https://ai-sdk.dev/providers/ai-sdk-providers/xai"
+        ],
+        "models": [
+            "grok-3",
+            "grok-3-mini",
+            "grok-4"
+        ],
+        "api_key": "XAI_API_KEY",
+        "capabilities": {
+            "grok-3": [
+                "search"
+            ],
+            "grok-3-mini": [
+                "search"
+            ],
+            "grok-4": [
+                "image",
+                "reasoning",
+                "search"
+            ]
+        },
+        "openrouter_identifier": {
+            "grok-3": "xai/grok-3",
+            "grok-3-mini": "xai/grok-3-mini",
+            "grok-4": "xai/grok-4"
+        },
+        "price": {
+            "grok-3": {
+                "input": 3,
+                "output": 15
+            },
+            "grok-3-mini": {
+                "input": 0.3,
+                "output": 0.50
+            },
+            "grok-4": {
+                "input": 3,
+                "output": 15
+            }
+        },
+        "name": {
+            "grok-4": "Grok 4",
+            "grok-3-mini": "Grok 3 Mini"
+        },
+        "availableForChatApp": {
+            "grok-4": "Pro",
+            "grok-3-mini": "Free"
+        },
+        "descriptions": {
+            "grok-4": "Latest reasoning model from xAI",
+            "grok-3-mini": "Previous small model from xAI"
+        }
     }
 }
