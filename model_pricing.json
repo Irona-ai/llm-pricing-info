@@ -98,7 +98,6 @@
             "gpt-4.1-nano": [
                 "routing",
                 "image",
-                "image-gen",
                 "file-search",
                 "mcp",
                 "code-interpreter"
@@ -106,7 +105,6 @@
             "gpt-4.1-nano-2025-04-14": [
                 "routing",
                 "image",
-                "image-gen",
                 "file-search",
                 "mcp",
                 "code-interpreter"
@@ -135,8 +133,7 @@
                 "routing",
                 "image",
                 "search",
-                "mcp",
-                "image-gen"
+                "mcp"
             ],
             "gpt-5-mini": [
                 "reasoning",
@@ -149,8 +146,7 @@
                 "routing",
                 "image",
                 "reasoning",
-                "mcp",
-                "image-gen"
+                "mcp"
             ],
             "gpt-image-1": [
                 "image",
