@@ -997,7 +997,8 @@
             ],
             "grok-3-mini": [
                 "routing",
-                "search"
+                "search",
+                "reasoning"
             ],
             "grok-4": [
                 "routing",
