@@ -106,7 +106,14 @@ def upsert_provider(sb: Client, provider_name: str, cfg: dict):
 
     # Insert new provider
     new_id = str(uuid.uuid4())
-    data = {"id": new_id, "name": provider_name, "apiEndpoint": endpoint, "icon": icon_url}
+    current_time_iso = datetime.utcnow().isoformat()
+    data = {
+        "id": new_id,
+        "name": provider_name,
+        "apiEndpoint": endpoint,
+        "icon": icon_url,
+        "updatedAt": current_time_iso,
+    }
     try:
         sb.table("Provider").insert(data).execute()
         logger.info(f"Created Provider '{provider_name}' (ID: {new_id})")
