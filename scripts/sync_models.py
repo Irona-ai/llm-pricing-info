@@ -105,10 +105,10 @@ def upsert_provider(sb: Client, provider_name: str, cfg: dict):
         return provider_id
 
     # Insert new provider
-    data = {"name": provider_name, "apiEndpoint": endpoint, "icon": icon_url}
+    new_id = str(uuid.uuid4())
+    data = {"id": new_id, "name": provider_name, "apiEndpoint": endpoint, "icon": icon_url}
     try:
-        insert_res = sb.table("Provider").insert(data).execute()
-        new_id = insert_res.data[0].get("id")
+        sb.table("Provider").insert(data).execute()
         logger.info(f"Created Provider '{provider_name}' (ID: {new_id})")
         return new_id
     except Exception as e:
