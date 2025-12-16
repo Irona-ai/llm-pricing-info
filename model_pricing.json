@@ -115,7 +115,6 @@
                 "file-search",
                 "mcp",
                 "code-interpreter"
-                
             ],
             "o1-mini-2024-09-12": [
                 "routing",
@@ -559,7 +558,8 @@
             "gemini-2.0-flash",
             "gemini-2.5-flash",
             "gemini-2.5-pro",
-            "gemini-2.5-flash-image-preview"
+            "gemini-2.5-flash-image-preview",
+            "gemini-3-pro-image-preview"
         ],
         "api_key": "GOOGLE_GENERATIVE_AI_API_KEY",
         "capabilities": {
@@ -586,6 +586,10 @@
                 "reasoning"
             ],
             "gemini-2.5-flash-image-preview": [
+                "image",
+                "image-gen"
+            ],
+            "gemini-3-pro-image-preview": [
                 "image",
                 "image-gen"
             ],
@@ -625,6 +629,10 @@
                 "input": 0.15,
                 "output": 0.6
             },
+            "gemini-3-pro-image-preview": {
+                "input": 2,
+                "output": 120
+            },
             "gemini-2.5-pro": {
                 "input": 1.25,
                 "output": 10
@@ -643,7 +651,8 @@
             "gemini-2.0-flash": "Free",
             "gemini-2.5-flash": "Free",
             "gemini-2.5-pro": "Pro",
-            "gemini-2.5-flash-image-preview": "Pro"
+            "gemini-2.5-flash-image-preview": "Pro",
+            "gemini-3-pro-image-preview": "Pro"
         },
         "descriptions": {
             "gemini-1.5-flash-latest": "Faster & less precise Gemini-1.5 Pro",
@@ -651,7 +660,8 @@
             "gemini-2.0-flash": "Google's latest stable model",
             "gemini-2.5-flash": "Google's latest fastest model",
             "gemini-2.5-pro": "Google's newest experimental model",
-            "gemini-2.5-flash-image-preview": "Google's newest img model (nanobanana)"
+            "gemini-2.5-flash-image-preview": "Google's newest img model (nano-banana)",
+            "gemini-3-pro-image-preview": "Google's newest img model (nano-banana-pro)"
         }
     },
     "cohere": {
