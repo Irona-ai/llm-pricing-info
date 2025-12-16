@@ -331,7 +331,7 @@
                 "input": 1.25,
                 "output": 10
             },
-            "gpt-5.1-chat": {
+            "gpt-5.1-chat-latest": {
                 "input": 1.25,
                 "output": 10
             },
@@ -339,7 +339,7 @@
                 "input": 1.75,
                 "output": 14
             },
-            "gpt-5.2-chat": {
+            "gpt-5.2-chat-latest": {
                 "input": 1.75,
                 "output": 14
             }
