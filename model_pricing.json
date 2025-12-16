@@ -356,9 +356,9 @@
             "gpt-5-nano": "GPT-5 Nano",
             "gpt-image-1": "GPT-Image 1",
             "gpt-5.1": "GPT-5.1",
-            "gpt-5.1-chat": "GPT-5.1 Chat",
+            "gpt-5.1-chat-latest": "GPT-5.1 Chat",
             "gpt-5.2": "GPT-5.2",
-            "gpt-5.2-chat": "GPT-5.2 Chat"
+            "gpt-5.2-chat-latest": "GPT-5.2 Chat"
         },
         "availableForChatApp": {
             "gpt-4o-mini": "Free",
@@ -372,9 +372,9 @@
             "gpt-5-nano": "Free",
             "gpt-image-1": "Pro",
             "gpt-5.1": "Pro",
-            "gpt-5.1-chat": "Pro",
+            "gpt-5.1-chat-latest": "Pro",
             "gpt-5.2": "Pro",
-            "gpt-5.2-chat": "Pro"
+            "gpt-5.2-chat-latest": "Pro"
         },
         "descriptions": {
             "gpt-4o-mini": "Faster, less precise GPT-4o",
@@ -388,9 +388,9 @@
             "gpt-5-nano": "OpenAI's Next-Gen Nano Model",
             "gpt-image-1": "OpenAI's Latest Image-Creating Model",
             "gpt-5.1": "OpenAI's Next-Gen Model",
-            "gpt-5.1-chat": "OpenAI's Next-Gen Chat Model",
+            "gpt-5.1-chat-latest": "OpenAI's Next-Gen Chat Model",
             "gpt-5.2": "OpenAI's Next-Gen Model",
-            "gpt-5.2-chat": "OpenAI's Next-Gen Chat Model"
+            "gpt-5.2-chat-latest": "OpenAI's Next-Gen Chat Model"
         }
     },
     "anthropic": {
