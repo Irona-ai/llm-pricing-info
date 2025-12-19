@@ -449,14 +449,16 @@
             ],
             
             "claude-haiku-4-5": [
-                "image"
+                "image",
+                "routing"
             ],
 
             "claude-sonnet-4-5": [
                 "image", 
                 "pdf", 
                 "computer-use", 
-                "reasoning"
+                "reasoning",
+                "routing"
             ],
 
             "claude-opus-4-5": [
@@ -715,7 +717,7 @@
             "gemini-2.5-flash": "Free",
             "gemini-2.5-pro": "Pro",
             "gemini-2.5-flash-image-preview": "Pro",    
-            "gemini-3-flash": "Pro",
+            "gemini-3-flash": "Free",
             "gemini-3-pro": "Pro"
         },
         "descriptions": {
@@ -854,7 +856,9 @@
             "Meta-Llama-3.1-8B-Instruct-Turbo",
             "Meta-Llama-3.1-70B-Instruct-Turbo",
             "Meta-Llama-3.1-405B-Instruct-Turbo",
-            "DeepSeek-R1"
+            "DeepSeek-R1",
+            "Kimi-K2-Thinking",
+            "Qwen3-30B-A3B"
         ],
         "api_key": "TOGETHER_AI_API_KEY",
         "model_prefix": {
@@ -867,12 +871,24 @@
             "Meta-Llama-3.1-8B-Instruct-Turbo": "meta-llama",
             "Meta-Llama-3.1-70B-Instruct-Turbo": "meta-llama",
             "Meta-Llama-3.1-405B-Instruct-Turbo": "meta-llama",
-            "DeepSeek-R1": "deepseek-ai"
+            "DeepSeek-R1": "deepseek-ai",
+            "Kimi-K2-Thinking": "moonshotai",
+            "Qwen3-30B-A3B": "Qwen"
         },
         "capabilities": {
             "DeepSeek-R1": [
                 "routing",
                 "reasoning"
+            ],
+            "Kimi-K2-Thinking": [
+                "reasoning",
+                "routing",
+                "agentic"
+            ],
+            "Qwen3-30B-A3B": [
+                "routing",
+                "reasoning",
+                "search"
             ]
         },
         "openrouter_identifier": {
@@ -885,7 +901,9 @@
             "Meta-Llama-3.1-8B-Instruct-Turbo": "meta-llama/llama-3.1-8b-instruct",
             "Meta-Llama-3.1-70B-Instruct-Turbo": "meta-llama/llama-3.1-70b-instruct",
             "Meta-Llama-3.1-405B-Instruct-Turbo": "meta-llama/llama-3.1-405b-instruct",
-            "DeepSeek-R1": "deepseek/deepseek-r1"
+            "DeepSeek-R1": "deepseek/deepseek-r1",
+            "Kimi-K2-Thinking": "moonshotai/kimi-k2-thinking",
+            "Qwen3-30B-A3B": "qwen/qwen3-30b-a3b"
         },
         "price": {
             "Mistral-7B-Instruct-v0.2": {
@@ -927,19 +945,33 @@
             "DeepSeek-R1": {
                 "input": 3,
                 "output": 7
+            },
+            "Kimi-K2-Thinking": {
+                "input": 0.15,
+                "output": 2.50
+            },
+            "Qwen3-30B-A3B": {
+                 "input": 0.30,
+                 "output": 1.20
             }
         },
         "name": {
             "Meta-Llama-3.1-70B-Instruct-Turbo": "Llama-3.1 70B",
-            "DeepSeek-R1": "DeepSeek R1"
+            "DeepSeek-R1": "DeepSeek R1",
+            "Kimi-K2-Thinking": "Kimi K2 Thinking",
+            "Qwen3-30B-A3B": "Qwen3 30B"
         },
         "availableForChatApp": {
             "Meta-Llama-3.1-70B-Instruct-Turbo": "Free",
-            "DeepSeek-R1": "Pro"
+            "DeepSeek-R1": "Pro",
+            "Kimi-K2-Thinking": "Pro",
+            "Qwen3-30B-A3B": "Pro"
         },
         "descriptions": {
             "Meta-Llama-3.1-70B-Instruct-Turbo": "Meta's 70B flagship model",
-            "DeepSeek-R1": "DeepSeek's Reasoning Model"
+            "DeepSeek-R1": "DeepSeek's Reasoning Model",
+            "Kimi-K2-Thinking": "Open-source agentic reasoning model with deep multi-step planning and tool use",
+            "Qwen3-30B-A3B": "Qwen3 hybrid reasoning model with large context and multilingual support"
         }
     },
     "perplexity": {
@@ -1115,7 +1147,7 @@
         "availableForChatApp": {
             "grok-4": "Pro",
             "grok-3-mini": "Free",
-            "grok-4-fast": "Pro"
+            "grok-4-fast": "Free"
         },
         "descriptions": {
             "grok-4": "Latest reasoning model from xAI",
