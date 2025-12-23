@@ -319,7 +319,7 @@
             "gpt-5-mini": "GPT-5 Mini",
             "gpt-5-nano": "GPT-5 Nano",
             "gpt-image-1": "GPT-Image 1",
-            "gpt-image-1.5": "GPT Image 1.5"
+            "gpt-image-1.5": "GPT-Image 1.5"
         },
         "availableForChatApp": {
             "gpt-4o-mini": "Free",
@@ -580,9 +580,9 @@
             "claude-3-5-haiku-20241022": "Claude-3.5 Haiku",
             "claude-3-5-sonnet-latest": "Claude-3.5 Sonnet",
             "claude-sonnet-4-20250514": "Claude-4 Sonnet",
-            "claude-haiku-4-5": "Claude 4.5 Haiku",
-            "claude-sonnet-4-5": "Claude 4.5 Sonnet",
-            "claude-opus-4-5": "Claude 4.5 Opus"
+            "claude-haiku-4-5": "Claude-4.5 Haiku",
+            "claude-sonnet-4-5": "Claude-4.5 Sonnet",
+            "claude-opus-4-5": "Claude-4.5 Opus"
         },
         "availableForChatApp": {
             "claude-3-haiku-20240307": "Free",
@@ -722,8 +722,8 @@
             "gemini-2.5-flash": "Gemini-2.5 Flash",
             "gemini-2.5-flash-image-preview": "Gemini-2.5 Flash Image",
             "gemini-2.5-pro": "Gemini-2.5 Pro",
-            "gemini-3-pro": "Gemini 3 Pro",
-            "gemini-3-flash": "Gemini 3 Flash"
+            "gemini-3-pro": "Gemini-3 Pro",
+            "gemini-3-flash": "Gemini-3 Flash"
         },
         "availableForChatApp": {
             "gemini-1.5-pro-latest": "Pro",
@@ -971,9 +971,9 @@
         },
         "name": {
             "Meta-Llama-3.1-70B-Instruct-Turbo": "Llama-3.1 70B",
-            "DeepSeek-R1": "DeepSeek R1",
-            "Kimi-K2-Thinking": "Kimi K2 Thinking",
-            "Qwen3-30B-A3B": "Qwen3 30B"
+            "DeepSeek-R1": "DeepSeek-R1",
+            "Kimi-K2-Thinking": "Kimi-K2-Thinking",
+            "Qwen3-30B-A3B": "Qwen-3-30B"
         },
         "availableForChatApp": {
             "Meta-Llama-3.1-70B-Instruct-Turbo": "Free",
