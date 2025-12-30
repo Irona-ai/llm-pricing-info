@@ -681,40 +681,40 @@
             "gemini-3-pro": "google/gemini-3-pro",
             "gemini-3-flash": "google/gemini-3-flash"
         },
-"price": {
-    "gemini-1.5-pro-latest": {
-        "input": 1.25,
-        "output": 10
-    },
-    "gemini-1.5-flash-latest": {
-        "input": 0.35,
-        "output": 1.05
-    },
-    "gemini-2.0-flash": {
-        "input": 0.15,
-        "output": 0.60
-    },
-    "gemini-2.5-flash": {
-        "input": 0.15,
-        "output": 0.6
-    },
-    "gemini-2.5-flash-image-preview": {
-        "input": 0.15,
-        "output": 0.6
-    },
-    "gemini-2.5-pro": {
-        "input": 1.25,
-        "output": 10
-    },
-    "gemini-3-pro": {
-        "input": 1,
-        "output": 10
-    },
-    "gemini-3-flash": {
-        "input": 1,
-        "output": 10
-    }
-},
+        "price": {
+            "gemini-1.5-pro-latest": {
+                "input": 1.25,
+                "output": 10
+            },
+            "gemini-1.5-flash-latest": {
+                "input": 0.35,
+                "output": 1.05
+            },
+            "gemini-2.0-flash": {
+                "input": 0.15,
+                "output": 0.60
+            },
+            "gemini-2.5-flash": {
+                "input": 0.15,
+                "output": 0.6
+            },
+            "gemini-2.5-flash-image-preview": {
+                "input": 0.15,
+                "output": 0.6
+            },
+            "gemini-2.5-pro": {
+                "input": 1.25,
+                "output": 10
+            },
+            "gemini-3-pro": {
+                "input": 1,
+                "output": 10
+            },
+            "gemini-3-flash": {
+                "input": 1,
+                "output": 10
+            }
+        },
         "name": {
             "gemini-1.5-flash-latest": "Gemini-1.5 Flash",
             "gemini-1.5-pro-latest": "Gemini-1.5 Pro",
