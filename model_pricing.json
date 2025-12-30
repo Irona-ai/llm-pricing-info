@@ -1133,7 +1133,7 @@
             "grok-3": "xai/grok-3",
             "grok-3-mini": "xai/grok-3-mini",
             "grok-4": "xai/grok-4",
-            "grok-4-fast": "xai/grok-4-fast"
+            "grok-4-fast": "x-ai/grok-4-fast"
         },
         "price": {
             "grok-3": {
