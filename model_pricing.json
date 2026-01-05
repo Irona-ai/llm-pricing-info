@@ -872,7 +872,8 @@
             "Meta-Llama-3.1-405B-Instruct-Turbo",
             "DeepSeek-R1",
             "Kimi-K2-Thinking",
-            "Qwen3-30B-A3B"
+            "Qwen3-30B-A3B",
+            "Qwen-image-2512"
         ],
         "api_key": "TOGETHER_AI_API_KEY",
         "model_prefix": {
@@ -887,7 +888,8 @@
             "Meta-Llama-3.1-405B-Instruct-Turbo": "meta-llama",
             "DeepSeek-R1": "deepseek-ai",
             "Kimi-K2-Thinking": "moonshotai",
-            "Qwen3-30B-A3B": "Qwen"
+            "Qwen3-30B-A3B": "Qwen",
+            "Qwen-image-2512": "Qwen"
         },
         "capabilities": {
             "DeepSeek-R1": [
@@ -903,6 +905,11 @@
                 "routing",
                 "reasoning",
                 "search"
+            ],
+            "Qwen-image-2512": [
+                "image-generation",
+                "text-rendering",
+                "multilingual"
             ]
         },
         "openrouter_identifier": {
@@ -917,7 +924,8 @@
             "Meta-Llama-3.1-405B-Instruct-Turbo": "meta-llama/llama-3.1-405b-instruct",
             "DeepSeek-R1": "deepseek/deepseek-r1",
             "Kimi-K2-Thinking": "moonshotai/kimi-k2-thinking",
-            "Qwen3-30B-A3B": "qwen/qwen3-30b-a3b"
+            "Qwen3-30B-A3B": "qwen/qwen3-30b-a3b",
+            "Qwen-image-2512": "qwen/Qwen-image-2512"
         },
         "price": {
             "Mistral-7B-Instruct-v0.2": {
@@ -967,25 +975,32 @@
             "Qwen3-30B-A3B": {
                  "input": 0.30,
                  "output": 1.20
+            },
+            "Qwen-image-2512": {
+                "input": 0,
+                "output": 75
             }
         },
         "name": {
             "Meta-Llama-3.1-70B-Instruct-Turbo": "Llama-3.1 70B",
             "DeepSeek-R1": "DeepSeek-R1",
             "Kimi-K2-Thinking": "Kimi-K2-Thinking",
-            "Qwen3-30B-A3B": "Qwen-3-30B"
+            "Qwen3-30B-A3B": "Qwen-3-30B",
+            "Qwen-image-2512": "Qwen-image-2512"
         },
         "availableForChatApp": {
             "Meta-Llama-3.1-70B-Instruct-Turbo": "Free",
             "DeepSeek-R1": "Pro",
             "Kimi-K2-Thinking": "Pro",
-            "Qwen3-30B-A3B": "Pro"
+            "Qwen3-30B-A3B": "Pro",
+            "Qwen-image-2512": "Pro"
         },
         "descriptions": {
             "Meta-Llama-3.1-70B-Instruct-Turbo": "Meta's 70B flagship model",
             "DeepSeek-R1": "DeepSeek's Reasoning Model",
             "Kimi-K2-Thinking": "Open-source agentic reasoning model with deep multi-step planning and tool use",
-            "Qwen3-30B-A3B": "Qwen3 hybrid reasoning model with large context and multilingual support"
+            "Qwen3-30B-A3B": "Qwen3 hybrid reasoning model with large context and multilingual support",
+            "Qwen-image-2512": "A 20B MMDiT image foundation model that achieves significant advances in complex text rendering and precise image editing, rivaling Google's Nano Banana Pro."
         }
     },
     "perplexity": {
