@@ -742,7 +742,9 @@
             "gemini-2.5-flash": "google/gemini-2.5-flash",
             "gemini-2.5-pro": "google/gemini-2.5-pro",
             "gemini-3-pro": "google/gemini-3-pro",
-            "gemini-3-flash": "google/gemini-3-flash"
+            "gemini-3-flash": "google/gemini-3-flash",
+            "gemini-3-pro-image-preview": "google/gemini-3-pro-image-preview",
+            "gemini-2.5-flash-image-preview": "google/gemini-2.5-flash-image-preview"
         },
         "price": {
             "gemini-1.5-pro-latest": {
@@ -767,7 +769,7 @@
             },
             "gemini-3-pro-image-preview": {
                 "input": 2,
-                "output": 120
+                "output": 12
             },
             "gemini-2.5-pro": {
                 "input": 1.25,
@@ -790,7 +792,8 @@
             "gemini-2.5-flash-image-preview": "Gemini-2.5 Flash Image",
             "gemini-2.5-pro": "Gemini-2.5 Pro",
             "gemini-3-pro": "Gemini-3 Pro",
-            "gemini-3-flash": "Gemini-3 Flash"
+            "gemini-3-flash": "Gemini-3 Flash",
+            "gemini-3-pro-image-preview": "Gemini-3 Pro Image"
         },
         "availableForChatApp": {
             "gemini-1.5-pro-latest": "Pro",
@@ -799,7 +802,8 @@
             "gemini-2.5-pro": "Pro",
             "gemini-2.5-flash-image-preview": "Pro",    
             "gemini-3-flash": "Free",
-            "gemini-3-pro": "Pro"
+            "gemini-3-pro": "Pro",
+            "gemini-3-pro-image-preview": "Pro"
         },
         "descriptions": {
             "gemini-1.5-flash-latest": "Faster & less precise Gemini-1.5 Pro",
@@ -809,7 +813,8 @@
             "gemini-2.5-pro": "Google's newest experimental model",
             "gemini-2.5-flash-image-preview": "Google's newest img model (nanobanana)",
             "gemini-3-pro": "Google’s latest flagship Gemini model with advanced reasoning",
-            "gemini-3-flash": "Fast and lightweight Gemini 3 model optimized for low latency"
+            "gemini-3-flash": "Fast and lightweight Gemini 3 model optimized for low latency",
+            "gemini-3-pro-image-preview": "Google's latest image model (megabanana)"
         }
     },
     "cohere": {
