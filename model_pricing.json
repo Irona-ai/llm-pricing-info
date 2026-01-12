@@ -627,8 +627,8 @@
                 "output": 15
             },
             "claude-opus-4-5-20251101": {
-                "input": 15,
-                "output": 75
+                "input": 5,
+                "output": 25
             }       
         },
         "name": {
