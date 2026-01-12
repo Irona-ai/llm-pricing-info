@@ -1190,9 +1190,9 @@
             "https://ai-sdk.dev/providers/ai-sdk-providers/xai"
         ],
         "models": [
-            "grok 3",
-            "grok 3 mini",
-            "grok 4",
+            "grok-3",
+            "grok-3-mini",
+            "grok-4",
             "grok-4-fast"
         ],
         "api_key": "XAI_API_KEY",
@@ -1218,9 +1218,9 @@
             ]
         },
         "openrouter_identifier": {
-            "grok-3": "xai/grok-3",
-            "grok-3-mini": "xai/grok-3-mini",
-            "grok-4": "xai/grok-4",
+            "grok-3": "x-ai/grok-3",
+            "grok-3-mini": "x-ai/grok-3-mini",
+            "grok-4": "x-ai/grok-4",
             "grok-4-fast": "x-ai/grok-4-fast"
         },
         "price": {
@@ -1243,16 +1243,19 @@
         },
         "name": {
             "grok-4": "Grok 4",
+            "grok-3": "Grok 3",
             "grok-3-mini": "Grok 3 Mini",
             "grok-4-fast": "Grok 4 Fast"
         },
         "availableForChatApp": {
             "grok-4": "Pro",
+            "grok-3": "Pro",
             "grok-3-mini": "Free",
             "grok-4-fast": "Free"
         },
         "descriptions": {
             "grok-4": "Latest reasoning model from xAI",
+            "grok-3": "Previous flagship model from xAI",
             "grok-3-mini": "Previous small model from xAI",
             "grok-4-fast": "Low-latency, cost-efficient variant of Grok 4 optimized for speed"
 
