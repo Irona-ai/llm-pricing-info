@@ -997,8 +997,8 @@
             "Meta-Llama-3.1-405B-Instruct-Turbo": "meta-llama/llama-3.1-405b-instruct",
             "DeepSeek-R1": "deepseek/deepseek-r1",
             "Kimi-K2-Thinking": "moonshotai/kimi-k2-thinking",
-            "Qwen3-30B-A3B": "qwen/qwen3-30b-a3b",
-            "Qwen-image-2512": "qwen/Qwen-image-2512"
+            "Qwen3-30B-A3B": "Qwen/qwen3-30B-A3B",
+            "Qwen-image-2512": "Qwen/Qwen-image-2512"
         },
         "price": {
             "Mistral-7B-Instruct-v0.2": {
