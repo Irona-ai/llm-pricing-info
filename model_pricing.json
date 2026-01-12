@@ -621,11 +621,11 @@
                 "output": 15
             },
             "claude-haiku-4-5": {
-            "input": 1,
-            "output": 5
+                "input": 1,
+                "output": 5
             },
             "claude-sonnet-4-5": {
-            "input": 3,
+                "input": 3,
                 "output": 15
             },
             "claude-opus-4-5": {
