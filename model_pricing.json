@@ -522,9 +522,9 @@
 
             "claude-haiku-4-5-20251001": [
                 "image",
-                "routing"
+                "routing",
+                "pdf"
             ],
-
             "claude-sonnet-4-5-20250929": [
                 "image", 
                 "pdf", 
@@ -532,7 +532,6 @@
                 "reasoning",
                 "routing"
             ],
-
             "claude-opus-4-5-20251101": [
                 "image", 
                 "pdf", 
@@ -1217,7 +1216,8 @@
             ],
             "grok-4-fast": [
                 "reasoning",
-                "search"
+                "search",
+                "image"
             ]
         },
         "openrouter_identifier": {
