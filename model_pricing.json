@@ -679,7 +679,7 @@
             "gemini-2.5-flash",
             "gemini-2.5-pro",
             "gemini-2.5-flash-image-preview",
-            "gemini-3-pro",
+            "gemini-3-pro-preview",
             "gemini-3-flash-preview",
             "gemini-3-pro-image-preview"
         ],
@@ -722,7 +722,7 @@
                 "search",
                 "reasoning"
             ],
-            "gemini-3-pro": [
+            "gemini-3-pro-preview": [
                 "routing", 
                 "image", 
                 "pdf", 
@@ -742,7 +742,7 @@
             "gemini-2.0-flash": "google/gemini-2.0-flash",
             "gemini-2.5-flash": "google/gemini-2.5-flash",
             "gemini-2.5-pro": "google/gemini-2.5-pro",
-            "gemini-3-pro": "google/gemini-3-pro",
+            "gemini-3-pro-preview": "google/gemini-3-pro-preview",
             "gemini-3-flash-preview": "google/gemini-3-flash-preview",
             "gemini-3-pro-image-preview": "google/gemini-3-pro-image-preview",
             "gemini-2.5-flash-image-preview": "google/gemini-2.5-flash-image-preview"
@@ -776,7 +776,7 @@
                 "input": 1.25,
                 "output": 10
             },
-            "gemini-3-pro": {
+            "gemini-3-pro-preview": {
                 "input": 1,
                 "output": 10
             },
@@ -792,7 +792,7 @@
             "gemini-2.5-flash": "Gemini-2.5 Flash",
             "gemini-2.5-flash-image-preview": "Gemini-2.5 Flash Image",
             "gemini-2.5-pro": "Gemini-2.5 Pro",
-            "gemini-3-pro": "Gemini-3 Pro",
+            "gemini-3-pro-preview": "Gemini-3 Pro",
             "gemini-3-flash-preview": "Gemini-3 Flash",
             "gemini-3-pro-image-preview": "Gemini-3 Pro Image"
         },
@@ -803,7 +803,7 @@
             "gemini-2.5-pro": "Pro",
             "gemini-2.5-flash-image-preview": "Pro",    
             "gemini-3-flash-preview": "Free",
-            "gemini-3-pro": "Pro",
+            "gemini-3-pro-preview": "Pro",
             "gemini-3-pro-image-preview": "Pro"
         },
         "descriptions": {
@@ -813,7 +813,7 @@
             "gemini-2.5-flash": "Google's latest fastest model",
             "gemini-2.5-pro": "Google's newest experimental model",
             "gemini-2.5-flash-image-preview": "Google's newest img model (nanobanana)",
-            "gemini-3-pro": "Google’s latest flagship Gemini model with advanced reasoning",
+            "gemini-3-pro-preview": "Google’s latest flagship Gemini model with advanced reasoning",
             "gemini-3-flash-preview": "Fast and lightweight Gemini 3 model optimized for low latency",
             "gemini-3-pro-image-preview": "Google's latest image model (megabanana)"
         }
