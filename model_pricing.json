@@ -947,7 +947,7 @@
             "DeepSeek-R1",
             "Kimi-K2-Thinking",
             "Qwen3-30B-A3B",
-            "Qwen-Image-2512",
+            "Qwen-Image",
             "GLM-Image"
         ],
         "api_key": "TOGETHER_AI_API_KEY",
@@ -964,7 +964,7 @@
             "DeepSeek-R1": "deepseek-ai",
             "Kimi-K2-Thinking": "moonshotai",
             "Qwen3-30B-A3B": "Qwen",
-            "Qwen-Image-2512": "Qwen",
+            "Qwen-Image": "Qwen",
             "GLM-Image": "zai-org"
         },
         "capabilities": {
@@ -982,7 +982,7 @@
                 "reasoning",
                 "search"
             ],
-            "Qwen-Image-2512": [
+            "Qwen-Image": [
                 "image-gen"
             ],
             "GLM-Image": [
@@ -1002,7 +1002,7 @@
             "DeepSeek-R1": "deepseek/deepseek-r1",
             "Kimi-K2-Thinking": "moonshotai/kimi-k2-thinking",
             "Qwen3-30B-A3B": "Qwen/qwen3-30B-A3B",
-            "Qwen-Image-2512": "Qwen/Qwen-image-2512",
+            "Qwen-Image": "Qwen/Qwen-Image",
             "GLM-Image": "zai-org/glm-image"
         },
         "price": {
@@ -1054,7 +1054,7 @@
                  "input": 0.30,
                  "output": 1.20
             },
-            "Qwen-Image-2512": {
+            "Qwen-Image": {
                 "input": 0,
                 "output": 75
             },
@@ -1068,7 +1068,7 @@
             "DeepSeek-R1": "DeepSeek-R1",
             "Kimi-K2-Thinking": "Kimi-K2-Thinking",
             "Qwen3-30B-A3B": "Qwen-3-30B",
-            "Qwen-Image-2512": "Qwen-image-2512",
+            "Qwen-Image": "Qwen-Image",
             "GLM-Image": "GLM-Image (Zhipu)"
         },
         "availableForChatApp": {
@@ -1076,7 +1076,7 @@
             "DeepSeek-R1": "Pro",
             "Kimi-K2-Thinking": "Pro",
             "Qwen3-30B-A3B": "Pro",
-            "Qwen-Image-2512": "Pro",
+            "Qwen-Image": "Pro",
             "GLM-Image": "Pro"
         },
         "descriptions": {
@@ -1084,7 +1084,7 @@
             "DeepSeek-R1": "DeepSeek's Reasoning Model",
             "Kimi-K2-Thinking": "Open-source agentic reasoning model with deep multi-step planning and tool use",
             "Qwen3-30B-A3B": "Qwen3 hybrid reasoning model with large context and multilingual support",
-            "Qwen-Image-2512": "A 20B MMDiT image foundation model that achieves significant advances in complex text rendering and precise image editing, rivaling Google's Nano Banana Pro.",
+            "Qwen-Image": "A 20B MMDiT image foundation model that achieves significant advances in complex text rendering and precise image editing.",
             "GLM-Image": "Flagship hybrid AR+Diffusion model by Z.ai. Leading open-source performance in complex text rendering and semantic image consistency."
         }
     },
