@@ -1332,7 +1332,7 @@
             "us.deepseek.r1-v1:0": "DeepSeek R1 (Bedrock)"
         }
     },
-    "x-ai": {
+    "xai": {
         "icon": "https://svgl.app/library/xai_light.svg",
         "sources": [
             "https://docs.x.ai/docs/models",
