@@ -806,7 +806,8 @@
             "gemini-3-pro-preview",
             "gemini-3-flash-preview",
             "gemini-3-pro-image-preview",
-            "gemini-2.0-flash-001"
+            "gemini-2.0-flash-001",
+            "gemini-3.1-flash-image-preview"
         ],
         "api_key": "GOOGLE_GENERATIVE_AI_API_KEY",
         "capabilities": {
@@ -865,6 +866,11 @@
                 "image",
                 "pdf",
                 "search"
+            ],
+            "gemini-3.1-flash-image-preview": [
+                "image",
+                "image-gen",
+                "pdf"
             ]
         },
         "openrouter_identifier": {
@@ -919,6 +925,10 @@
             "gemini-2.0-flash-001": {
                 "input": 0.15,
                 "output": 0.6
+            },
+            "gemini-3.1-flash-image-preview": {
+                "input": 0.25,
+                "output": 60
             }
         },
         "name": {
@@ -930,7 +940,8 @@
             "gemini-2.5-pro": "Gemini-2.5 Pro",
             "gemini-3-pro-preview": "Gemini-3 Pro",
             "gemini-3-flash-preview": "Gemini-3 Flash",
-            "gemini-3-pro-image-preview": "Gemini-3 Pro Image"
+            "gemini-3-pro-image-preview": "Gemini-3 Pro Image",
+            "gemini-3.1-flash-image-preview": "Gemini-3.1 Flash Image"
         },
         "availableForChatApp": {
             "gemini-1.5-pro-latest": "Pro",
@@ -940,7 +951,8 @@
             "gemini-2.5-flash-image-preview": "Pro",
             "gemini-3-flash-preview": "Free",
             "gemini-3-pro-preview": "Pro",
-            "gemini-3-pro-image-preview": "Pro"
+            "gemini-3-pro-image-preview": "Pro",
+            "gemini-3.1-flash-image-preview": "Pro"
         },
         "descriptions": {
             "gemini-1.5-flash-latest": "Faster & less precise Gemini-1.5 Pro",
@@ -951,7 +963,8 @@
             "gemini-2.5-flash-image-preview": "Google's newest img model (nanobanana)",
             "gemini-3-pro-preview": "Google’s latest flagship Gemini model with advanced reasoning",
             "gemini-3-flash-preview": "Fast and lightweight Gemini 3 model optimized for low latency",
-            "gemini-3-pro-image-preview": "Google's latest image model (megabanana)"
+            "gemini-3-pro-image-preview": "Google's latest image model (megabanana)",
+            "gemini-3.1-flash-image-preview": "Google's latest image model NanoBanana with improved instruction following and image generation capabilities"
         },
         "alias": {
             "gemini-2.0-flash-001": "gemini-2.0-flash"
