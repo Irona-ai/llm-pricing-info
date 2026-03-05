@@ -964,7 +964,7 @@
             "gemini-3-pro-preview": "Google’s latest flagship Gemini model with advanced reasoning",
             "gemini-3-flash-preview": "Fast and lightweight Gemini 3 model optimized for low latency",
             "gemini-3-pro-image-preview": "Google's latest image model (megabanana)",
-            "gemini-3.1-flash-image-preview": "Google's latest image model NanoBanana with improved instruction following and image generation capabilities"
+            "gemini-3.1-flash-image-preview": "Google's latest image model NanoBanana with improved image generation capabilities"
         },
         "alias": {
             "gemini-2.0-flash-001": "gemini-2.0-flash"
