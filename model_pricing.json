@@ -477,7 +477,6 @@
             "gpt-5": "Pro",
             "gpt-5-mini": "Pro",
             "gpt-5-nano": "Free",
-            "gpt-image-1": "Pro",
             "gpt-image-1.5": "Pro",
             "gpt-5.1": "Pro",
             "gpt-5.1-chat-latest": "Pro",
@@ -485,7 +484,8 @@
             "gpt-5.2-chat-latest": "Pro",
             "gpt-5.2-pro": "Pro",
             "o1-mini": false,
-            "chatgpt-4o-latest": false
+            "chatgpt-4o-latest": false,
+            "gpt-image-1": false
         },
         "descriptions": {
             "gpt-4o-mini": "Faster, less precise GPT-4o",
@@ -520,7 +520,8 @@
             "o1-preview-2024-09-12",
             "o1-mini",
             "o1-mini-2024-09-12",
-            "chatgpt-4o-latest"
+            "chatgpt-4o-latest",
+            "gpt-image-1"
         ]
     },
     "anthropic": {
