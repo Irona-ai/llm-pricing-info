@@ -689,15 +689,13 @@
                 "image",
                 "pdf",
                 "computer-use",
-                "reasoning",
-                "routing"
+                "reasoning"
             ],
             "claude-opus-4-6": [
                 "image",
                 "pdf",
                 "computer-use",
-                "reasoning",
-                "routing"
+                "reasoning"
             ]
         },
         "openrouter_identifier": {
