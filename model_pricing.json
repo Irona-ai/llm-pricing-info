@@ -47,7 +47,8 @@
             "gpt-5.1-2025-11-13",
             "gpt-5.2-2025-12-11",
             "gpt-5.2-pro",
-            "gpt-5.2-pro-2025-12-11"
+            "gpt-5.2-pro-2025-12-11",
+            "gpt-5.3-codex"
         ],
         "api_key": "OPENAI_API_KEY",
         "capabilities": {
@@ -238,6 +239,13 @@
             "gpt-5.2-pro-2025-12-11": [
                 "reasoning",
                 "image",
+                "search",
+                "mcp"
+            ],
+            "gpt-5.3-codex": [
+                "text",
+                "image",
+                "reasoning",
                 "search",
                 "mcp"
             ]
@@ -449,6 +457,10 @@
             "gpt-5.2-pro-2025-12-11": {
                 "input": 21,
                 "output": 168
+            },
+            "gpt-5.3-codex": {
+                "input": 1.75,
+                "output": 14
             }
         },
         "name": {
@@ -467,7 +479,8 @@
             "gpt-5.1-chat-latest": "GPT-5.1 Chat",
             "gpt-5.2": "GPT-5.2",
             "gpt-5.2-chat-latest": "GPT-5.2 Chat",
-            "gpt-5.2-pro": "GPT-5.2 Pro"
+            "gpt-5.2-pro": "GPT-5.2 Pro",
+            "gpt-5.3-codex": "GPT-5.3 Codex"
         },
         "availableForChatApp": {
             "gpt-4o-mini": "Free",
@@ -485,7 +498,8 @@
             "gpt-5.1-chat-latest": "Pro",
             "gpt-5.2": "Pro",
             "gpt-5.2-chat-latest": "Pro",
-            "gpt-5.2-pro": "Pro"
+            "gpt-5.2-pro": "Pro",
+            "gpt-5.3-codex": "Pro"
         },
         "descriptions": {
             "gpt-4o-mini": "Faster, less precise GPT-4o",
@@ -503,7 +517,8 @@
             "gpt-5.1-chat-latest": "OpenAI's Next-Gen Chat Model",
             "gpt-5.2": "OpenAI's Next-Gen Model",
             "gpt-5.2-chat-latest": "OpenAI's Next-Gen Chat Model",
-            "gpt-5.2-pro": "OpenAI's most capable reasoning model"
+            "gpt-5.2-pro": "OpenAI's most capable reasoning model",
+            "gpt-5.3-codex": "OpenAI's most capable agentic coding model to date."
         },
         "alias": {
             "gpt-4o-2024-11-20": "gpt-4o",
@@ -542,7 +557,9 @@
             "claude-haiku-4-5-20251001",
             "claude-sonnet-4-5-20250929",
             "claude-opus-4-5-20251101",
-            "claude-opus-4-1-20250805"
+            "claude-opus-4-1-20250805",
+            "claude-sonnet-4-6",
+            "claude-opus-4-6"
         ],
         "api_key": "ANTHROPIC_API_KEY",
         "capabilities": {
@@ -653,6 +670,20 @@
                 "pdf",
                 "computer-use",
                 "reasoning"
+            ],
+            "claude-sonnet-4-6": [
+                "routing",
+                "image",
+                "pdf",
+                "computer-use",
+                "reasoning"
+            ],
+            "claude-opus-4-6": [
+                "routing",
+                "image",
+                "pdf",
+                "computer-use",
+                "reasoning"
             ]
         },
         "openrouter_identifier": {
@@ -751,6 +782,14 @@
             "claude-opus-4-1-20250805": {
                 "input": 15,
                 "output": 75
+            },
+            "claude-sonnet-4-6": {
+                "input": 3,
+                "output": 15
+            },
+            "claude-opus-4-6": {
+                "input": 5,
+                "output": 25
             }
         },
         "name": {
@@ -760,7 +799,9 @@
             "claude-sonnet-4-20250514": "Claude-4 Sonnet",
             "claude-haiku-4-5-20251001": "Claude-4.5 Haiku",
             "claude-sonnet-4-5-20250929": "Claude-4.5 Sonnet",
-            "claude-opus-4-5-20251101": "Claude-4.5 Opus"
+            "claude-opus-4-5-20251101": "Claude-4.5 Opus",
+            "claude-sonnet-4-6": "Claude-4.6 Sonnet",
+            "claude-opus-4-6": "Claude-4.6 Opus"
         },
         "availableForChatApp": {
             "claude-3-haiku-20240307": "Free",
@@ -769,7 +810,9 @@
             "claude-sonnet-4-20250514": "Pro",
             "claude-haiku-4-5-20251001": "Pro",
             "claude-sonnet-4-5-20250929": "Pro",
-            "claude-opus-4-5-20251101": "Pro"
+            "claude-opus-4-5-20251101": "Pro",
+            "claude-sonnet-4-6": "Pro",
+            "claude-opus-4-6": "Pro"
         },
         "alias": {
             "claude-3-5-haiku-20241022": "claude-3-5-haiku",
@@ -777,7 +820,9 @@
             "claude-sonnet-4-5-20250929": "claude-sonnet-4-5",
             "claude-opus-4-5-20251101": "claude-opus-4-5",
             "claude-haiku-4-5-20251001": "claude-haiku-4-5",
-            "claude-opus-4-1-20250805": "claude-opus-4-1"
+            "claude-opus-4-1-20250805": "claude-opus-4-1",
+            "claude-sonnet-4-6": "claude-sonnet-4-6",
+            "claude-opus-4-6": "claude-opus-4-6"
         },
         "descriptions": {
             "claude-3-haiku-20240307": "Anthropic's previous fastest model",
@@ -786,7 +831,9 @@
             "claude-sonnet-4-20250514": "Anthropic's Flagship Model",
             "claude-haiku-4-5-20251001": "Fast and affordable Claude 4.5 model for lightweight tasks",
             "claude-sonnet-4-5-20250929": "Balanced Claude 4.5 model optimized for reasoning and reliability",
-            "claude-opus-4-5-20251101": "Anthropic’s most powerful Claude model for complex reasoning"
+            "claude-opus-4-5-20251101": "Anthropic’s most powerful Claude model for complex reasoning",
+            "claude-sonnet-4-6": "The best combination of speed and intelligence",
+            "claude-opus-4-6": "The most intelligent model for building agents and coding"
         }
     },
     "google": {
@@ -806,7 +853,8 @@
             "gemini-3-pro-preview",
             "gemini-3-flash-preview",
             "gemini-3-pro-image-preview",
-            "gemini-2.0-flash-001"
+            "gemini-2.0-flash-001",
+            "gemini-3.1-pro-preview"
         ],
         "api_key": "GOOGLE_GENERATIVE_AI_API_KEY",
         "capabilities": {
@@ -865,6 +913,13 @@
                 "image",
                 "pdf",
                 "search"
+            ],
+            "gemini-3.1-pro-preview": [
+                "text",
+                "pdf",
+                "image",
+                "search",
+                "reasoning"
             ]
         },
         "openrouter_identifier": {
@@ -919,6 +974,10 @@
             "gemini-2.0-flash-001": {
                 "input": 0.15,
                 "output": 0.6
+            },
+            "gemini-3.1-pro-preview": {
+                "input": 0.779,
+                "output": 12.02
             }
         },
         "name": {
@@ -930,7 +989,8 @@
             "gemini-2.5-pro": "Gemini-2.5 Pro",
             "gemini-3-pro-preview": "Gemini-3 Pro",
             "gemini-3-flash-preview": "Gemini-3 Flash",
-            "gemini-3-pro-image-preview": "Gemini-3 Pro Image"
+            "gemini-3-pro-image-preview": "Gemini-3 Pro Image",
+            "gemini-3.1-pro-preview": "Gemini-3.1 Pro"
         },
         "availableForChatApp": {
             "gemini-1.5-pro-latest": "Pro",
@@ -940,7 +1000,8 @@
             "gemini-2.5-flash-image-preview": "Pro",
             "gemini-3-flash-preview": "Free",
             "gemini-3-pro-preview": "Pro",
-            "gemini-3-pro-image-preview": "Pro"
+            "gemini-3-pro-image-preview": "Pro",
+            "gemini-3.1-pro-preview": "Pro"
         },
         "descriptions": {
             "gemini-1.5-flash-latest": "Faster & less precise Gemini-1.5 Pro",
@@ -951,7 +1012,8 @@
             "gemini-2.5-flash-image-preview": "Google's newest img model (nanobanana)",
             "gemini-3-pro-preview": "Google’s latest flagship Gemini model with advanced reasoning",
             "gemini-3-flash-preview": "Fast and lightweight Gemini 3 model optimized for low latency",
-            "gemini-3-pro-image-preview": "Google's latest image model (megabanana)"
+            "gemini-3-pro-image-preview": "Google's latest image model (megabanana)",
+            "gemini-3.1-pro-preview": "Google's latest and most advanced Gemini model with improved reasoning and creativity"
         },
         "alias": {
             "gemini-2.0-flash-001": "gemini-2.0-flash"
