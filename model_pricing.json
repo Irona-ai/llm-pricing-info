@@ -48,7 +48,8 @@
             "gpt-5.2-2025-12-11",
             "gpt-5.2-pro",
             "gpt-5.2-pro-2025-12-11",
-            "gpt-5.3-codex"
+            "gpt-5.3-codex",
+            "gpt-5.4"
         ],
         "api_key": "OPENAI_API_KEY",
         "capabilities": {
@@ -246,6 +247,13 @@
                 "image",
                 "reasoning",
                 "search",
+                "mcp"
+            ],
+            "gpt-5.4": [
+                "reasoning",
+                "image",
+                "search",
+                "pdf",
                 "mcp"
             ]
         },
@@ -460,6 +468,10 @@
             "gpt-5.3-codex": {
                 "input": 1.75,
                 "output": 14
+            },
+            "gpt-5.4": {
+                "input": 2.50,
+                "output": 15
             }
         },
         "name": {
@@ -479,7 +491,8 @@
             "gpt-5.2": "GPT-5.2",
             "gpt-5.2-chat-latest": "GPT-5.2 Chat",
             "gpt-5.2-pro": "GPT-5.2 Pro",
-            "gpt-5.3-codex": "GPT-5.3 Codex"
+            "gpt-5.3-codex": "GPT-5.3 Codex",
+            "gpt-5.4": "GPT-5.4"
         },
         "availableForChatApp": {
             "gpt-4o-mini": "Free",
@@ -498,7 +511,8 @@
             "gpt-5.2": "Pro",
             "gpt-5.2-chat-latest": "Pro",
             "gpt-5.2-pro": "Pro",
-            "gpt-5.3-codex": "Pro"
+            "gpt-5.3-codex": "Pro",
+            "gpt-5.4": "Pro"
         },
         "descriptions": {
             "gpt-4o-mini": "Faster, less precise GPT-4o",
@@ -517,7 +531,8 @@
             "gpt-5.2": "OpenAI's Next-Gen Model",
             "gpt-5.2-chat-latest": "OpenAI's Next-Gen Chat Model",
             "gpt-5.2-pro": "OpenAI's most capable reasoning model",
-            "gpt-5.3-codex": "OpenAI's most capable agentic coding model to date."
+            "gpt-5.3-codex": "OpenAI's most capable agentic coding model to date.",
+            "gpt-5.4": "OpenAI's latest model with improved reasoning, image understanding, and search capabilities."
         },
         "alias": {
             "gpt-4o-2024-11-20": "gpt-4o",
