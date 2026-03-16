@@ -243,7 +243,6 @@
                 "mcp"
             ],
             "gpt-5.3-codex": [
-                "text",
                 "image",
                 "reasoning",
                 "search",
@@ -672,14 +671,12 @@
                 "reasoning"
             ],
             "claude-sonnet-4-6": [
-                "routing",
                 "image",
                 "pdf",
                 "computer-use",
                 "reasoning"
             ],
             "claude-opus-4-6": [
-                "routing",
                 "image",
                 "pdf",
                 "computer-use",
@@ -915,7 +912,6 @@
                 "search"
             ],
             "gemini-3.1-pro-preview": [
-                "text",
                 "pdf",
                 "image",
                 "search",
