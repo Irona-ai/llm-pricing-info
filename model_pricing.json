@@ -943,7 +943,7 @@
             "gemini-3.1-flash-image-preview": [
                 "image",
                 "image-gen"
-            ],
+            ]
         },
         "openrouter_identifier": {
             "gemini-1.5-pro-latest": "google/gemini-pro-1.5",
@@ -1043,7 +1043,7 @@
             "gemini-3-pro-preview": "Google’s latest flagship Gemini model with advanced reasoning",
             "gemini-3-flash": "Fast and lightweight Gemini 3 model optimized for low latency",
             "gemini-3-pro-image-preview": "Google's latest Pro image model (Nano Banana Pro)",
-            "gemini-3.1-pro-preview": "Google's latest and most advanced Gemini model with improved reasoning and creativity"
+            "gemini-3.1-pro-preview": "Google's latest and most advanced Gemini model with improved reasoning and creativity",
             "gemini-3.1-flash-image-preview": "Google's latest fast image model (Nano Banana 2)"
         },
         "alias": {
