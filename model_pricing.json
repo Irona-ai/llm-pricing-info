@@ -872,7 +872,8 @@
             "gemini-3-pro-preview",
             "gemini-3-flash",
             "gemini-3-pro-image-preview",
-            "gemini-3.1-pro-preview"
+            "gemini-3.1-pro-preview",
+            "gemini-3.1-flash-image-preview"
         ],
         "api_key": "GOOGLE_GENERATIVE_AI_API_KEY",
         "capabilities": {
@@ -956,7 +957,8 @@
             "gemini-3-pro-image-preview": "google/gemini-3-pro-image-preview",
             "gemini-2.5-flash-image-preview": "google/gemini-2.5-flash-image-preview",
             "gemini-2.0-flash-001": "google/gemini-2.0-flash-001",
-            "gemini-3.1-pro-preview": "google/gemini-3.1-pro-preview"
+            "gemini-3.1-pro-preview": "google/gemini-3.1-pro-preview",
+            "gemini-3.1-flash-image-preview": "google/gemini-3.1-flash-image-preview"
         },
         "price": {
             "gemini-1.5-pro-latest": {
