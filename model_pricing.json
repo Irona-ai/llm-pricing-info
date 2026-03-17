@@ -247,14 +247,16 @@
                 "image",
                 "reasoning",
                 "search",
-                "mcp"
+                "mcp",
+                "agent"
             ],
             "gpt-5.4": [
                 "reasoning",
                 "image",
                 "search",
                 "pdf",
-                "mcp"
+                "mcp",
+                "agent"
             ]
         },
         "openrouter_identifier": {
@@ -691,13 +693,15 @@
                 "image",
                 "pdf",
                 "computer-use",
-                "reasoning"
+                "reasoning",
+                "agent"
             ],
             "claude-opus-4-6": [
                 "image",
                 "pdf",
                 "computer-use",
-                "reasoning"
+                "reasoning",
+                "agent"
             ]
         },
         "openrouter_identifier": {
@@ -861,13 +865,13 @@
             "gemini-1.5-pro-latest",
             "gemini-1.5-flash-latest",
             "gemini-2.0-flash",
+            "gemini-2.0-flash-001",
             "gemini-2.5-flash",
             "gemini-2.5-pro",
             "gemini-2.5-flash-image-preview",
             "gemini-3-pro-preview",
-            "gemini-3-flash-preview",
+            "gemini-3-flash",
             "gemini-3-pro-image-preview",
-            "gemini-2.0-flash-001",
             "gemini-3.1-pro-preview"
         ],
         "api_key": "GOOGLE_GENERATIVE_AI_API_KEY",
@@ -879,6 +883,12 @@
             "gemini-1.5-flash-latest": [
                 "routing",
                 "image",
+                "search"
+            ],
+            "gemini-2.0-flash-001": [
+                "routing",
+                "image",
+                "pdf",
                 "search"
             ],
             "gemini-2.0-flash": [
@@ -898,16 +908,16 @@
                 "image",
                 "image-gen"
             ],
-            "gemini-3-pro-image-preview": [
-                "image",
-                "image-gen"
-            ],
             "gemini-2.5-pro": [
                 "routing",
                 "image",
                 "pdf",
                 "search",
                 "reasoning"
+            ],
+            "gemini-3-pro-image-preview": [
+                "image",
+                "image-gen"
             ],
             "gemini-3-pro-preview": [
                 "routing",
@@ -916,23 +926,19 @@
                 "search",
                 "reasoning"
             ],
-            "gemini-3-flash-preview": [
+            "gemini-3-flash": [
                 "routing",
                 "image",
                 "search",
-                "reasoning"
-            ],
-            "gemini-2.0-flash-001": [
-                "routing",
-                "image",
-                "pdf",
-                "search"
+                "reasoning",
+                "agent"
             ],
             "gemini-3.1-pro-preview": [
                 "pdf",
                 "image",
                 "search",
-                "reasoning"
+                "reasoning",
+                "agent"
             ]
         },
         "openrouter_identifier": {
@@ -999,11 +1005,11 @@
             "gemini-1.5-pro-latest": "Gemini-1.5 Pro",
             "gemini-2.0-flash": "Gemini-2.0 Flash",
             "gemini-2.5-flash": "Gemini-2.5 Flash",
-            "gemini-2.5-flash-image-preview": "Gemini-2.5 Flash Image",
+            "gemini-2.5-flash-image-preview": "Nano Banana",
             "gemini-2.5-pro": "Gemini-2.5 Pro",
             "gemini-3-pro-preview": "Gemini-3 Pro",
             "gemini-3-flash-preview": "Gemini-3 Flash",
-            "gemini-3-pro-image-preview": "Gemini-3 Pro Image",
+            "gemini-3-pro-image-preview": "Nano Banana Pro",
             "gemini-3.1-pro-preview": "Gemini-3.1 Pro"
         },
         "availableForChatApp": {
@@ -1023,10 +1029,10 @@
             "gemini-2.0-flash": "Google's latest stable model",
             "gemini-2.5-flash": "Google's latest fastest model",
             "gemini-2.5-pro": "Google's newest experimental model",
-            "gemini-2.5-flash-image-preview": "Google's newest img model (nanobanana)",
+            "gemini-2.5-flash-image-preview": "Google's newest img model (Nano Banana)",
             "gemini-3-pro-preview": "Google’s latest flagship Gemini model with advanced reasoning",
             "gemini-3-flash-preview": "Fast and lightweight Gemini 3 model optimized for low latency",
-            "gemini-3-pro-image-preview": "Google's latest image model (megabanana)",
+            "gemini-3-pro-image-preview": "Google's latest image model (Nano Banana 2)",
             "gemini-3.1-pro-preview": "Google's latest and most advanced Gemini model with improved reasoning and creativity"
         },
         "alias": {
