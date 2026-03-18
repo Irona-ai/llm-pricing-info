@@ -1441,11 +1441,11 @@
             "grok-4": [
                 "routing",
                 "image",
-                "reasoning",
+                "xSearch",
                 "search"
             ],
             "grok-4-fast": [
-                "reasoning",
+                "xSearch",
                 "search",
                 "image"
             ]
