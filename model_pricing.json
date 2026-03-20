@@ -929,7 +929,8 @@
             "gemini-3-flash",
             "gemini-3-pro-image-preview",
             "gemini-3.1-pro-preview",
-            "gemini-3.1-flash-image-preview"
+            "gemini-3.1-flash-image-preview",
+            "gemini-3.1-flash-lite-preview"
         ],
         "api_key": "GOOGLE_GENERATIVE_AI_API_KEY",
         "capabilities": {
@@ -1000,6 +1001,12 @@
             "gemini-3.1-flash-image-preview": [
                 "image",
                 "image-gen"
+            ],
+            "gemini-3.1-flash-lite-preview": [
+                "routing",
+                "image",
+                "search",
+                "reasoning"
             ]
         },
         "openrouter_identifier": {
@@ -1014,7 +1021,8 @@
             "gemini-2.5-flash-image-preview": "google/gemini-2.5-flash-image-preview",
             "gemini-2.0-flash-001": "google/gemini-2.0-flash-001",
             "gemini-3.1-pro-preview": "google/gemini-3.1-pro-preview",
-            "gemini-3.1-flash-image-preview": "google/gemini-3.1-flash-image-preview"
+            "gemini-3.1-flash-image-preview": "google/gemini-3.1-flash-image-preview",
+            "gemini-3.1-flash-lite-preview": "google/gemini-3.1-flash-lite-preview"
         },
         "price": {
             "gemini-1.5-pro-latest": {
@@ -1064,6 +1072,10 @@
             "gemini-3.1-flash-image-preview": {
                 "input": 0.25,
                 "output": 3
+            },
+            "gemini-3.1-flash-lite-preview": {
+                "input": 0.25,
+                "output": 1.5
             }
         },
         "name": {
@@ -1077,7 +1089,8 @@
             "gemini-3-flash": "Gemini-3 Flash",
             "gemini-3-pro-image-preview": "Nano Banana Pro",
             "gemini-3.1-pro-preview": "Gemini-3.1 Pro",
-            "gemini-3.1-flash-image-preview": "Nano Banana 2"
+            "gemini-3.1-flash-image-preview": "Nano Banana 2",
+            "gemini-3.1-flash-lite-preview": "Gemini-3.1 Flash Lite"
         },
         "availableForChatApp": {
             "gemini-1.5-pro-latest": "Pro",
@@ -1089,7 +1102,8 @@
             "gemini-3-pro-preview": "Pro",
             "gemini-3-pro-image-preview": "Pro",
             "gemini-3.1-pro-preview": "Pro",
-            "gemini-3.1-flash-image-preview": "Pro"
+            "gemini-3.1-flash-image-preview": "Pro",
+            "gemini-3.1-flash-lite-preview": "Free"
         },
         "descriptions": {
             "gemini-1.5-flash-latest": "Faster & less precise Gemini-1.5 Pro",
@@ -1102,7 +1116,8 @@
             "gemini-3-flash": "Fast and lightweight Gemini 3 model optimized for low latency",
             "gemini-3-pro-image-preview": "Google's latest Pro image model (Nano Banana Pro)",
             "gemini-3.1-pro-preview": "Google's latest and most advanced Gemini model with improved reasoning and creativity",
-            "gemini-3.1-flash-image-preview": "Google's latest fast image model (Nano Banana 2)"
+            "gemini-3.1-flash-image-preview": "Google's latest fast image model (Nano Banana 2)",
+            "gemini-3.1-flash-lite-preview": "Google's lightweight Gemini 3.1 Flash model optimized for speed and efficiency"
         },
         "alias": {
             "gemini-2.0-flash-001": "gemini-2.0-flash"
