@@ -587,7 +587,7 @@
             "gpt-5.4": "OpenAI's latest model with improved reasoning, image understanding, and search capabilities.",
             "gpt-5.4-mini": "OpenAI's strongest mini model yet for coding, computer use, and subagents",
             "gpt-5.4-nano": "OpenAI's cheapest GPT-5.4-class model for simple high-volume tasks",
-            "gpt-5.4-image-2": "OpenAI's GPT-5.4 combined with GPT Image-2 for multimodal reasoning and image generation",
+            "gpt-5.4-image-2": "OpenAI's frontier reasoning image generation model",
             "gpt-5.5": "OpenAI's frontier model for complex professional workloads with stronger reasoning and reliability",
             "gpt-5.5-pro": "OpenAI's high-capability model optimized for deep reasoning on complex, high-stakes workloads"
         },
