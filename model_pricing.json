@@ -1445,7 +1445,7 @@
         }
     },
     "xiaomi": {
-        "icon": "https://svgl.app/library/xiaomi.svg",
+        "icon": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Xiaomi_logo_%282021-%29.svg",
         "sources": [
             "https://openrouter.ai/xiaomi",
             "https://vercel.com/ai-gateway/models/mimo-v2-pro",
