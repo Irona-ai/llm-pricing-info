@@ -503,7 +503,7 @@
                 "input": 0.20,
                 "output": 1.25
             },
-            "gpt-5.4-image-2": {
+            "gpt-image-2": {
                 "input": 8,
                 "output": 15
             },
