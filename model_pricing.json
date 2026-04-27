@@ -1363,7 +1363,7 @@
         }
     },
     "moonshotai": {
-        "icon": "https://svgl.app/library/moonshot.svg",
+        "icon": "https://svgl.app/library/kimi-icon.svg",
         "sources": [
             "https://openrouter.ai/moonshotai",
             "https://platform.moonshot.ai/docs/pricing"
