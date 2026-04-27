@@ -262,12 +262,14 @@
             "gpt-5.5": [
                 "reasoning",
                 "image",
-                "search"
+                "search",
+                "pdf"
             ],
             "gpt-5.5-pro": [
                 "reasoning",
                 "image",
-                "search"
+                "search",
+                "pdf"
             ]
         },
         "openrouter_identifier": {
@@ -1233,7 +1235,8 @@
             "Meta-Llama-3.1-405B-Instruct-Turbo",
             "DeepSeek-R1",
             "Kimi-K2-Thinking",
-            "Qwen3-30B-A3B"
+            "Qwen3-30B-A3B",
+            "Qwen-Image"
         ],
         "api_key": "TOGETHER_AI_API_KEY",
         "model_prefix": {
@@ -1248,7 +1251,8 @@
             "Meta-Llama-3.1-405B-Instruct-Turbo": "meta-llama",
             "DeepSeek-R1": "deepseek-ai",
             "Kimi-K2-Thinking": "moonshotai",
-            "Qwen3-30B-A3B": "Qwen"
+            "Qwen3-30B-A3B": "Qwen",
+            "Qwen-Image": "Qwen"
         },
         "capabilities": {
             "DeepSeek-R1": [
@@ -1264,6 +1268,9 @@
                 "routing",
                 "reasoning",
                 "search"
+            ],
+            "Qwen-Image": [
+                "image-gen"
             ]
         },
         "openrouter_identifier": {
@@ -1278,7 +1285,8 @@
             "Meta-Llama-3.1-405B-Instruct-Turbo": "meta-llama/llama-3.1-405b-instruct",
             "DeepSeek-R1": "deepseek/deepseek-r1",
             "Kimi-K2-Thinking": "moonshotai/kimi-k2-thinking",
-            "Qwen3-30B-A3B": "Qwen/qwen3-30B-A3B"
+            "Qwen3-30B-A3B": "Qwen/qwen3-30B-A3B",
+            "Qwen-Image": "Qwen/Qwen-Image"
         },
         "price": {
             "Mistral-7B-Instruct-v0.2": {
@@ -1328,13 +1336,18 @@
             "Qwen3-30B-A3B": {
                 "input": 0.3,
                 "output": 1.2
+            },
+            "Qwen-Image": {
+                "input": 0,
+                "output": 75
             }
         },
         "name": {
             "Meta-Llama-3.1-70B-Instruct-Turbo": "Llama-3.1 70B",
             "DeepSeek-R1": "DeepSeek-R1",
             "Kimi-K2-Thinking": "Kimi-K2-Thinking",
-            "Qwen3-30B-A3B": "Qwen-3-30B"
+            "Qwen3-30B-A3B": "Qwen-3-30B",
+            "Qwen-Image": "Qwen-Image"
         },
         "availableForChatApp": {
             "Meta-Llama-3.1-70B-Instruct-Turbo": "Free",
@@ -1345,7 +1358,8 @@
             "Meta-Llama-3.1-70B-Instruct-Turbo": "Meta's 70B flagship model",
             "DeepSeek-R1": "DeepSeek's Reasoning Model",
             "Kimi-K2-Thinking": "Open-source agentic reasoning model with deep multi-step planning and tool use",
-            "Qwen3-30B-A3B": "Qwen3 hybrid reasoning model with large context and multilingual support"
+            "Qwen3-30B-A3B": "Qwen3 hybrid reasoning model with large context and multilingual support",
+            "Qwen-Image": "A 20B MMDiT image foundation model that achieves significant advances in complex text rendering and precise image editing."
         }
     },
     "moonshotai": {
@@ -1360,10 +1374,9 @@
         "api_key": "MOONSHOT_API_KEY",
         "capabilities": {
             "Kimi-K2.6": [
-                "routing",
                 "image",
-                "reasoning",
-                "agent-mode"
+                "pdf",
+                "reasoning"
             ]
         },
         "openrouter_identifier": {
@@ -1398,14 +1411,10 @@
         "api_key": "DEEPSEEK_API_KEY",
         "capabilities": {
             "DeepSeek-V4-Flash": [
-                "routing",
-                "reasoning",
-                "agent-mode"
+                "reasoning"
             ],
             "DeepSeek-V4-Pro": [
-                "routing",
-                "reasoning",
-                "agent-mode"
+                "reasoning"
             ]
         },
         "openrouter_identifier": {
@@ -1438,7 +1447,9 @@
     "xiaomi": {
         "icon": "https://svgl.app/library/xiaomi.svg",
         "sources": [
-            "https://openrouter.ai/xiaomi"
+            "https://openrouter.ai/xiaomi",
+            "https://vercel.com/ai-gateway/models/mimo-v2-pro",
+            "https://vercel.com/ai-gateway/models/mimo-v2-flash"
         ],
         "models": [
             "MiMo-V2.5",
@@ -1447,16 +1458,12 @@
         "api_key": "XIAOMI_API_KEY",
         "capabilities": {
             "MiMo-V2.5": [
-                "routing",
                 "image",
-                "reasoning",
-                "agent-mode"
+                "reasoning"
             ],
             "MiMo-V2.5-Pro": [
-                "routing",
                 "image",
-                "reasoning",
-                "agent-mode"
+                "reasoning"
             ]
         },
         "openrouter_identifier": {
@@ -1482,8 +1489,8 @@
             "MiMo-V2.5-Pro": "Pro"
         },
         "descriptions": {
-            "MiMo-V2.5": "Xiaomi's omnimodal model with agentic capabilities at roughly half the cost of MiMo Pro",
-            "MiMo-V2.5-Pro": "Xiaomi's flagship model for agentic tasks, software engineering, and long-horizon workflows"
+            "MiMo-V2.5": "Xiaomi's omnimodal model (image + video) with 1M context, delivering Pro-level agentic performance at roughly half the cost",
+            "MiMo-V2.5-Pro": "Xiaomi's flagship model with 1M context, optimized for agentic tasks, complex software engineering, and long-horizon workflows"
         }
     },
     "perplexity": {
