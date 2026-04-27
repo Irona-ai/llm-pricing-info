@@ -255,7 +255,7 @@
                 "search",
                 "pdf"
             ],
-            "gpt-5.4-image-2": [
+            "gpt-image-2": [
                 "image",
                 "image-gen"
             ],
