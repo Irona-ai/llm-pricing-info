@@ -537,7 +537,7 @@
             "gpt-5.4": "GPT-5.4",
             "gpt-5.4-mini": "GPT-5.4 Mini",
             "gpt-5.4-nano": "GPT-5.4 Nano",
-            "gpt-5.4-image-2": "GPT Image-2",
+            "gpt-image-2": "GPT Image-2",
             "gpt-5.5": "GPT-5.5",
             "gpt-5.5-pro": "GPT-5.5 Pro"
         },
@@ -562,7 +562,7 @@
             "gpt-5.4": "Pro",
             "gpt-5.4-mini": "Pro",
             "gpt-5.4-nano": "Pro",
-            "gpt-5.4-image-2": "Pro",
+            "gpt-image-2": "Pro",
             "gpt-5.5": "Pro",
             "gpt-5.5-pro": "Pro"
         },
@@ -587,7 +587,7 @@
             "gpt-5.4": "OpenAI's latest model with improved reasoning, image understanding, and search capabilities.",
             "gpt-5.4-mini": "OpenAI's strongest mini model yet for coding, computer use, and subagents",
             "gpt-5.4-nano": "OpenAI's cheapest GPT-5.4-class model for simple high-volume tasks",
-            "gpt-5.4-image-2": "OpenAI's frontier reasoning image generation model",
+            "gpt-image-2": "OpenAI's frontier reasoning image generation model",
             "gpt-5.5": "OpenAI's frontier model for complex professional workloads with stronger reasoning and reliability",
             "gpt-5.5-pro": "OpenAI's high-capability model optimized for deep reasoning on complex, high-stakes workloads"
         },
