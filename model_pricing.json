@@ -949,6 +949,7 @@
             "gemini-3-flash",
             "gemini-3.1-pro-preview",
             "gemini-3.1-flash-lite-preview",
+            "gemini-3.5-flash",
             "gemini-2.5-flash-image-preview",
             "gemini-3-pro-image-preview",
             "gemini-3.1-flash-image-preview"
@@ -1012,8 +1013,13 @@
                 "agent-mode"
             ],
             "gemini-3.1-flash-lite-preview": [
-                "routing",
                 "image",
+                "search",
+                "reasoning"
+            ],
+            "gemini-3.5-flash": [
+                "image",
+                "pdf",
                 "search",
                 "reasoning"
             ],
@@ -1041,6 +1047,7 @@
             "gemini-3-flash": "google/gemini-3-flash-preview",
             "gemini-3.1-pro-preview": "google/gemini-3.1-pro-preview",
             "gemini-3.1-flash-lite-preview": "google/gemini-3.1-flash-lite-preview",
+            "gemini-3.5-flash": "google/gemini-3.5-flash",
             "gemini-2.5-flash-image-preview": "google/gemini-2.5-flash-image-preview",
             "gemini-3-pro-image-preview": "google/gemini-3-pro-image-preview",
             "gemini-3.1-flash-image-preview": "google/gemini-3.1-flash-image-preview"
@@ -1086,6 +1093,10 @@
                 "input": 0.25,
                 "output": 1.5
             },
+            "gemini-3.5-flash": {
+                "input": 1.5,
+                "output": 9
+            },
             "gemini-2.5-flash-image-preview": {
                 "input": 0.15,
                 "output": 0.6
@@ -1109,6 +1120,7 @@
             "gemini-3-flash": "Gemini-3 Flash",
             "gemini-3.1-pro-preview": "Gemini-3.1 Pro",
             "gemini-3.1-flash-lite-preview": "Gemini-3.1 Flash Lite",
+            "gemini-3.5-flash": "Gemini-3.5 Flash",
             "gemini-2.5-flash-image-preview": "Nano Banana",
             "gemini-3-pro-image-preview": "Nano Banana Pro",
             "gemini-3.1-flash-image-preview": "Nano Banana 2"
@@ -1122,6 +1134,7 @@
             "gemini-3-flash": "Free",
             "gemini-3.1-pro-preview": "Pro",
             "gemini-3.1-flash-lite-preview": "Free",
+            "gemini-3.5-flash": "Pro",
             "gemini-2.5-flash-image-preview": "Pro",
             "gemini-3-pro-image-preview": "Pro",
             "gemini-3.1-flash-image-preview": "Pro"
@@ -1136,6 +1149,7 @@
             "gemini-3-flash": "Fast and lightweight Gemini 3 model optimized for low latency",
             "gemini-3.1-pro-preview": "Google's latest and most advanced Gemini model with improved reasoning and creativity",
             "gemini-3.1-flash-lite-preview": "Google's lightweight Gemini 3.1 Flash model optimized for speed and efficiency",
+            "gemini-3.5-flash": "Google's flash-tier model optimized for coding and parallel agentic execution loops",
             "gemini-2.5-flash-image-preview": "Google's newest img model (Nano Banana)",
             "gemini-3-pro-image-preview": "Google's latest Pro image model (Nano Banana Pro)",
             "gemini-3.1-flash-image-preview": "Google's latest fast image model (Nano Banana 2)"
@@ -1649,7 +1663,8 @@
             "grok-3",
             "grok-3-mini",
             "grok-4",
-            "grok-4-fast"
+            "grok-4-fast",
+            "grok-4.3"
         ],
         "api_key": "XAI_API_KEY",
         "capabilities": {
@@ -1665,20 +1680,24 @@
             "grok-4": [
                 "routing",
                 "image",
-                "xSearch",
                 "search"
             ],
             "grok-4-fast": [
-                "xSearch",
                 "search",
                 "image"
+            ],
+            "grok-4.3": [
+                "image",
+                "search",
+                "reasoning"
             ]
         },
         "openrouter_identifier": {
             "grok-3": "x-ai/grok-3",
             "grok-3-mini": "x-ai/grok-3-mini",
             "grok-4": "x-ai/grok-4",
-            "grok-4-fast": "x-ai/grok-4-fast"
+            "grok-4-fast": "x-ai/grok-4-fast",
+            "grok-4.3": "x-ai/grok-4.3"
         },
         "price": {
             "grok-3": {
@@ -1696,25 +1715,31 @@
             "grok-4-fast": {
                 "input": 0.2,
                 "output": 0.5
+            },
+            "grok-4.3": {
+                "input": 1.25,
+                "output": 2.5
             }
         },
         "name": {
             "grok-3": "Grok 3",
             "grok-3-mini": "Grok 3 Mini",
             "grok-4": "Grok 4",
-            "grok-4-fast": "Grok 4 Fast"
+            "grok-4-fast": "Grok 4 Fast",
+            "grok-4.3": "Grok 4.3"
         },
         "availableForChatApp": {
             "grok-3": "Pro",
             "grok-3-mini": "Free",
-            "grok-4": "Pro",
-            "grok-4-fast": "Free"
+            "grok-4-fast": "Free",
+            "grok-4.3": "Pro"
         },
         "descriptions": {
             "grok-3": "Previous flagship model from xAI",
             "grok-3-mini": "Previous small model from xAI",
             "grok-4": "Latest reasoning model from xAI",
-            "grok-4-fast": "Low-latency, cost-efficient variant of Grok 4 optimized for speed"
+            "grok-4-fast": "Low-latency, cost-efficient variant of Grok 4 optimized for speed",
+            "grok-4.3": "xAI's flagship reasoning model with strong agentic tool calling and 1M context"
         }
     }
 }
