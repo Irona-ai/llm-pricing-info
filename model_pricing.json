@@ -36,6 +36,8 @@
             "gpt-5-nano",
             "gpt-image-1",
             "gpt-image-1.5",
+            "gpt-5-image",
+            "gpt-5-image-mini",
             "gpt-5.1",
             "gpt-5.1-chat-latest",
             "gpt-5.2",
@@ -273,6 +275,14 @@
                 "search",
                 "pdf",
                 "mcp"
+            ],
+            "gpt-5-image": [
+                "image",
+                "image-gen"
+            ],
+            "gpt-5-image-mini": [
+                "image",
+                "image-gen"
             ]
         },
         "openrouter_identifier": {
@@ -316,7 +326,9 @@
             "gpt-5.3-codex": "openai/gpt-5.3-codex",
             "gpt-5.4": "openai/gpt-5.4",
             "gpt-5.4-mini": "openai/gpt-5.4-mini",
-            "gpt-5.4-nano": "openai/gpt-5.4-nano"
+            "gpt-5.4-nano": "openai/gpt-5.4-nano",
+            "gpt-5-image": "openai/gpt-5-image",
+            "gpt-5-image-mini": "openai/gpt-5-image-mini"
         },
         "price": {
             "gpt-3.5-turbo": {
@@ -492,16 +504,24 @@
                 "output": 14
             },
             "gpt-5.4": {
-                "input": 2.50,
+                "input": 2.5,
                 "output": 15
             },
             "gpt-5.4-mini": {
                 "input": 0.75,
-                "output": 4.50
+                "output": 4.5
             },
             "gpt-5.4-nano": {
-                "input": 0.20,
+                "input": 0.2,
                 "output": 1.25
+            },
+            "gpt-5-image": {
+                "input": 5,
+                "output": 10
+            },
+            "gpt-5-image-mini": {
+                "input": 0.05,
+                "output": 0.4
             }
         },
         "name": {
@@ -524,7 +544,9 @@
             "gpt-5.3-codex": "GPT-5.3 Codex",
             "gpt-5.4": "GPT-5.4",
             "gpt-5.4-mini": "GPT-5.4 Mini",
-            "gpt-5.4-nano": "GPT-5.4 Nano"
+            "gpt-5.4-nano": "GPT-5.4 Nano",
+            "gpt-5-image": "GPT-5 Image",
+            "gpt-5-image-mini": "GPT-5 Image Mini"
         },
         "availableForChatApp": {
             "gpt-4o-mini": "Free",
@@ -536,8 +558,6 @@
             "gpt-5": "Pro",
             "gpt-5-mini": "Pro",
             "gpt-5-nano": "Free",
-            "gpt-image-1": "Pro",
-            "gpt-image-1.5": "Pro",
             "gpt-5.1": "Pro",
             "gpt-5.1-chat-latest": "Pro",
             "gpt-5.2": "Pro",
@@ -545,8 +565,10 @@
             "gpt-5.2-pro": "Pro",
             "gpt-5.3-codex": "Pro",
             "gpt-5.4": "Pro",
-            "gpt-5.4-mini": "Pro",
-            "gpt-5.4-nano": "Pro"
+            "gpt-5.4-mini": "Free",
+            "gpt-5.4-nano": "Free",
+            "gpt-5-image": "Pro",
+            "gpt-5-image-mini": "Pro"
         },
         "descriptions": {
             "gpt-4o-mini": "Faster, less precise GPT-4o",
@@ -568,7 +590,9 @@
             "gpt-5.3-codex": "OpenAI's most capable agentic coding model to date.",
             "gpt-5.4": "OpenAI's latest model with improved reasoning, image understanding, and search capabilities.",
             "gpt-5.4-mini": "OpenAI's strongest mini model yet for coding, computer use, and subagents",
-            "gpt-5.4-nano": "OpenAI's cheapest GPT-5.4-class model for simple high-volume tasks"
+            "gpt-5.4-nano": "OpenAI's cheapest GPT-5.4-class model for simple high-volume tasks",
+            "gpt-5-image": "OpenAI's GPT-5 class image generation model with high fidelity and creative capabilities",
+            "gpt-5-image-mini": "OpenAI's GPT-5 class image generation model optimized for speed and cost efficiency"
         },
         "alias": {
             "gpt-4o-2024-11-20": "gpt-4o",
@@ -905,7 +929,8 @@
             "gemini-3-flash",
             "gemini-3-pro-image-preview",
             "gemini-3.1-pro-preview",
-            "gemini-3.1-flash-image-preview"
+            "gemini-3.1-flash-image-preview",
+            "gemini-3.1-flash-lite-preview"
         ],
         "api_key": "GOOGLE_GENERATIVE_AI_API_KEY",
         "capabilities": {
@@ -976,6 +1001,12 @@
             "gemini-3.1-flash-image-preview": [
                 "image",
                 "image-gen"
+            ],
+            "gemini-3.1-flash-lite-preview": [
+                "routing",
+                "image",
+                "search",
+                "reasoning"
             ]
         },
         "openrouter_identifier": {
@@ -990,7 +1021,8 @@
             "gemini-2.5-flash-image-preview": "google/gemini-2.5-flash-image-preview",
             "gemini-2.0-flash-001": "google/gemini-2.0-flash-001",
             "gemini-3.1-pro-preview": "google/gemini-3.1-pro-preview",
-            "gemini-3.1-flash-image-preview": "google/gemini-3.1-flash-image-preview"
+            "gemini-3.1-flash-image-preview": "google/gemini-3.1-flash-image-preview",
+            "gemini-3.1-flash-lite-preview": "google/gemini-3.1-flash-lite-preview"
         },
         "price": {
             "gemini-1.5-pro-latest": {
@@ -1040,6 +1072,10 @@
             "gemini-3.1-flash-image-preview": {
                 "input": 0.25,
                 "output": 3
+            },
+            "gemini-3.1-flash-lite-preview": {
+                "input": 0.25,
+                "output": 1.5
             }
         },
         "name": {
@@ -1053,7 +1089,8 @@
             "gemini-3-flash": "Gemini-3 Flash",
             "gemini-3-pro-image-preview": "Nano Banana Pro",
             "gemini-3.1-pro-preview": "Gemini-3.1 Pro",
-            "gemini-3.1-flash-image-preview": "Nano Banana 2"
+            "gemini-3.1-flash-image-preview": "Nano Banana 2",
+            "gemini-3.1-flash-lite-preview": "Gemini-3.1 Flash Lite"
         },
         "availableForChatApp": {
             "gemini-1.5-pro-latest": "Pro",
@@ -1065,7 +1102,8 @@
             "gemini-3-pro-preview": "Pro",
             "gemini-3-pro-image-preview": "Pro",
             "gemini-3.1-pro-preview": "Pro",
-            "gemini-3.1-flash-image-preview": "Pro"
+            "gemini-3.1-flash-image-preview": "Pro",
+            "gemini-3.1-flash-lite-preview": "Free"
         },
         "descriptions": {
             "gemini-1.5-flash-latest": "Faster & less precise Gemini-1.5 Pro",
@@ -1078,7 +1116,8 @@
             "gemini-3-flash": "Fast and lightweight Gemini 3 model optimized for low latency",
             "gemini-3-pro-image-preview": "Google's latest Pro image model (Nano Banana Pro)",
             "gemini-3.1-pro-preview": "Google's latest and most advanced Gemini model with improved reasoning and creativity",
-            "gemini-3.1-flash-image-preview": "Google's latest fast image model (Nano Banana 2)"
+            "gemini-3.1-flash-image-preview": "Google's latest fast image model (Nano Banana 2)",
+            "gemini-3.1-flash-lite-preview": "Google's lightweight Gemini 3.1 Flash model optimized for speed and efficiency"
         },
         "alias": {
             "gemini-2.0-flash-001": "gemini-2.0-flash"
