@@ -947,20 +947,23 @@
                 "routing",
                 "image",
                 "pdf",
-                "search"
+                "search",
+                "video"
             ],
             "gemini-2.0-flash": [
                 "routing",
                 "image",
                 "pdf",
-                "search"
+                "search",
+                "video"
             ],
             "gemini-2.5-flash": [
                 "routing",
                 "image",
                 "pdf",
                 "search",
-                "reasoning"
+                "reasoning",
+                "video"
             ],
             "gemini-2.5-flash-image-preview": [
                 "image",
@@ -971,7 +974,8 @@
                 "image",
                 "pdf",
                 "search",
-                "reasoning"
+                "reasoning",
+                "video"
             ],
             "gemini-3-pro-image-preview": [
                 "image",
@@ -982,21 +986,24 @@
                 "image",
                 "pdf",
                 "search",
-                "reasoning"
+                "reasoning",
+                "video"
             ],
             "gemini-3-flash": [
                 "routing",
                 "image",
                 "search",
                 "reasoning",
-                "agent"
+                "agent",
+                "video"
             ],
             "gemini-3.1-pro-preview": [
                 "pdf",
                 "image",
                 "search",
                 "reasoning",
-                "agent"
+                "agent",
+                "video"
             ],
             "gemini-3.1-flash-image-preview": [
                 "image",
@@ -1006,7 +1013,8 @@
                 "routing",
                 "image",
                 "search",
-                "reasoning"
+                "reasoning",
+                "video"
             ]
         },
         "openrouter_identifier": {
