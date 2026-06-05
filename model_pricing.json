@@ -947,15 +947,13 @@
                 "routing",
                 "image",
                 "pdf",
-                "search",
-                "video"
+                "search"
             ],
             "gemini-2.0-flash": [
                 "routing",
                 "image",
                 "pdf",
-                "search",
-                "video"
+                "search"
             ],
             "gemini-2.5-flash": [
                 "routing",
