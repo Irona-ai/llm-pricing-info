@@ -1675,6 +1675,7 @@
             "grok-3-mini",
             "grok-4",
             "grok-4-fast",
+            "grok-imagine-video"
             "grok-4.3"
         ],
         "api_key": "XAI_API_KEY",
@@ -1697,6 +1698,9 @@
                 "search",
                 "image"
             ],
+            "grok-imagine-video": [
+                "video-gen",
+                "image"
             "grok-4.3": [
                 "image",
                 "search",
@@ -1708,6 +1712,7 @@
             "grok-3-mini": "x-ai/grok-3-mini",
             "grok-4": "x-ai/grok-4",
             "grok-4-fast": "x-ai/grok-4-fast",
+            "grok-imagine-video": "x-ai/grok-imagine-video"
             "grok-4.3": "x-ai/grok-4.3"
         },
         "price": {
@@ -1727,6 +1732,10 @@
                 "input": 0.2,
                 "output": 0.5
             },
+            "grok-imagine-video": {
+                "video_480p_per_second": 0.05,
+                "video_720p_per_second": 0.07,
+                "image_input_per_image": 0.002
             "grok-4.3": {
                 "input": 1.25,
                 "output": 2.5
@@ -1735,6 +1744,8 @@
         "name": {
             "grok-3": "Grok 3",
             "grok-3-mini": "Grok 3 Mini",
+            "grok-4-fast": "Grok 4 Fast",
+            "grok-imagine-video": "Grok Imagine Video"
             "grok-4": "Grok 4",
             "grok-4-fast": "Grok 4 Fast",
             "grok-4.3": "Grok 4.3"
@@ -1743,14 +1754,90 @@
             "grok-3": "Pro",
             "grok-3-mini": "Free",
             "grok-4-fast": "Free",
+            "grok-imagine-video": "Pro"
             "grok-4.3": "Pro"
         },
         "descriptions": {
             "grok-3": "Previous flagship model from xAI",
             "grok-3-mini": "Previous small model from xAI",
-            "grok-4": "Latest reasoning model from xAI",
+            "grok-4-fast": "Low-latency, cost-efficient variant of Grok 4 optimized for speed",
+            "grok-imagine-video": "xAI's fast video generation model supporting text-to-video, image-to-video, and reference-to-video at 480p or 720p across seven aspect ratios",
+             "grok-4": "Latest reasoning model from xAI",
             "grok-4-fast": "Low-latency, cost-efficient variant of Grok 4 optimized for speed",
             "grok-4.3": "xAI's flagship reasoning model with strong agentic tool calling and 1M context"
+
+        }
+    },
+    "kwaivgi": {
+        "icon": "https://unpkg.com/@lobehub/icons-static-svg@latest/icons/kling.svg",
+        "sources": [
+            "https://kling.ai/document-api/quickStart/productIntroduction/overview",
+            "https://ai-sdk.dev/providers/ai-sdk-providers/klingai"
+        ],
+        "models": [
+            "kling-v3.0-pro"
+        ],
+        "api_key": "KLING_API_KEY",
+        "capabilities": {
+            "kling-v3.0-pro": [
+                "video-gen",
+                "image"
+            ]
+        },
+        "openrouter_identifier": {
+            "kling-v3.0-pro": "kwaivgi/kling-v3.0-pro"
+        },
+        "price": {
+            "kling-v3.0-pro": {
+                "video_with_audio_per_second": 0.168,
+                "video_no_audio_per_second": 0.112
+            }
+        },
+        "name": {
+            "kling-v3.0-pro": "Kling v3.0 Pro"
+        },
+        "availableForChatApp": {
+            "kling-v3.0-pro": "Pro"
+        },
+        "descriptions": {
+            "kling-v3.0-pro": "Kuaishou's premium video generation model with text-to-video and image-to-video support, first/last-frame control, and optional native audio generation"
+        }
+    },
+    "bytedance": {
+        "icon": "https://unpkg.com/@lobehub/icons-static-svg@latest/icons/bytedance.svg",
+        "sources": [
+            "https://docs.byteplus.com/en/docs/ModelArk/1520757",
+            "https://seed.bytedance.com/en/seedance2_0"
+        ],
+        "models": [
+            "seedance-2.0"
+        ],
+        "api_key": "BYTEDANCE_API_KEY",
+        "capabilities": {
+            "seedance-2.0": [
+                "video-gen",
+                "image"
+            ]
+        },
+        "openrouter_identifier": {
+            "seedance-2.0": "bytedance/seedance-2.0"
+        },
+        "price": {
+            "seedance-2.0": {
+                "video_480p_per_second": 0.06726,
+                "video_720p_per_second": 0.1512,
+                "video_1080p_per_second": 0.3402,
+                "video_tokens_per_million": 7
+            }
+        },
+        "name": {
+            "seedance-2.0": "Seedance 2.0"
+        },
+        "availableForChatApp": {
+            "seedance-2.0": "Pro"
+        },
+        "descriptions": {
+            "seedance-2.0": "ByteDance's video generation model with text-to-video, image-to-video with first/last-frame control, and multimodal reference-to-video with strong character and style consistency"
         }
     }
 }
