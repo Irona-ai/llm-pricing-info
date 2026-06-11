@@ -1011,7 +1011,7 @@
                 "image",
                 "search",
                 "reasoning",
-                "video"
+                "video",
                 "agent-mode"
             ],
             "gemini-3.1-pro-preview": [
@@ -1019,7 +1019,7 @@
                 "image",
                 "search",
                 "reasoning",
-                "video"
+                "video",
                 "agent-mode"
             ],
             "gemini-3.1-flash-lite-preview": [
@@ -1675,7 +1675,7 @@
             "grok-3-mini",
             "grok-4",
             "grok-4-fast",
-            "grok-imagine-video"
+            "grok-imagine-video",
             "grok-4.3"
         ],
         "api_key": "XAI_API_KEY",
@@ -1701,6 +1701,7 @@
             "grok-imagine-video": [
                 "video-gen",
                 "image"
+            ],
             "grok-4.3": [
                 "image",
                 "search",
@@ -1712,7 +1713,7 @@
             "grok-3-mini": "x-ai/grok-3-mini",
             "grok-4": "x-ai/grok-4",
             "grok-4-fast": "x-ai/grok-4-fast",
-            "grok-imagine-video": "x-ai/grok-imagine-video"
+            "grok-imagine-video": "x-ai/grok-imagine-video",
             "grok-4.3": "x-ai/grok-4.3"
         },
         "price": {
@@ -1736,6 +1737,7 @@
                 "video_480p_per_second": 0.05,
                 "video_720p_per_second": 0.07,
                 "image_input_per_image": 0.002
+            },
             "grok-4.3": {
                 "input": 1.25,
                 "output": 2.5
@@ -1744,17 +1746,16 @@
         "name": {
             "grok-3": "Grok 3",
             "grok-3-mini": "Grok 3 Mini",
-            "grok-4-fast": "Grok 4 Fast",
-            "grok-imagine-video": "Grok Imagine Video"
             "grok-4": "Grok 4",
             "grok-4-fast": "Grok 4 Fast",
-            "grok-4.3": "Grok 4.3"
+            "grok-4.3": "Grok 4.3",
+            "grok-imagine-video": "Grok Imagine Video"
         },
         "availableForChatApp": {
             "grok-3": "Pro",
             "grok-3-mini": "Free",
             "grok-4-fast": "Free",
-            "grok-imagine-video": "Pro"
+            "grok-imagine-video": "Pro",
             "grok-4.3": "Pro"
         },
         "descriptions": {
