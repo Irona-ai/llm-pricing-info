@@ -1734,6 +1734,8 @@
                 "output": 0.5
             },
             "grok-imagine-video": {
+                "input": 0,
+                "output": 0,
                 "video_480p_per_second": 0.05,
                 "video_720p_per_second": 0.07,
                 "image_input_per_image": 0.002
@@ -1790,6 +1792,8 @@
         },
         "price": {
             "kling-v3.0-pro": {
+                "input": 0,
+                "output": 0,
                 "video_with_audio_per_second": 0.168,
                 "video_no_audio_per_second": 0.112
             }
@@ -1825,6 +1829,8 @@
         },
         "price": {
             "seedance-2.0": {
+                "input": 0,
+                "output": 0,
                 "video_480p_per_second": 0.06726,
                 "video_720p_per_second": 0.1512,
                 "video_1080p_per_second": 0.3402,
