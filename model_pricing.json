@@ -975,14 +975,21 @@
                 "routing",
                 "image",
                 "pdf",
-                "search"
+                "search",
+                "reasoning",
+                "video"
+            ],
+            "gemini-2.5-flash-image-preview": [
+                "image",
+                "image-gen"
             ],
             "gemini-2.5-pro": [
                 "routing",
                 "image",
                 "pdf",
                 "search",
-                "reasoning"
+                "reasoning",
+                "video"
             ],
             "gemini-2.5-flash": [
                 "routing",
@@ -996,13 +1003,15 @@
                 "image",
                 "pdf",
                 "search",
-                "reasoning"
+                "reasoning",
+                "video"
             ],
             "gemini-3-flash": [
                 "routing",
                 "image",
                 "search",
                 "reasoning",
+                "video"
                 "agent-mode"
             ],
             "gemini-3.1-pro-preview": [
@@ -1010,6 +1019,7 @@
                 "image",
                 "search",
                 "reasoning",
+                "video"
                 "agent-mode"
             ],
             "gemini-3.1-flash-lite-preview": [
@@ -1021,7 +1031,8 @@
                 "image",
                 "pdf",
                 "search",
-                "reasoning"
+                "reasoning",
+                "video"
             ],
             "gemini-2.5-flash-image-preview": [
                 "image",
