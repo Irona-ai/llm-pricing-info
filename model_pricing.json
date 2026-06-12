@@ -654,7 +654,9 @@
             "claude-sonnet-4-5-20250929",
             "claude-opus-4-5-20251101",
             "claude-sonnet-4-6",
-            "claude-opus-4-6"
+            "claude-opus-4-6",
+            "claude-opus-4-7",
+            "claude-opus-4-8"
         ],
         "api_key": "ANTHROPIC_API_KEY",
         "capabilities": {
@@ -779,6 +781,16 @@
                 "computer-use",
                 "reasoning",
                 "agent-mode"
+            ],
+            "claude-opus-4-7": [
+                "image",
+                "pdf",
+                "reasoning"
+            ],
+            "claude-opus-4-8": [
+                "image",
+                "pdf",
+                "reasoning"
             ]
         },
         "openrouter_identifier": {
@@ -801,7 +813,9 @@
             "claude-sonnet-4-5-20250929": "anthropic/claude-sonnet-4.5-20250929",
             "claude-opus-4-5-20251101": "anthropic/claude-opus-4.5-20251101",
             "claude-sonnet-4-6": "anthropic/claude-sonnet-4.6",
-            "claude-opus-4-6": "anthropic/claude-opus-4.6"
+            "claude-opus-4-6": "anthropic/claude-opus-4.6",
+            "claude-opus-4-7": "anthropic/claude-opus-4.7",
+            "claude-opus-4-8": "anthropic/claude-opus-4.8"
         },
         "price": {
             "claude-2.1": {
@@ -887,6 +901,14 @@
             "claude-opus-4-6": {
                 "input": 5,
                 "output": 25
+            },
+            "claude-opus-4-7": {
+                "input": 5,
+                "output": 25
+            },
+            "claude-opus-4-8": {
+                "input": 5,
+                "output": 25
             }
         },
         "name": {
@@ -898,7 +920,9 @@
             "claude-sonnet-4-5-20250929": "Claude-4.5 Sonnet",
             "claude-opus-4-5-20251101": "Claude-4.5 Opus",
             "claude-sonnet-4-6": "Claude-4.6 Sonnet",
-            "claude-opus-4-6": "Claude-4.6 Opus"
+            "claude-opus-4-6": "Claude-4.6 Opus",
+            "claude-opus-4-7": "Claude-4.7 Opus",
+            "claude-opus-4-8": "Claude-4.8 Opus"
         },
         "availableForChatApp": {
             "claude-3-haiku-20240307": "Free",
@@ -909,7 +933,9 @@
             "claude-sonnet-4-5-20250929": "Pro",
             "claude-opus-4-5-20251101": "Pro",
             "claude-sonnet-4-6": "Pro",
-            "claude-opus-4-6": "Pro"
+            "claude-opus-4-6": "Pro",
+            "claude-opus-4-7": "Pro",
+            "claude-opus-4-8": "Pro"
         },
         "alias": {
             "claude-3-5-haiku-20241022": "claude-3-5-haiku",
@@ -928,7 +954,9 @@
             "claude-sonnet-4-5-20250929": "Balanced Claude 4.5 model optimized for reasoning and reliability",
             "claude-opus-4-5-20251101": "Anthropic\u2019s most powerful Claude model for complex reasoning",
             "claude-sonnet-4-6": "The best combination of speed and intelligence",
-            "claude-opus-4-6": "The most intelligent model for building agents and coding"
+            "claude-opus-4-6": "The most intelligent model for building agents and coding",
+            "claude-opus-4-7": "Highly autonomous Claude model for long-horizon agentic work and coding",
+            "claude-opus-4-8": "Anthropic's most capable model for complex reasoning and autonomous agents"
         }
     },
     "google": {
@@ -978,10 +1006,6 @@
                 "search",
                 "reasoning",
                 "video"
-            ],
-            "gemini-2.5-flash-image-preview": [
-                "image",
-                "image-gen"
             ],
             "gemini-2.5-pro": [
                 "routing",
@@ -1763,9 +1787,8 @@
         "descriptions": {
             "grok-3": "Previous flagship model from xAI",
             "grok-3-mini": "Previous small model from xAI",
-            "grok-4-fast": "Low-latency, cost-efficient variant of Grok 4 optimized for speed",
             "grok-imagine-video": "xAI's fast video generation model supporting text-to-video, image-to-video, and reference-to-video at 480p or 720p across seven aspect ratios",
-             "grok-4": "Latest reasoning model from xAI",
+            "grok-4": "Latest reasoning model from xAI",
             "grok-4-fast": "Low-latency, cost-efficient variant of Grok 4 optimized for speed",
             "grok-4.3": "xAI's flagship reasoning model with strong agentic tool calling and 1M context"
 
