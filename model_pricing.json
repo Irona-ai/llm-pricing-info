@@ -785,12 +785,14 @@
             "claude-opus-4-7": [
                 "image",
                 "pdf",
-                "reasoning"
+                "reasoning", 
+                 "agent-mode"
             ],
             "claude-opus-4-8": [
                 "image",
                 "pdf",
-                "reasoning"
+                "reasoning",
+                 "agent-mode"
             ]
         },
         "openrouter_identifier": {
