@@ -296,9 +296,9 @@
             "gpt-4o-mini-2024-07-18": "openai/gpt-4o-mini-2024-07-18",
             "chatgpt-4o-latest": "openai/chatgpt-4o-latest",
             "gpt-4.1": "openai/gpt-4.1",
-            "gpt-4.1-2025-04-14": "openai/gpt-4.1-2025-04-14",
+            "gpt-4.1-2025-04-14": "openai/gpt-4.1",
             "gpt-4.1-mini": "openai/gpt-4.1-mini",
-            "gpt-4.1-mini-2025-04-14": "openai/gpt-4.1-mini-2025-04-14",
+            "gpt-4.1-mini-2025-04-14": "openai/gpt-4.1-mini",
             "gpt-4.1-nano": "openai/gpt-4.1-nano",
             "gpt-4.1-nano-2025-04-14": "openai/gpt-4.1-nano-2025-04-14",
             "o1-preview": "openai/o1-preview",
@@ -623,7 +623,16 @@
             "gpt-5.1-2025-11-13": "gpt-5.1",
             "gpt-5.2-2025-12-11": "gpt-5.2",
             "gpt-5.2-pro-2025-12-11": "gpt-5.2-pro"
-        }
+        },
+        "deprecated": [
+            "gpt-4-1106-vision-preview",
+            "o1-preview",
+            "o1-preview-2024-09-12",
+            "o1-mini",
+            "o1-mini-2024-09-12",
+            "chatgpt-4o-latest",
+            "gpt-image-1"
+        ]
     },
     "anthropic": {
         "icon": "https://svgl.app/library/claude-ai-icon.svg",
@@ -1248,8 +1257,8 @@
         "openrouter_identifier": {
             "mistral-large-latest": "mistralai/mistral-large",
             "mistral-large-2407": "mistralai/mistral-large",
-            "mistral-medium-latest": "mistralai/mistral-medium",
-            "mistral-small-latest": "mistralai/mistral-small",
+            "mistral-medium-latest": "mistralai/mistral-medium-3.1",
+            "mistral-small-latest": "mistralai/mistral-small-3.1-24b-instruct",
             "open-mistral-7b": "mistralai/mistral-7b-instruct",
             "open-mistral-nemo": "mistralai/mistral-nemo",
             "open-mixtral-8x7b": "mistralai/mixtral-8x7b",
@@ -1305,7 +1314,11 @@
         },
         "description": {
             "mistral-large-latest": "Mistral's latest flagship model"
-        }
+        },
+        "deprecated": [
+            "open-mistral-7b",
+            "open-mixtral-8x7b"
+        ]
     },
     "togetherai": {
         "icon": "https://svgl.app/library/meta.svg",
@@ -1718,11 +1731,13 @@
             "grok-4": [
                 "routing",
                 "image",
-                "search"
+                "search",
+                "xSearch"
             ],
             "grok-4-fast": [
                 "search",
-                "image"
+                "image",
+                "xSearch"
             ],
             "grok-imagine-video": [
                 "video-gen",
