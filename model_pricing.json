@@ -1517,8 +1517,8 @@
         },
         "price": {
             "Kimi-K2.6": {
-                "input": 0.7448,
-                "output": 4.655
+                "input": 0.68,
+                "output": 3.41
             }
         },
         "name": {
@@ -1572,8 +1572,8 @@
             "DeepSeek-V4-Pro": "DeepSeek-V4 Pro"
         },
         "availableForChatApp": {
-            "DeepSeek-V4-Flash": "Pro",
-            "DeepSeek-V4-Pro": "Pro"
+            "DeepSeek-V4-Flash": "Free",
+            "DeepSeek-V4-Pro": "Free"
         },
         "descriptions": {
             "DeepSeek-V4-Flash": "DeepSeek's efficient MoE model (284B/13B active) with 1M context optimized for fast reasoning and coding",
@@ -1612,12 +1612,12 @@
         },
         "price": {
             "MiMo-V2.5": {
-                "input": 0.4,
-                "output": 2
+                "input": 0.14,
+                "output": 0.28
             },
             "MiMo-V2.5-Pro": {
-                "input": 1,
-                "output": 3
+                "input": 0.435,
+                "output": 0.87
             }
         },
         "name": {
@@ -1625,8 +1625,8 @@
             "MiMo-V2.5-Pro": "MiMo-V2.5 Pro"
         },
         "availableForChatApp": {
-            "MiMo-V2.5": "Pro",
-            "MiMo-V2.5-Pro": "Pro"
+            "MiMo-V2.5": "Free",
+            "MiMo-V2.5-Pro": "Free"
         },
         "descriptions": {
             "MiMo-V2.5": "Xiaomi's omnimodal model (image + video) with 1M context, delivering Pro-level agentic performance at roughly half the cost",
@@ -1934,6 +1934,43 @@
         },
         "descriptions": {
             "seedance-2.0": "ByteDance's video generation model with text-to-video, image-to-video with first/last-frame control, and multimodal reference-to-video with strong character and style consistency"
+        }
+    },
+    "z-ai": {
+        "icon": "https://svgl.app/library/zhipu.svg",
+        "sources": [
+            "https://openrouter.ai/z-ai",
+            "https://docs.z.ai"
+        ],
+        "models": [
+            "GLM-5.2"
+        ],
+        "api_key": "ZAI_API_KEY",
+        "capabilities": {
+            "GLM-5.2": [
+                "reasoning"
+            ]
+        },
+        "openrouter_identifier": {
+            "GLM-5.2": "z-ai/glm-5.2"
+        },
+        "price": {
+            "GLM-5.2": {
+                "input": 1.4,
+                "output": 4.4
+            }
+        },
+        "name": {
+            "GLM-5.2": "GLM 5.2"
+        },
+        "availableForChatApp": {
+            "GLM-5.2": "Pro"
+        },
+        "descriptions": {
+            "GLM-5.2": "Z.ai's large-scale reasoning model with 1M-token context, suited for long-horizon agent workflows and project-level software engineering."
+        },
+        "release_date": {
+            "GLM-5.2": "2026-06-16"
         }
     }
 }
