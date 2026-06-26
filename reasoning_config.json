@@ -1,204 +1,89 @@
 {
-    "version": "1.0",
-    "description": "Declarative reasoning/thinking configuration per provider. Mirrors the ReasoningConfig logic in the Ironlabs node SDK so reasoning behavior is data-driven and stays in sync with model_pricing.json.",
-    "effort_levels": [
-        "off",
-        "low",
-        "medium",
-        "high",
-        "max"
-    ],
-    "effort_multipliers": {
-        "off": 0.0,
-        "low": 0.25,
-        "medium": 0.5,
-        "high": 0.85,
-        "max": 1.0
+  "gateway_effort_levels": [
+    "xhigh",
+    "high",
+    "medium",
+    "low",
+    "minimal",
+    "none"
+  ],
+  "effort_budget_ratios": {
+    "none": 0.0,
+    "minimal": 0.1,
+    "low": 0.25,
+    "medium": 0.5,
+    "high": 0.85,
+    "xhigh": 1.0
+  },
+  "budget_clamp": {
+    "min": 1024,
+    "max": 64000
+  },
+  "field_docs": {
+    "supported_efforts": "Effort values to show in an effort selector, in DESCENDING order (highest first). 'xhigh' is the top tier and is sent verbatim as reasoning.effort. null = no discrete selector, but the gateway accepts effort values. Field omitted = model exposes no effort selection. Does not include 'none' — disabling is governed by `mandatory`/`default_enabled`.",
+    "default_effort": "Effort to pre-select when reasoning is enabled; maps to reasoning.effort. null when the provider has no effort selection.",
+    "default_enabled": "Default on/off state when the user has not set reasoning.enabled.",
+    "supports_max_tokens": "When true, the provider reasons by token budget: show a token-budget control and send reasoning.max_tokens (alongside or instead of reasoning.effort). false when reasoning is effort/level only.",
+    "max_budget": "Maximum thinking-token budget (only present when supports_max_tokens is true). When the user picks an effort instead of an explicit budget, send reasoning.max_tokens = clamp(floor(max_budget * effort_budget_ratios[effort]), budget_clamp.min, budget_clamp.max).",
+    "mandatory": "When true, reasoning cannot be disabled — hide disable controls and never send effort 'none' / enabled:false."
+  },
+  "providers": {
+    "openai": {
+      "supported_efforts": ["xhigh", "high", "medium", "low", "minimal"],
+      "default_effort": "medium",
+      "default_enabled": true,
+      "supports_max_tokens": false,
+      "mandatory": false
     },
-    "placeholders": {
-        "$budget": "floor(max_budget * effort_multipliers[effort]); replaced by `derive.budget.off` when effort is 'off'",
-        "$level": "discrete thinking level resolved from derive.level.map (falling back to derive.level.default)",
-        "$effort": "the effort string, after applying derive.effort.remap if present",
-        "$enabled": "'enabled' when effort != 'off', otherwise 'disabled'",
-        "$includeThoughts": "true when effort != 'off', otherwise false",
-        "$includeReasoning": "true when effort != 'off', otherwise false",
-        "$omit": "sentinel: the interpreter removes any key whose resolved value is $omit"
+    "anthropic": {
+      "supported_efforts": ["xhigh", "high", "medium", "low"],
+      "default_effort": "medium",
+      "default_enabled": false,
+      "supports_max_tokens": true,
+      "max_budget": 64000,
+      "mandatory": false
     },
-    "providers": {
-        "anthropic": {
-            "supports_middleware": false,
-            "match_against": "model",
-            "rules": [
-                {
-                    "when": { "model_includes": "opus" },
-                    "derive": { "budget": { "max_budget": 32000, "off": "$omit" } },
-                    "provider_options": {
-                        "anthropic": {
-                            "thinking": {
-                                "type": "$enabled",
-                                "budgetTokens": "$budget"
-                            }
-                        }
-                    }
-                },
-                {
-                    "when": { "model_includes": "claude" },
-                    "derive": { "budget": { "max_budget": 64000, "off": "$omit" } },
-                    "provider_options": {
-                        "anthropic": {
-                            "thinking": {
-                                "type": "$enabled",
-                                "budgetTokens": "$budget"
-                            }
-                        }
-                    }
-                }
-            ]
-        },
-        "google": {
-            "supports_middleware": false,
-            "match_against": "model",
-            "rules": [
-                {
-                    "when": { "model_includes": "gemini-3-flash" },
-                    "off_returns_null": true,
-                    "derive": {
-                        "level": {
-                            "map": { "low": "low", "medium": "medium", "high": "high", "max": "high" },
-                            "default": "low"
-                        }
-                    },
-                    "provider_options": {
-                        "google": {
-                            "thinkingConfig": {
-                                "includeThoughts": true,
-                                "thinkingLevel": "$level"
-                            }
-                        }
-                    }
-                },
-                {
-                    "when": { "model_includes": "gemini-3" },
-                    "off_returns_null": true,
-                    "derive": {
-                        "level": {
-                            "map": { "high": "high", "max": "high" },
-                            "default": "low"
-                        }
-                    },
-                    "provider_options": {
-                        "google": {
-                            "thinkingConfig": {
-                                "includeThoughts": true,
-                                "thinkingLevel": "$level"
-                            }
-                        }
-                    }
-                },
-                {
-                    "when": { "model_includes": "2.5-pro" },
-                    "derive": { "budget": { "max_budget": 32768, "off": 128 } },
-                    "provider_options": {
-                        "google": {
-                            "thinkingConfig": {
-                                "thinkingBudget": "$budget",
-                                "includeThoughts": true
-                            }
-                        }
-                    }
-                },
-                {
-                    "when": { "model_includes": "gemini" },
-                    "derive": {
-                        "budget": { "max_budget": 24567, "off": 0 },
-                        "includeThoughts": { "not_off": true }
-                    },
-                    "provider_options": {
-                        "google": {
-                            "thinkingConfig": {
-                                "thinkingBudget": "$budget",
-                                "includeThoughts": "$includeThoughts"
-                            }
-                        }
-                    }
-                }
-            ]
-        },
-        "openai": {
-            "supports_middleware": false,
-            "match_against": "model",
-            "rules": [
-                {
-                    "when": { "default": true },
-                    "derive": { "effort": { "remap": { "off": "none", "max": "xhigh" } } },
-                    "provider_options": {
-                        "openai": {
-                            "reasoningEffort": "$effort",
-                            "reasoningSummary": "auto"
-                        }
-                    }
-                }
-            ]
-        },
-        "togetherai": {
-            "supports_middleware": true,
-            "match_against": "model",
-            "rules": [
-                {
-                    "when": { "model_includes": "DeepSeek-R1" },
-                    "derive": { "includeReasoning": { "not_off": true } },
-                    "provider_options": {
-                        "togetherai": {
-                            "reasoning": { "includeReasoning": "$includeReasoning" }
-                        }
-                    }
-                }
-            ]
-        },
-        "mistral": {
-            "supports_middleware": true,
-            "match_against": "model",
-            "rules": [
-                {
-                    "when": { "default": true },
-                    "derive": { "includeReasoning": { "not_off": true } },
-                    "provider_options": {
-                        "mistral": {
-                            "reasoning": { "includeReasoning": "$includeReasoning" }
-                        }
-                    }
-                }
-            ]
-        },
-        "perplexity": {
-            "supports_middleware": true,
-            "match_against": "model",
-            "rules": [
-                {
-                    "when": { "default": true },
-                    "derive": { "effort": { "passthrough": true } },
-                    "provider_options": {
-                        "perplexity": {
-                            "reasoning": { "effort": "$effort" }
-                        }
-                    }
-                }
-            ]
-        },
-        "xai": {
-            "supports_middleware": false,
-            "match_against": "model",
-            "rules": [
-                {
-                    "when": { "model_includes": "grok" },
-                    "derive": { "effort": { "remap": { "medium": "low" } } },
-                    "provider_options": {
-                        "xai": {
-                            "reasoningEffort": "$effort"
-                        }
-                    }
-                }
-            ]
-        }
+    "google": {
+      "supported_efforts": ["xhigh", "high", "medium", "low"],
+      "default_effort": "medium",
+      "default_enabled": true,
+      "supports_max_tokens": false,
+      "mandatory": false
+    },
+    "xai": {
+      "supported_efforts": ["xhigh", "high", "low"],
+      "default_effort": "high",
+      "default_enabled": true,
+      "supports_max_tokens": false,
+      "mandatory": false
+    },
+    "moonshotai": {
+      "supported_efforts": null,
+      "default_effort": null,
+      "default_enabled": true,
+      "supports_max_tokens": false,
+      "mandatory": false
+    },
+    "deepseek": {
+      "supported_efforts": ["xhigh", "high", "medium", "low"],
+      "default_effort": "medium",
+      "default_enabled": true,
+      "supports_max_tokens": false,
+      "mandatory": false
+    },
+    "xiaomi": {
+      "supported_efforts": null,
+      "default_effort": null,
+      "default_enabled": true,
+      "supports_max_tokens": false,
+      "mandatory": false
+    },
+    "z-ai": {
+      "supported_efforts": null,
+      "default_effort": null,
+      "default_enabled": true,
+      "supports_max_tokens": false,
+      "mandatory": false
     }
+  }
 }
