@@ -185,17 +185,6 @@
     },
     "google": {
       "models": {
-        "gemini-3-pro-preview": {
-          "supported_efforts": [
-            "xhigh",
-            "high",
-            "low"
-          ],
-          "default_effort": "medium",
-          "default_enabled": true,
-          "supports_max_tokens": false,
-          "mandatory": false
-        },
         "gemini-3-flash": {
           "supported_efforts": [
             "xhigh",
