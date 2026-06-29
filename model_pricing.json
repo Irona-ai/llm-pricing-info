@@ -1936,6 +1936,40 @@
             "seedance-2.0": "ByteDance's video generation model with text-to-video, image-to-video with first/last-frame control, and multimodal reference-to-video with strong character and style consistency"
         }
     },
+    "alibaba": {
+        "icon": "https://unpkg.com/@lobehub/icons-static-svg@latest/icons/alibaba.svg",
+        "sources": [
+            "https://openrouter.ai/alibaba/happyhorse-1.1"
+        ],
+        "models": [
+            "happyhorse-1.1"
+        ],
+        "api_key": "ALIBABA_API_KEY",
+        "capabilities": {
+            "happyhorse-1.1": [
+                "video-gen",
+                "image"
+            ]
+        },
+        "openrouter_identifier": {
+            "happyhorse-1.1": "alibaba/happyhorse-1.1"
+        },
+        "price": {
+            "happyhorse-1.1": {
+                "input": 0,
+                "output": 0.0988
+            }
+        },
+        "name": {
+            "happyhorse-1.1": "HappyHorse 1.1"
+        },
+        "availableForChatApp": {
+            "happyhorse-1.1": "Pro"
+        },
+        "descriptions": {
+            "happyhorse-1.1": "Alibaba's video generation model creating short videos up to 1080p (3-15s) from a text prompt, a single starting image, or a set of reference images, with stronger prompt adherence, smoother motion, and more consistent characters across frames"
+        }
+    },
     "z-ai": {
         "icon": "https://svgl.app/library/zhipu.svg",
         "sources": [
