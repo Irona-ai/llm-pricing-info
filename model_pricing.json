@@ -1227,6 +1227,9 @@
             "gemini-2.5-flash",
             "gemini-3-pro-preview"
         ],
+        "depreciationDate": {
+            "gemini-3-pro-preview": "2026-06-30"
+        },
         "release_date": {
             "gemini-3-flash": "2025-12-17",
             "gemini-3.1-pro-preview": "2026-02-19",

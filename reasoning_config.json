@@ -99,7 +99,6 @@
       "models": {
         "claude-sonnet-4-5-20250929": {
           "supported_efforts": [
-            "xhigh",
             "high",
             "medium",
             "low",
@@ -113,7 +112,6 @@
         },
         "claude-opus-4-5-20251101": {
           "supported_efforts": [
-            "xhigh",
             "high",
             "medium",
             "low",
@@ -163,8 +161,7 @@
           ],
           "default_effort": "medium",
           "default_enabled": false,
-          "supports_max_tokens": true,
-          "max_budget": 32000,
+          "supports_max_tokens": false,
           "mandatory": false
         },
         "claude-opus-4-8": {
@@ -177,8 +174,7 @@
           ],
           "default_effort": "medium",
           "default_enabled": false,
-          "supports_max_tokens": true,
-          "max_budget": 32000,
+          "supports_max_tokens": false,
           "mandatory": false
         }
       }
@@ -326,7 +322,7 @@
             "low",
             "minimal"
           ],
-          "default_effort": "high",
+          "default_effort": "medium",
           "default_enabled": true,
           "supports_max_tokens": false,
           "mandatory": false
