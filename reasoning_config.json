@@ -1,0 +1,350 @@
+{
+  "gateway_effort_levels": [
+    "xhigh",
+    "high",
+    "medium",
+    "low",
+    "minimal",
+    "none"
+  ],
+  "effort_budget_ratios": {
+    "none": 0,
+    "minimal": 0.1,
+    "low": 0.25,
+    "medium": 0.5,
+    "high": 0.85,
+    "xhigh": 1
+  },
+  "budget_clamp": {
+    "min": 1024,
+    "max": 64000
+  },
+  "field_docs": {
+    "supported_efforts": "Effort values to show in an effort selector, in DESCENDING order (highest first). 'xhigh' is the top tier and is sent verbatim as reasoning.effort. null = no discrete selector, but the gateway accepts effort values. Field omitted = model exposes no effort selection. Does not include 'none' — disabling is governed by `mandatory`/`default_enabled`.",
+    "default_effort": "Effort to pre-select when reasoning is enabled; maps to reasoning.effort. null when the provider has no effort selection.",
+    "default_enabled": "Default on/off state when the user has not set reasoning.enabled.",
+    "supports_max_tokens": "When true, the provider reasons by token budget: show a token-budget control and send reasoning.max_tokens (alongside or instead of reasoning.effort). false when reasoning is effort/level only.",
+    "max_budget": "Maximum thinking-token budget (only present when supports_max_tokens is true). When the user picks an effort instead of an explicit budget, send reasoning.max_tokens = clamp(floor(max_budget * effort_budget_ratios[effort]), budget_clamp.min, budget_clamp.max).",
+    "mandatory": "When true, reasoning cannot be disabled — hide disable controls and never send effort 'none' / enabled:false."
+  },
+  "providers": {
+    "openai": {
+      "models": {
+        "gpt-5.4": {
+          "supported_efforts": [
+            "xhigh",
+            "high",
+            "medium",
+            "low",
+            "minimal"
+          ],
+          "default_effort": "medium",
+          "default_enabled": true,
+          "supports_max_tokens": false,
+          "mandatory": false
+        },
+        "gpt-5.4-mini": {
+          "supported_efforts": [
+            "xhigh",
+            "high",
+            "medium",
+            "low",
+            "minimal"
+          ],
+          "default_effort": "medium",
+          "default_enabled": true,
+          "supports_max_tokens": false,
+          "mandatory": false
+        },
+        "gpt-5.4-nano": {
+          "supported_efforts": [
+            "xhigh",
+            "high",
+            "medium",
+            "low",
+            "minimal"
+          ],
+          "default_effort": "medium",
+          "default_enabled": true,
+          "supports_max_tokens": false,
+          "mandatory": false
+        },
+        "gpt-5.5": {
+          "supported_efforts": [
+            "xhigh",
+            "high",
+            "medium",
+            "low",
+            "minimal"
+          ],
+          "default_effort": "medium",
+          "default_enabled": true,
+          "supports_max_tokens": false,
+          "mandatory": false
+        },
+        "gpt-5.5-pro": {
+          "supported_efforts": [
+            "xhigh",
+            "high",
+            "medium"
+          ],
+          "default_effort": "medium",
+          "default_enabled": true,
+          "supports_max_tokens": false,
+          "mandatory": false
+        }
+      }
+    },
+    "anthropic": {
+      "models": {
+        "claude-sonnet-4-5-20250929": {
+          "supported_efforts": [
+            "high",
+            "medium",
+            "low",
+            "minimal"
+          ],
+          "default_effort": "medium",
+          "default_enabled": false,
+          "supports_max_tokens": true,
+          "max_budget": 64000,
+          "mandatory": false
+        },
+        "claude-opus-4-5-20251101": {
+          "supported_efforts": [
+            "high",
+            "medium",
+            "low",
+            "minimal"
+          ],
+          "default_effort": "medium",
+          "default_enabled": false,
+          "supports_max_tokens": true,
+          "max_budget": 32000,
+          "mandatory": false
+        },
+        "claude-sonnet-4-6": {
+          "supported_efforts": [
+            "xhigh",
+            "high",
+            "medium",
+            "low",
+            "minimal"
+          ],
+          "default_effort": "medium",
+          "default_enabled": false,
+          "supports_max_tokens": true,
+          "max_budget": 64000,
+          "mandatory": false
+        },
+        "claude-opus-4-6": {
+          "supported_efforts": [
+            "xhigh",
+            "high",
+            "medium",
+            "low",
+            "minimal"
+          ],
+          "default_effort": "medium",
+          "default_enabled": false,
+          "supports_max_tokens": true,
+          "max_budget": 32000,
+          "mandatory": false
+        },
+        "claude-opus-4-7": {
+          "supported_efforts": [
+            "xhigh",
+            "high",
+            "medium",
+            "low",
+            "minimal"
+          ],
+          "default_effort": "medium",
+          "default_enabled": false,
+          "supports_max_tokens": false,
+          "mandatory": false
+        },
+        "claude-opus-4-8": {
+          "supported_efforts": [
+            "xhigh",
+            "high",
+            "medium",
+            "low",
+            "minimal"
+          ],
+          "default_effort": "medium",
+          "default_enabled": false,
+          "supports_max_tokens": false,
+          "mandatory": false
+        }
+      }
+    },
+    "google": {
+      "models": {
+        "gemini-3-flash": {
+          "supported_efforts": [
+            "xhigh",
+            "high",
+            "medium",
+            "low",
+            "minimal"
+          ],
+          "default_effort": "medium",
+          "default_enabled": true,
+          "supports_max_tokens": false,
+          "mandatory": false
+        },
+        "gemini-3.1-pro-preview": {
+          "supported_efforts": [
+            "xhigh",
+            "high",
+            "medium",
+            "low",
+            "minimal"
+          ],
+          "default_effort": "medium",
+          "default_enabled": true,
+          "supports_max_tokens": false,
+          "mandatory": true
+        },
+        "gemini-3.1-flash-lite-preview": {
+          "supported_efforts": [
+            "xhigh",
+            "high",
+            "medium",
+            "low",
+            "minimal"
+          ],
+          "default_effort": "medium",
+          "default_enabled": true,
+          "supports_max_tokens": false,
+          "mandatory": false
+        },
+        "gemini-3.5-flash": {
+          "supported_efforts": [
+            "xhigh",
+            "high",
+            "medium",
+            "low",
+            "minimal"
+          ],
+          "default_effort": "medium",
+          "default_enabled": true,
+          "supports_max_tokens": false,
+          "mandatory": false
+        }
+      }
+    },
+    "moonshotai": {
+      "models": {
+        "Kimi-K2.6": {
+          "supported_efforts": [
+            "xhigh",
+            "high",
+            "medium",
+            "low",
+            "minimal"
+          ],
+          "default_effort": "medium",
+          "default_enabled": true,
+          "supports_max_tokens": false,
+          "mandatory": false
+        }
+      }
+    },
+    "deepseek": {
+      "models": {
+        "DeepSeek-V4-Flash": {
+          "supported_efforts": [
+            "xhigh",
+            "high",
+            "medium",
+            "low",
+            "minimal"
+          ],
+          "default_effort": "medium",
+          "default_enabled": true,
+          "supports_max_tokens": false,
+          "mandatory": false
+        },
+        "DeepSeek-V4-Pro": {
+          "supported_efforts": [
+            "xhigh",
+            "high",
+            "medium",
+            "low",
+            "minimal"
+          ],
+          "default_effort": "medium",
+          "default_enabled": true,
+          "supports_max_tokens": false,
+          "mandatory": false
+        }
+      }
+    },
+    "xiaomi": {
+      "models": {
+        "MiMo-V2.5": {
+          "supported_efforts": [
+            "xhigh",
+            "high",
+            "medium",
+            "low",
+            "minimal"
+          ],
+          "default_effort": "medium",
+          "default_enabled": true,
+          "supports_max_tokens": false,
+          "mandatory": false
+        },
+        "MiMo-V2.5-Pro": {
+          "supported_efforts": [
+            "xhigh",
+            "high",
+            "medium",
+            "low",
+            "minimal"
+          ],
+          "default_effort": "medium",
+          "default_enabled": true,
+          "supports_max_tokens": false,
+          "mandatory": false
+        }
+      }
+    },
+    "xai": {
+      "models": {
+        "grok-4.3": {
+          "supported_efforts": [
+            "xhigh",
+            "high",
+            "medium",
+            "low",
+            "minimal"
+          ],
+          "default_effort": "medium",
+          "default_enabled": true,
+          "supports_max_tokens": false,
+          "mandatory": false
+        }
+      }
+    },
+    "z-ai": {
+      "models": {
+        "GLM-5.2": {
+          "supported_efforts": [
+            "xhigh",
+            "high",
+            "medium",
+            "low",
+            "minimal"
+          ],
+          "default_effort": "medium",
+          "default_enabled": true,
+          "supports_max_tokens": false,
+          "mandatory": false
+        }
+      }
+    }
+  }
+}
