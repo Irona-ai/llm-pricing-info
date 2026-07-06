@@ -1989,7 +1989,7 @@
             "happyhorse-1.1": "Pro"
         },
         "descriptions": {
-            "happyhorse-1.1": "Alibaba's video generation model creating short videos up to 1080p (3-15s) from a text prompt, a single starting image, or a set of reference images, with stronger prompt adherence, smoother motion, and more consistent characters across frames"
+            "happyhorse-1.1": "Alibaba's video generation model creating short videos up to 1080p (3-15s) with native audio and multilingual lip-sync"
         }
     },
     "z-ai": {
