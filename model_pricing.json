@@ -1917,8 +1917,7 @@
                 "reasoning",
                 "image",
                 "search",
-                "pdf",
-                "agent-mode"
+                "pdf"
             ]
         },
         "openrouter_identifier": {
