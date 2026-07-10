@@ -398,6 +398,19 @@
           "default_enabled": true,
           "supports_max_tokens": false,
           "mandatory": false
+        },
+        "grok-4.5": {
+          "supported_efforts": [
+            "xhigh",
+            "high",
+            "medium",
+            "low",
+            "minimal"
+          ],
+          "default_effort": "medium",
+          "default_enabled": true,
+          "supports_max_tokens": false,
+          "mandatory": false
         }
       }
     },
