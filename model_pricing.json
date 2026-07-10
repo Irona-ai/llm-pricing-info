@@ -53,11 +53,8 @@
             "gpt-5.5",
             "gpt-5.5-pro",
             "gpt-5.6-sol",
-            "gpt-5.6-sol-pro",
             "gpt-5.6-terra",
-            "gpt-5.6-terra-pro",
             "gpt-5.6-luna",
-            "gpt-5.6-luna-pro",
             "gpt-image-1",
             "gpt-image-1.5",
             "gpt-image-2",
@@ -274,13 +271,6 @@
                 "pdf",
                 "agent-mode"
             ],
-            "gpt-5.6-sol-pro": [
-                "reasoning",
-                "image",
-                "search",
-                "pdf",
-                "agent-mode"
-            ],
             "gpt-5.6-terra": [
                 "reasoning",
                 "image",
@@ -288,20 +278,7 @@
                 "pdf",
                 "agent-mode"
             ],
-            "gpt-5.6-terra-pro": [
-                "reasoning",
-                "image",
-                "search",
-                "pdf",
-                "agent-mode"
-            ],
             "gpt-5.6-luna": [
-                "reasoning",
-                "image",
-                "search",
-                "pdf"
-            ],
-            "gpt-5.6-luna-pro": [
                 "reasoning",
                 "image",
                 "search",
@@ -372,11 +349,8 @@
             "gpt-5.5": "openai/gpt-5.5",
             "gpt-5.5-pro": "openai/gpt-5.5-pro",
             "gpt-5.6-sol": "openai/gpt-5.6-sol",
-            "gpt-5.6-sol-pro": "openai/gpt-5.6-sol-pro",
             "gpt-5.6-terra": "openai/gpt-5.6-terra",
-            "gpt-5.6-terra-pro": "openai/gpt-5.6-terra-pro",
             "gpt-5.6-luna": "openai/gpt-5.6-luna",
-            "gpt-5.6-luna-pro": "openai/gpt-5.6-luna-pro",
             "gpt-image-1.5": "openai/gpt-image-1.5",
             "gpt-image-2": "openai/gpt-5.4-image-2",
             "gpt-5-image": "openai/gpt-5-image",
@@ -571,23 +545,11 @@
                 "input": 5,
                 "output": 30
             },
-            "gpt-5.6-sol-pro": {
-                "input": 5,
-                "output": 30
-            },
             "gpt-5.6-terra": {
                 "input": 2.5,
                 "output": 15
             },
-            "gpt-5.6-terra-pro": {
-                "input": 2.5,
-                "output": 15
-            },
             "gpt-5.6-luna": {
-                "input": 1,
-                "output": 6
-            },
-            "gpt-5.6-luna-pro": {
                 "input": 1,
                 "output": 6
             },
@@ -634,11 +596,8 @@
             "gpt-5.5": "GPT-5.5",
             "gpt-5.5-pro": "GPT-5.5 Pro",
             "gpt-5.6-sol": "GPT-5.6 Sol",
-            "gpt-5.6-sol-pro": "GPT-5.6 Sol Pro",
             "gpt-5.6-terra": "GPT-5.6 Terra",
-            "gpt-5.6-terra-pro": "GPT-5.6 Terra Pro",
             "gpt-5.6-luna": "GPT-5.6 Luna",
-            "gpt-5.6-luna-pro": "GPT-5.6 Luna Pro",
             "gpt-image-1": "GPT-Image 1",
             "gpt-image-1.5": "GPT-Image 1.5",
             "gpt-image-2": "GPT Image-2",
@@ -652,11 +611,8 @@
             "gpt-5.5": "Pro",
             "gpt-5.5-pro": "Pro",
             "gpt-5.6-sol": "Pro",
-            "gpt-5.6-sol-pro": "Pro",
             "gpt-5.6-terra": "Pro",
-            "gpt-5.6-terra-pro": "Pro",
             "gpt-5.6-luna": "Free",
-            "gpt-5.6-luna-pro": "Pro",
             "gpt-image-2": "Pro",
             "gpt-5-image": "Pro",
             "gpt-5-image-mini": "Pro"
@@ -683,11 +639,8 @@
             "gpt-5.5": "OpenAI's frontier model for complex professional workloads with stronger reasoning and reliability",
             "gpt-5.5-pro": "OpenAI's high-capability model optimized for deep reasoning on complex, high-stakes workloads",
             "gpt-5.6-sol": "OpenAI's flagship GPT-5.6 model for the most complex reasoning and agentic workloads",
-            "gpt-5.6-sol-pro": "GPT-5.6 Sol served in pro reasoning mode for higher-quality responses on complex tasks",
             "gpt-5.6-terra": "OpenAI's balanced GPT-5.6 model with strong reasoning at lower cost",
-            "gpt-5.6-terra-pro": "GPT-5.6 Terra served in pro reasoning mode for higher-quality responses on complex tasks",
             "gpt-5.6-luna": "OpenAI's fastest, most cost-efficient GPT-5.6 model for high-volume tasks",
-            "gpt-5.6-luna-pro": "GPT-5.6 Luna served in pro reasoning mode for higher-quality responses on complex tasks",
             "gpt-image-1": "OpenAI's Latest Image-Creating Model",
             "gpt-image-1.5": "OpenAI\u2019s latest image generation model with improved instruction following, higher fidelity, and faster performance",
             "gpt-image-2": "OpenAI's frontier reasoning image generation model",
@@ -732,11 +685,8 @@
             "gpt-5.5": "2026-04-24",
             "gpt-5.5-pro": "2026-04-24",
             "gpt-5.6-sol": "2026-07-09",
-            "gpt-5.6-sol-pro": "2026-07-09",
             "gpt-5.6-terra": "2026-07-09",
-            "gpt-5.6-terra-pro": "2026-07-09",
             "gpt-5.6-luna": "2026-07-09",
-            "gpt-5.6-luna-pro": "2026-07-09",
             "gpt-image-2": "2026-04-22",
             "gpt-5-image": "2025-10-14",
             "gpt-5-image-mini": "2025-10-16"
