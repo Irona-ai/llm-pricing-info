@@ -92,6 +92,78 @@
           "default_enabled": true,
           "supports_max_tokens": false,
           "mandatory": false
+        },
+        "gpt-5.6-sol": {
+          "supported_efforts": [
+            "xhigh",
+            "high",
+            "medium",
+            "low",
+            "minimal"
+          ],
+          "default_effort": "medium",
+          "default_enabled": true,
+          "supports_max_tokens": false,
+          "mandatory": false
+        },
+        "gpt-5.6-sol-pro": {
+          "supported_efforts": [
+            "xhigh",
+            "high",
+            "medium"
+          ],
+          "default_effort": "medium",
+          "default_enabled": true,
+          "supports_max_tokens": false,
+          "mandatory": false
+        },
+        "gpt-5.6-terra": {
+          "supported_efforts": [
+            "xhigh",
+            "high",
+            "medium",
+            "low",
+            "minimal"
+          ],
+          "default_effort": "medium",
+          "default_enabled": true,
+          "supports_max_tokens": false,
+          "mandatory": false
+        },
+        "gpt-5.6-terra-pro": {
+          "supported_efforts": [
+            "xhigh",
+            "high",
+            "medium"
+          ],
+          "default_effort": "medium",
+          "default_enabled": true,
+          "supports_max_tokens": false,
+          "mandatory": false
+        },
+        "gpt-5.6-luna": {
+          "supported_efforts": [
+            "xhigh",
+            "high",
+            "medium",
+            "low",
+            "minimal"
+          ],
+          "default_effort": "medium",
+          "default_enabled": true,
+          "supports_max_tokens": false,
+          "mandatory": false
+        },
+        "gpt-5.6-luna-pro": {
+          "supported_efforts": [
+            "xhigh",
+            "high",
+            "medium"
+          ],
+          "default_effort": "medium",
+          "default_enabled": true,
+          "supports_max_tokens": false,
+          "mandatory": false
         }
       }
     },
