@@ -2041,7 +2041,6 @@
         "api_key": "META_API_KEY",
         "capabilities": {
             "muse-spark-1.1": [
-                "routing",
                 "image",
                 "video",
                 "pdf",
