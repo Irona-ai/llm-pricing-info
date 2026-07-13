@@ -2041,11 +2041,13 @@
         "api_key": "META_API_KEY",
         "capabilities": {
             "muse-spark-1.1": [
+                "routing",
+                "reasoning",
                 "image",
                 "video",
                 "pdf",
-                "reasoning",
-                "search"
+                "search",
+                "agent-mode"
             ]
         },
         "price": {
@@ -2061,7 +2063,7 @@
             "muse-spark-1.1": "Pro"
         },
         "descriptions": {
-            "muse-spark-1.1": "Meta's multimodal reasoning model built for agentic tool calling, coding, structured output, and long-context workflows with image and video understanding."
+            "muse-spark-1.1": "Meta's 1M-context multimodal reasoning model for agentic tool calling, coding, and structured output with image and video understanding"
         },
         "release_date": {
             "muse-spark-1.1": "2026-07-13"
