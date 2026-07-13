@@ -75,6 +75,14 @@ The sync script requires these Supabase credentials:
 3. Commit and push to `development` branch for staging sync
 4. Merge to `main` branch for production sync
 
+### Capabilities vs `routing`
+
+Each model's `capabilities` array describes **what the model itself supports** (e.g. `reasoning`, `image`, `video`, `pdf`, `search`, `agent-mode`).
+
+**`routing` is not a model capability.** It marks whether a model is supported by **IronLabs' LLM-Routing algorithm** — i.e. eligible for IronLabs model-select / tradeoff routing across a candidate set. Do not add `routing` to a model just because it supports function calling or tools; only add it when the model is wired into IronLabs routing.
+
+Other capability strings map to provider-native features. When in doubt, check an existing model in the same provider tier (see PRs like #31) rather than inferring from LiteLLM flags alone.
+
 ## Workflow Details
 
 The `sync-models.yml` workflow:
