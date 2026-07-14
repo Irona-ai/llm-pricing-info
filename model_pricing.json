@@ -2094,5 +2094,44 @@
         "release_date": {
             "GLM-5.2": "2026-06-16"
         }
+    },
+    "meta": {
+        "icon": "https://svgl.app/library/meta.svg",
+        "sources": [
+            "https://llmgateway.io/models/muse-spark-1.1",
+            "https://dev.meta.ai/docs/getting-started/pricing-rate-limits"
+        ],
+        "models": [
+            "muse-spark-1.1"
+        ],
+        "api_key": "META_API_KEY",
+        "capabilities": {
+            "muse-spark-1.1": [
+                "reasoning",
+                "image",
+                "video",
+                "pdf",
+                "search",
+                "agent-mode"
+            ]
+        },
+        "price": {
+            "muse-spark-1.1": {
+                "input": 1.25,
+                "output": 4.25
+            }
+        },
+        "name": {
+            "muse-spark-1.1": "Muse Spark 1.1"
+        },
+        "availableForChatApp": {
+            "muse-spark-1.1": "Pro"
+        },
+        "descriptions": {
+            "muse-spark-1.1": "Meta's 1M-context multimodal reasoning model for agentic tool calling, coding, and structured output with image and video understanding"
+        },
+        "release_date": {
+            "muse-spark-1.1": "2026-07-13"
+        }
     }
 }
