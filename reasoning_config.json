@@ -1,5 +1,6 @@
 {
   "gateway_effort_levels": [
+    "max",
     "xhigh",
     "high",
     "medium",
@@ -13,14 +14,15 @@
     "low": 0.25,
     "medium": 0.5,
     "high": 0.85,
-    "xhigh": 1
+    "xhigh": 1,
+    "max": 1
   },
   "budget_clamp": {
     "min": 1024,
     "max": 64000
   },
   "field_docs": {
-    "supported_efforts": "Effort values to show in an effort selector, in DESCENDING order (highest first). 'xhigh' is the top tier and is sent verbatim as reasoning.effort. null = no discrete selector, but the gateway accepts effort values. Field omitted = model exposes no effort selection. Does not include 'none' — disabling is governed by `mandatory`/`default_enabled`.",
+    "supported_efforts": "Effort values to show in an effort selector, in DESCENDING order (highest first). 'max' is the top tier and is sent verbatim as reasoning.effort. null = no discrete selector, but the gateway accepts effort values. Field omitted = model exposes no effort selection. Does not include 'none' — disabling is governed by `mandatory`/`default_enabled`.",
     "default_effort": "Effort to pre-select when reasoning is enabled; maps to reasoning.effort. null when the provider has no effort selection.",
     "default_enabled": "Default on/off state when the user has not set reasoning.enabled.",
     "supports_max_tokens": "When true, the provider reasons by token budget: show a token-budget control and send reasoning.max_tokens (alongside or instead of reasoning.effort). false when reasoning is effort/level only.",
@@ -87,6 +89,45 @@
             "xhigh",
             "high",
             "medium"
+          ],
+          "default_effort": "medium",
+          "default_enabled": true,
+          "supports_max_tokens": false,
+          "mandatory": false
+        },
+        "gpt-5.6-sol": {
+          "supported_efforts": [
+            "max",
+            "xhigh",
+            "high",
+            "medium",
+            "low"
+          ],
+          "default_effort": "medium",
+          "default_enabled": true,
+          "supports_max_tokens": false,
+          "mandatory": false
+        },
+        "gpt-5.6-terra": {
+          "supported_efforts": [
+            "max",
+            "xhigh",
+            "high",
+            "medium",
+            "low"
+          ],
+          "default_effort": "medium",
+          "default_enabled": true,
+          "supports_max_tokens": false,
+          "mandatory": false
+        },
+        "gpt-5.6-luna": {
+          "supported_efforts": [
+            "max",
+            "xhigh",
+            "high",
+            "medium",
+            "low"
           ],
           "default_effort": "medium",
           "default_enabled": true,
@@ -326,6 +367,17 @@
           "default_enabled": true,
           "supports_max_tokens": false,
           "mandatory": false
+        },
+        "grok-4.5": {
+          "supported_efforts": [
+            "high",
+            "medium",
+            "low"
+          ],
+          "default_effort": "high",
+          "default_enabled": true,
+          "supports_max_tokens": false,
+          "mandatory": true
         }
       }
     },
