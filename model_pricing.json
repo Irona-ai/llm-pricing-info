@@ -1584,7 +1584,8 @@
             "https://platform.moonshot.ai/docs/pricing"
         ],
         "models": [
-            "Kimi-K2.6"
+            "Kimi-K2.6",
+            "Kimi-K3"
         ],
         "api_key": "MOONSHOT_API_KEY",
         "capabilities": {
@@ -1592,28 +1593,42 @@
                 "image",
                 "pdf",
                 "reasoning"
+            ],
+            "Kimi-K3": [
+                "reasoning",
+                "image",
+                "pdf"
             ]
         },
         "openrouter_identifier": {
-            "Kimi-K2.6": "moonshotai/kimi-k2.6"
+            "Kimi-K2.6": "moonshotai/kimi-k2.6",
+            "Kimi-K3": "moonshotai/kimi-k3"
         },
         "price": {
             "Kimi-K2.6": {
                 "input": 0.68,
                 "output": 3.41
+            },
+            "Kimi-K3": {
+                "input": 3,
+                "output": 15
             }
         },
         "name": {
-            "Kimi-K2.6": "Kimi K2.6"
+            "Kimi-K2.6": "Kimi K2.6",
+            "Kimi-K3": "Kimi K3"
         },
         "availableForChatApp": {
-            "Kimi-K2.6": "Pro"
+            "Kimi-K2.6": "Pro",
+            "Kimi-K3": "Pro"
         },
         "descriptions": {
-            "Kimi-K2.6": "Moonshot's multimodal model for long-horizon coding, UI/UX generation from visuals, and multi-agent orchestration"
+            "Kimi-K2.6": "Moonshot's multimodal model for long-horizon coding, UI/UX generation from visuals, and multi-agent orchestration",
+            "Kimi-K3": "Moonshot's 2.8T-parameter open-weight multimodal reasoning model for complex coding, knowledge work, and long-horizon agentic workflows"
         },
         "release_date": {
-            "Kimi-K2.6": "2026-04-20"
+            "Kimi-K2.6": "2026-04-20",
+            "Kimi-K3": "2026-07-20"
         }
     },
     "deepseek": {
@@ -2143,6 +2158,7 @@
         "icon": "https://svgl.app/library/meta.svg",
         "sources": [
             "https://llmgateway.io/models/muse-spark-1.1",
+            "https://openrouter.ai/meta/muse-spark-1.1",
             "https://dev.meta.ai/docs/getting-started/pricing-rate-limits"
         ],
         "models": [
@@ -2158,6 +2174,9 @@
                 "search",
                 "agent-mode"
             ]
+        },
+        "openrouter_identifier": {
+            "muse-spark-1.1": "meta/muse-spark-1.1"
         },
         "price": {
             "muse-spark-1.1": {
