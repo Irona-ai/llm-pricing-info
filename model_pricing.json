@@ -1861,13 +1861,15 @@
             "grok-4.3": [
                 "image",
                 "search",
-                "reasoning"
+                "reasoning",
+                "xSearch"
             ],
             "grok-4.5": [
                 "reasoning",
                 "image",
                 "search",
-                "pdf"
+                "pdf",
+                "xSearch"
             ]
         },
         "openrouter_identifier": {
