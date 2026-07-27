@@ -217,6 +217,19 @@
           "default_enabled": false,
           "supports_max_tokens": false,
           "mandatory": false
+        },
+        "claude-opus-5": {
+          "supported_efforts": [
+            "xhigh",
+            "high",
+            "medium",
+            "low",
+            "minimal"
+          ],
+          "default_effort": "medium",
+          "default_enabled": false,
+          "supports_max_tokens": false,
+          "mandatory": false
         }
       }
     },
@@ -262,6 +275,32 @@
           "mandatory": false
         },
         "gemini-3.5-flash": {
+          "supported_efforts": [
+            "xhigh",
+            "high",
+            "medium",
+            "low",
+            "minimal"
+          ],
+          "default_effort": "medium",
+          "default_enabled": true,
+          "supports_max_tokens": false,
+          "mandatory": false
+        },
+        "gemini-3.6-flash": {
+          "supported_efforts": [
+            "xhigh",
+            "high",
+            "medium",
+            "low",
+            "minimal"
+          ],
+          "default_effort": "medium",
+          "default_enabled": true,
+          "supports_max_tokens": false,
+          "mandatory": false
+        },
+        "gemini-3.5-flash-lite": {
           "supported_efforts": [
             "xhigh",
             "high",
