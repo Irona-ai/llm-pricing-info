@@ -20,6 +20,14 @@ Do **not** add `routing` because a model supports function calling or tools. Onl
 
 Marks models that can be used as **Agent Mode** backends in **Foundry** ([chat.ironlabs.ai](https://chat.ironlabs.ai)) — IronLabs' agentic chat product (internal codename: Cottage). These models are vetted for long-horizon agent workflows (sandbox tool use, multi-step tasks) in Foundry, not merely “supports tools” on the provider API.
 
+### `llmgw_dp`
+
+**Not a native model capability.** Marks models available on **LLM Gateway DevPass** ([devpass.llmgateway.io](https://devpass.llmgateway.io)) — the flat-price coding plan, which carries only a subset of the main gateway's catalog. Absent this marker, a model may still be reachable on LLM Gateway itself; DevPass is the narrower set.
+
+Do **not** hand-edit this marker. It is maintained wholesale from the DevPass model directory — run `python scripts/check_gateway_names.py` to see the drift in both directions, then apply it. DevPass adds and drops models regularly, so a stale tag is worse than no tag.
+
+Worth knowing: DevPass currently carries exactly one Anthropic model (`claude-haiku-4-5`). Every other Claude, plus Perplexity Sonar and `gpt-5.5-pro`, is gateway-available but DevPass-excluded.
+
 ---
 
 ## Provider-native / feature capabilities

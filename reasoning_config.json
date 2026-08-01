@@ -235,7 +235,7 @@
     },
     "google": {
       "models": {
-        "gemini-3-flash": {
+        "gemini-3-flash-preview": {
           "supported_efforts": [
             "xhigh",
             "high",
@@ -261,7 +261,7 @@
           "supports_max_tokens": false,
           "mandatory": true
         },
-        "gemini-3.1-flash-lite-preview": {
+        "gemini-3.1-flash-lite": {
           "supported_efforts": [
             "xhigh",
             "high",
@@ -317,7 +317,7 @@
     },
     "moonshotai": {
       "models": {
-        "Kimi-K2.6": {
+        "kimi-k2.6": {
           "supported_efforts": [
             "xhigh",
             "high",
@@ -330,7 +330,7 @@
           "supports_max_tokens": false,
           "mandatory": false
         },
-        "Kimi-K3": {
+        "kimi-k3": {
           "supported_efforts": [
             "xhigh",
             "high",
@@ -347,7 +347,7 @@
     },
     "deepseek": {
       "models": {
-        "DeepSeek-V4-Flash": {
+        "deepseek-v4-flash": {
           "supported_efforts": [
             "xhigh",
             "high",
@@ -360,7 +360,7 @@
           "supports_max_tokens": false,
           "mandatory": false
         },
-        "DeepSeek-V4-Pro": {
+        "deepseek-v4-pro": {
           "supported_efforts": [
             "xhigh",
             "high",
@@ -377,7 +377,7 @@
     },
     "xiaomi": {
       "models": {
-        "MiMo-V2.5": {
+        "mimo-v2.5": {
           "supported_efforts": [
             "xhigh",
             "high",
@@ -390,7 +390,7 @@
           "supports_max_tokens": false,
           "mandatory": false
         },
-        "MiMo-V2.5-Pro": {
+        "mimo-v2.5-pro": {
           "supported_efforts": [
             "xhigh",
             "high",
@@ -407,7 +407,7 @@
     },
     "xai": {
       "models": {
-        "grok-4.3": {
+        "grok-4-3": {
           "supported_efforts": [
             "xhigh",
             "high",
@@ -420,7 +420,7 @@
           "supports_max_tokens": false,
           "mandatory": false
         },
-        "grok-4.5": {
+        "grok-4-5": {
           "supported_efforts": [
             "high",
             "medium",
@@ -435,7 +435,7 @@
     },
     "z-ai": {
       "models": {
-        "GLM-5.2": {
+        "glm-5.2": {
           "supported_efforts": [
             "xhigh",
             "high",
