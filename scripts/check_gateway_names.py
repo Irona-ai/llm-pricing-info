@@ -1,24 +1,16 @@
 #!/usr/bin/env python3
-"""Check model_pricing.json against the live LLM Gateway catalog.
+"""Check model_pricing.json model keys against the live LLM Gateway catalog.
 
-Two independent checks, both read-only and unauthenticated:
-
-  1. apiString validity -- every non-deprecated model key must resolve to a real
-     LLM Gateway model id. The key IS the apiString (see sync_models.py), so a key
-     that does not resolve means the gateway is being called with a name it does
-     not know.
-
-  2. llmgw_dp drift -- the set of models tagged `llmgw_dp` must match the DevPass
-     directory. DevPass adds and drops models regularly.
+Every non-deprecated model key must resolve to a real LLM Gateway model id. The
+key IS the apiString (see sync_models.py), so a key that does not resolve means
+the gateway is being called with a name it does not know -- which is how
+`gemini-3-flash` silently drifted from `gemini-3-flash-preview`.
 
 Usage:
-    python scripts/check_gateway_names.py            # both checks
-    python scripts/check_gateway_names.py --devpass  # DevPass drift only
-    python scripts/check_gateway_names.py --names    # apiString check only
+    python scripts/check_gateway_names.py
 
-Exits non-zero if either check reports drift, so it can be wired into CI.
+Exits non-zero if any current key fails to resolve, so it can be wired into CI.
 """
-import argparse
 import json
 import os
 import re
@@ -26,10 +18,6 @@ import sys
 import urllib.request
 
 GATEWAY_MODELS_URL = "https://api.llmgateway.io/v1/models"
-DEVPASS_MODELS_URL = "https://devpass.llmgateway.io/models?page={page}"
-DEVPASS_PAGES = 16  # generous upper bound; pagination stops early when a page repeats
-
-DEVPASS_CAPABILITY = "llmgw_dp"
 
 # Model keys that are not expected to resolve on LLM Gateway: dated provider
 # snapshots and legacy models that were never routed through it. Keeping this
@@ -59,7 +47,8 @@ KNOWN_UNRESOLVED = {
     "xai/grok-4-fast",
 }
 
-# Output-only modalities: not text completion, so DevPass never carries them.
+# Output-only modalities; these route through the image/video services, not the
+# text gateway, so their keys are not gateway model ids.
 NON_TEXT_CAPS = {"image-gen", "video-gen"}
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -84,23 +73,6 @@ def gateway_ids():
         ids.add(m["id"])
         ids.update(m.get("aliases") or [])
     return ids
-
-
-def devpass_ids():
-    """Scrape the DevPass directory. Each rendered row links to the gateway model
-    page, so the ids come straight out of the anchor hrefs."""
-    seen = []
-    previous_page = None
-    for page in range(1, DEVPASS_PAGES + 1):
-        html = fetch(DEVPASS_MODELS_URL.format(page=page))
-        found = re.findall(r"https://llmgateway\.io/models/([^/\"\\]+)/[^\"\\?]+", html)
-        if not found or found == previous_page:
-            break  # past the last page; the site repeats the final page
-        previous_page = found
-        for model_id in found:
-            if model_id not in seen:
-                seen.append(model_id)
-    return set(seen)
 
 
 def active_models(pricing):
@@ -145,63 +117,11 @@ def check_names(pricing, known):
     return bool(unexpected)
 
 
-def check_devpass(pricing, on_devpass, known):
-    print(f"== {DEVPASS_CAPABILITY} drift (tag must match the DevPass directory)")
-    tagged, should_be = set(), set()
-    for provider, key, caps in active_models(pricing):
-        name = f"{provider}/{key}"
-        if DEVPASS_CAPABILITY in caps:
-            tagged.add(name)
-        if key in on_devpass:
-            should_be.add(name)
-
-    missing = sorted(should_be - tagged)
-    stale = sorted(tagged - should_be)
-
-    if missing:
-        print(f"   {len(missing)} on DevPass but NOT tagged -- add '{DEVPASS_CAPABILITY}':")
-        for name in missing:
-            print(f"     {name}")
-    if stale:
-        print(f"   {len(stale)} tagged but NOT on DevPass -- remove '{DEVPASS_CAPABILITY}':")
-        for name in stale:
-            print(f"     {name}")
-    if not missing and not stale:
-        print(f"   no drift ({len(tagged)} models tagged)")
-
-    # Informational: gateway-available but DevPass-excluded is the interesting gap.
-    excluded = sorted(
-        f"{p}/{k}" for p, k, _ in active_models(pricing)
-        if k in known and k not in on_devpass and not is_legacy(p, k)
-    )
-    print(f"   on LLM Gateway but excluded from DevPass ({len(excluded)}):")
-    for name in excluded:
-        print(f"     {name}")
-    return bool(missing or stale)
-
-
 def main():
-    ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--names", action="store_true", help="only the apiString check")
-    ap.add_argument("--devpass", action="store_true", help="only the DevPass drift check")
-    args = ap.parse_args()
-    run_names = args.names or not args.devpass
-    run_devpass = args.devpass or not args.names
-
     pricing = load_pricing()
     known = gateway_ids()
     print(f"LLM Gateway catalog: {len(known)} ids\n")
-
-    drift = False
-    if run_names:
-        drift |= check_names(pricing, known)
-        print()
-    if run_devpass:
-        on_devpass = devpass_ids()
-        print(f"DevPass directory: {len(on_devpass)} models")
-        drift |= check_devpass(pricing, on_devpass, known)
-
-    return 1 if drift else 0
+    return 1 if check_names(pricing, known) else 0
 
 
 if __name__ == "__main__":
