@@ -811,7 +811,8 @@
                 "image",
                 "pdf",
                 "computer-use",
-                "reasoning"
+                "reasoning",
+                "llmgw_dp"
             ],
             "claude-sonnet-4-20250514": [
                 "routing",
@@ -838,52 +839,60 @@
                 "pdf",
                 "computer-use",
                 "reasoning",
-                "routing"
+                "routing",
+                "llmgw_dp"
             ],
             "claude-opus-4-5-20251101": [
                 "image",
                 "pdf",
                 "computer-use",
-                "reasoning"
+                "reasoning",
+                "llmgw_dp"
             ],
             "claude-sonnet-4-6": [
                 "image",
                 "pdf",
                 "computer-use",
                 "reasoning",
-                "agent-mode"
+                "agent-mode",
+                "llmgw_dp"
             ],
             "claude-opus-4-6": [
                 "image",
                 "pdf",
                 "computer-use",
                 "reasoning",
-                "agent-mode"
+                "agent-mode",
+                "llmgw_dp"
             ],
             "claude-opus-4-7": [
                 "image",
                 "pdf",
                 "reasoning",
-                "agent-mode"
+                "agent-mode",
+                "llmgw_dp"
             ],
             "claude-opus-4-8": [
                 "image",
                 "pdf",
                 "reasoning",
-                "agent-mode"
+                "agent-mode",
+                "llmgw_dp"
             ],
             "claude-sonnet-5": [
                 "image",
                 "pdf",
                 "computer-use",
                 "reasoning",
-                "agent-mode"
+                "agent-mode",
+                "llmgw_dp"
             ],
             "claude-opus-5": [
                 "image",
                 "pdf",
                 "reasoning",
-                "agent-mode"
+                "agent-mode",
+                "llmgw_dp"
             ]
         },
         "openrouter_identifier": {
@@ -1740,7 +1749,7 @@
             "deepseek-v4-pro": "Free"
         },
         "descriptions": {
-            "deepseek-v4-flash": "DeepSeek's efficient MoE model (284B/13B active) with 1M context optimized for fast reasoning and coding",
+            "deepseek-v4-flash": "DeepSeek's efficient MoE model (284B/13B active) with 1M context optimized for fast reasoning and coding. Serves the 0731 re-post-trained revision.",
             "deepseek-v4-pro": "DeepSeek's flagship 1.6T-parameter MoE for complex reasoning, full-codebase analysis, and agentic workflows"
         },
         "release_date": {

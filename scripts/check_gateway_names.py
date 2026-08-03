@@ -27,7 +27,7 @@ import urllib.request
 
 GATEWAY_MODELS_URL = "https://api.llmgateway.io/v1/models"
 DEVPASS_MODELS_URL = "https://devpass.llmgateway.io/models?page={page}"
-DEVPASS_PAGES = 8  # generous upper bound; pagination stops early when a page repeats
+DEVPASS_PAGES = 16  # generous upper bound; pagination stops early when a page repeats
 
 DEVPASS_CAPABILITY = "llmgw_dp"
 
