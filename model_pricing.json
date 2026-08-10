@@ -1927,6 +1927,7 @@
             "grok-imagine-image-quality": {
                 "input": 0,
                 "output": 0,
+                 "image_input_per_image": 0.01,
                 "image_output_1k_per_image": 0.5,
                 "image_output_2k_per_image": 0.7
             },
