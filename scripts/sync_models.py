@@ -157,7 +157,7 @@ def sync_model(sb: Client, provider_id: str, key: str, cfg: dict, models_filter:
     current_time_iso = datetime.utcnow().isoformat()
     rec = {
         "id": model_id,  # Ensure ID is always new for this initial build
-        "apiString": key,
+        "apiString": cfg.get("native_model_id", {}).get(key, key),
         "providerId": provider_id,
         "createdAt": current_time_iso,  # Add createdAt for new records
         "updatedAt": current_time_iso,  # Add updatedAt for new records
