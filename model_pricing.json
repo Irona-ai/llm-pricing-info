@@ -1077,7 +1077,8 @@
             "gemini-3.5-flash",
             "gemini-2.5-flash-image-preview",
             "gemini-3-pro-image-preview",
-            "gemini-3.1-flash-image-preview"
+            "gemini-3.1-flash-image-preview",
+            "gemini-3.1-flash-lite-image"
         ],
         "api_key": "GOOGLE_GENERATIVE_AI_API_KEY",
         "capabilities": {
@@ -1166,6 +1167,10 @@
             "gemini-3.1-flash-image-preview": [
                 "image",
                 "image-gen"
+            ],
+            "gemini-3.1-flash-lite-image": [
+                "image",
+                "image-gen"
             ]
         },
         "openrouter_identifier": {
@@ -1182,7 +1187,8 @@
             "gemini-3.5-flash": "google/gemini-3.5-flash",
             "gemini-2.5-flash-image-preview": "google/gemini-2.5-flash-image",
             "gemini-3-pro-image-preview": "google/gemini-3-pro-image-preview",
-            "gemini-3.1-flash-image-preview": "google/gemini-3.1-flash-image-preview"
+            "gemini-3.1-flash-image-preview": "google/gemini-3.1-flash-image-preview",
+            "gemini-3.1-flash-lite-image": "google/gemini-3.1-flash-lite-image"
         },
         "price": {
             "gemini-1.5-pro-latest": {
@@ -1240,6 +1246,10 @@
             "gemini-3.1-flash-image-preview": {
                 "input": 0.25,
                 "output": 3
+            },
+            "gemini-3.1-flash-lite-image": {
+                "input": 0.25,
+                "output": 1.5
             }
         },
         "name": {
@@ -1255,7 +1265,8 @@
             "gemini-3.5-flash": "Gemini-3.5 Flash",
             "gemini-2.5-flash-image-preview": "Nano Banana",
             "gemini-3-pro-image-preview": "Nano Banana Pro",
-            "gemini-3.1-flash-image-preview": "Nano Banana 2"
+            "gemini-3.1-flash-image-preview": "Nano Banana 2",
+            "gemini-3.1-flash-lite-image": "Nano Banana 2 Lite"
         },
         "availableForChatApp": {
             "gemini-3-flash": "Free",
@@ -1264,7 +1275,8 @@
             "gemini-3.5-flash": "Pro",
             "gemini-2.5-flash-image-preview": "Pro",
             "gemini-3-pro-image-preview": "Pro",
-            "gemini-3.1-flash-image-preview": "Pro"
+            "gemini-3.1-flash-image-preview": "Pro",
+            "gemini-3.1-flash-lite-image": "Pro"
         },
         "descriptions": {
             "gemini-1.5-pro-latest": "Google's previous flagship model",
@@ -1279,7 +1291,8 @@
             "gemini-3.5-flash": "Google's flash-tier model optimized for coding and parallel agentic execution loops",
             "gemini-2.5-flash-image-preview": "Google's newest img model (Nano Banana)",
             "gemini-3-pro-image-preview": "Google's latest Pro image model (Nano Banana Pro)",
-            "gemini-3.1-flash-image-preview": "Google's latest fast image model (Nano Banana 2)"
+            "gemini-3.1-flash-image-preview": "Google's latest fast image model (Nano Banana 2)",
+            "gemini-3.1-flash-lite-image": "Fast, efficient image generation for high-volume use"
         },
         "alias": {
             "gemini-2.0-flash-001": "gemini-2.0-flash"
@@ -1829,6 +1842,7 @@
             "grok-4",
             "grok-4-fast",
             "grok-imagine-video",
+            "grok-imagine-image-quality",
             "grok-4.3",
             "grok-4.5"
         ],
@@ -1858,6 +1872,10 @@
                 "video-gen",
                 "image"
             ],
+            "grok-imagine-image-quality": [
+                "image",
+                "image-gen"
+            ],
             "grok-4.3": [
                 "image",
                 "search",
@@ -1878,6 +1896,7 @@
             "grok-4": "x-ai/grok-4",
             "grok-4-fast": "x-ai/grok-4-fast",
             "grok-imagine-video": "x-ai/grok-imagine-video",
+            "grok-imagine-image-quality": "x-ai/grok-imagine-image-quality",
             "grok-4.3": "x-ai/grok-4.3",
             "grok-4.5": "x-ai/grok-4.5"
         },
@@ -1905,6 +1924,13 @@
                 "video_720p_per_second": 0.07,
                 "image_input_per_image": 0.002
             },
+            "grok-imagine-image-quality": {
+                "input": 0,
+                "output": 0,
+                "image_input_per_image": 0.01,
+                "image_output_1k_per_image": 0.05,
+                "image_output_2k_per_image": 0.07
+            },
             "grok-4.3": {
                 "input": 1.25,
                 "output": 2.5
@@ -1921,11 +1947,13 @@
             "grok-4-fast": "Grok 4 Fast",
             "grok-4.3": "Grok 4.3",
             "grok-4.5": "Grok 4.5",
-            "grok-imagine-video": "Grok Imagine Video"
+            "grok-imagine-video": "Grok Imagine Video",
+            "grok-imagine-image-quality": "Grok Imagine Image Quality"
         },
         "availableForChatApp": {
             "grok-4-fast": "Free",
             "grok-imagine-video": "Pro",
+            "grok-imagine-image-quality": "Pro",
             "grok-4.3": "Pro",
             "grok-4.5": "Pro"
         },
@@ -1933,6 +1961,7 @@
             "grok-3": "Previous flagship model from xAI",
             "grok-3-mini": "Previous small model from xAI",
             "grok-imagine-video": "xAI's fast video generation model supporting text-to-video, image-to-video, and reference-to-video at 480p or 720p across seven aspect ratios",
+            "grok-imagine-image-quality": "Fast, high-fidelity photorealistic image generation and editing",
             "grok-4": "Latest reasoning model from xAI",
             "grok-4-fast": "Low-latency, cost-efficient variant of Grok 4 optimized for speed",
             "grok-4.3": "xAI's flagship reasoning model with strong agentic tool calling and 1M context",
@@ -1992,17 +2021,23 @@
             "https://seed.bytedance.com/en/seedance2_0"
         ],
         "models": [
-            "seedance-2.0"
+            "seedance-2.0",
+            "seedream-4.5"
         ],
         "api_key": "BYTEDANCE_API_KEY",
         "capabilities": {
             "seedance-2.0": [
                 "video-gen",
                 "image"
+            ],
+            "seedream-4.5": [
+                "image",
+                "image-gen"
             ]
         },
         "openrouter_identifier": {
-            "seedance-2.0": "bytedance/seedance-2.0"
+            "seedance-2.0": "bytedance/seedance-2.0",
+            "seedream-4.5": "bytedance-seed/seedream-4.5"
         },
         "price": {
             "seedance-2.0": {
@@ -2012,16 +2047,24 @@
                 "video_720p_per_second": 0.1512,
                 "video_1080p_per_second": 0.3402,
                 "video_tokens_per_million": 7
+            },
+            "seedream-4.5": {
+                "input": 0,
+                "output": 0,
+                "image_output_per_image": 0.04
             }
         },
         "name": {
-            "seedance-2.0": "Seedance 2.0"
+            "seedance-2.0": "Seedance 2.0",
+            "seedream-4.5": "Seedream 4.5"
         },
         "availableForChatApp": {
-            "seedance-2.0": "Pro"
+            "seedance-2.0": "Pro",
+            "seedream-4.5": "Pro"
         },
         "descriptions": {
-            "seedance-2.0": "ByteDance's video generation model with text-to-video, image-to-video with first/last-frame control, and multimodal reference-to-video with strong character and style consistency"
+            "seedance-2.0": "ByteDance's video generation model with text-to-video, image-to-video with first/last-frame control, and multimodal reference-to-video with strong character and style consistency",
+            "seedream-4.5": "ByteDance's image model with stronger multi-image composition"
         }
     },
     "alibaba": {
