@@ -2018,15 +2018,22 @@
         "icon": "https://unpkg.com/@lobehub/icons-static-svg@latest/icons/bytedance.svg",
         "sources": [
             "https://docs.byteplus.com/en/docs/ModelArk/1520757",
-            "https://seed.bytedance.com/en/seedance2_0"
+            "https://seed.bytedance.com/en/seedance2_0",
+            "https://muapi.ai/seedance-2.5",
+            "https://openrouter.ai/bytedance/seedance-2.5"
         ],
         "models": [
             "seedance-2.0",
+            "seedance-2.5",
             "seedream-4.5"
         ],
         "api_key": "BYTEDANCE_API_KEY",
         "capabilities": {
             "seedance-2.0": [
+                "video-gen",
+                "image"
+            ],
+            "seedance-2.5": [
                 "video-gen",
                 "image"
             ],
@@ -2037,6 +2044,7 @@
         },
         "openrouter_identifier": {
             "seedance-2.0": "bytedance/seedance-2.0",
+            "seedance-2.5": "bytedance/seedance-2.5",
             "seedream-4.5": "bytedance-seed/seedream-4.5"
         },
         "price": {
@@ -2048,6 +2056,14 @@
                 "video_1080p_per_second": 0.3402,
                 "video_tokens_per_million": 7
             },
+            "seedance-2.5": {
+                "input": 0,
+                "output": 0,
+                "video_480p_per_second": 0.17,
+                "video_720p_per_second": 0.34,
+                "video_1080p_per_second": 0.85,
+                "video_4k_per_second": 1.7
+            },
             "seedream-4.5": {
                 "input": 0,
                 "output": 0,
@@ -2056,15 +2072,21 @@
         },
         "name": {
             "seedance-2.0": "Seedance 2.0",
+            "seedance-2.5": "Seedance 2.5",
             "seedream-4.5": "Seedream 4.5"
         },
         "availableForChatApp": {
             "seedance-2.0": "Pro",
+            "seedance-2.5": "Pro",
             "seedream-4.5": "Pro"
         },
         "descriptions": {
             "seedance-2.0": "ByteDance's video generation model with text-to-video, image-to-video with first/last-frame control, and multimodal reference-to-video with strong character and style consistency",
+            "seedance-2.5": "ByteDance's flagship video generation model with one-shot clips up to 30 seconds, up to 50 multimodal reference assets (image/video/audio), first/last-frame control, video edit and extend, and optional generated audio, up to native 4K",
             "seedream-4.5": "ByteDance's image model with stronger multi-image composition"
+        },
+        "release_date": {
+            "seedance-2.5": "2026-08-07"
         }
     },
     "alibaba": {
