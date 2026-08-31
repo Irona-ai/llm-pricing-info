@@ -58,7 +58,7 @@ These reflect what the model can do on the wire (inputs, outputs, or provider fe
 ]
 ```
 
-- No `routing` — not yet enrolled in IronLabs LLM-Routing; routed via LLM Gateway directly.
+- No `routing` — not yet enrolled in IronLabs LLM-Routing; routed via LLM Gateway or OpenRouter (`meta/muse-spark-1.1`).
 - `agent-mode` — eligible as a Foundry Agent Mode model.
 - `reasoning`, `image`, `video`, `pdf`, `search` — native multimodal + reasoning features from the provider/gateway.
 

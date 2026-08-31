@@ -546,12 +546,12 @@
                 "output": 30
             },
             "gpt-5.6-terra": {
-                "input": 2.5,
-                "output": 15
+                "input": 2,
+                "output": 12
             },
             "gpt-5.6-luna": {
-                "input": 1,
-                "output": 6
+                "input": 0.2,
+                "output": 1.2
             },
             "gpt-image-1": {
                 "input": 0.05,
@@ -609,7 +609,6 @@
             "gpt-5.4-mini": "Free",
             "gpt-5.4-nano": "Free",
             "gpt-5.5": "Pro",
-            "gpt-5.5-pro": "Pro",
             "gpt-5.6-sol": "Pro",
             "gpt-5.6-terra": "Pro",
             "gpt-5.6-luna": "Free",
@@ -676,7 +675,8 @@
             "gpt-5.2",
             "gpt-5.2-chat-latest",
             "gpt-5.2-pro",
-            "gpt-5.3-codex"
+            "gpt-5.3-codex",
+            "gpt-5.5-pro"
         ],
         "release_date": {
             "gpt-5.4": "2026-03-05",
@@ -724,7 +724,8 @@
             "claude-opus-4-6",
             "claude-opus-4-7",
             "claude-opus-4-8",
-            "claude-sonnet-5"
+            "claude-sonnet-5",
+            "claude-opus-5"
         ],
         "api_key": "ANTHROPIC_API_KEY",
         "capabilities": {
@@ -868,6 +869,12 @@
                 "computer-use",
                 "reasoning",
                 "agent-mode"
+            ],
+            "claude-opus-5": [
+                "image",
+                "pdf",
+                "reasoning",
+                "agent-mode"
             ]
         },
         "openrouter_identifier": {
@@ -893,7 +900,8 @@
             "claude-opus-4-6": "anthropic/claude-opus-4.6",
             "claude-opus-4-7": "anthropic/claude-opus-4.7",
             "claude-opus-4-8": "anthropic/claude-opus-4.8",
-            "claude-sonnet-5": "anthropic/claude-sonnet-5"
+            "claude-sonnet-5": "anthropic/claude-sonnet-5",
+            "claude-opus-5": "anthropic/claude-opus-5"
         },
         "price": {
             "claude-2.1": {
@@ -991,6 +999,10 @@
             "claude-sonnet-5": {
                 "input": 3,
                 "output": 15
+            },
+            "claude-opus-5": {
+                "input": 5,
+                "output": 25
             }
         },
         "name": {
@@ -1005,7 +1017,8 @@
             "claude-opus-4-6": "Claude-4.6 Opus",
             "claude-opus-4-7": "Claude-4.7 Opus",
             "claude-opus-4-8": "Claude-4.8 Opus",
-            "claude-sonnet-5": "Claude-5 Sonnet"
+            "claude-sonnet-5": "Claude-5 Sonnet",
+            "claude-opus-5": "Claude-5 Opus"
         },
         "availableForChatApp": {
             "claude-haiku-4-5-20251001": "Pro",
@@ -1014,7 +1027,8 @@
             "claude-sonnet-4-6": "Pro",
             "claude-opus-4-6": "Pro",
             "claude-opus-4-8": "Pro",
-            "claude-sonnet-5": "Pro"
+            "claude-sonnet-5": "Pro",
+            "claude-opus-5": "Pro"
         },
         "alias": {
             "claude-3-5-haiku-20241022": "claude-3-5-haiku",
@@ -1036,7 +1050,8 @@
             "claude-opus-4-6": "The most intelligent model for building agents and coding",
             "claude-opus-4-7": "Highly autonomous Claude model for long-horizon agentic work and coding",
             "claude-opus-4-8": "Anthropic's most capable model for complex reasoning and autonomous agents",
-            "claude-sonnet-5": "The best combination of speed and intelligence for coding and agents"
+            "claude-sonnet-5": "The best combination of speed and intelligence for coding and agents",
+            "claude-opus-5": "Anthropic's flagship Opus model for the most complex reasoning, coding, and autonomous agent work"
         },
         "deprecated": [
             "claude-3-haiku-20240307",
@@ -1052,7 +1067,8 @@
             "claude-opus-4-6": "2026-02-04",
             "claude-opus-4-7": "2026-04-16",
             "claude-opus-4-8": "2026-05-27",
-            "claude-sonnet-5": "2026-06-30"
+            "claude-sonnet-5": "2026-06-30",
+            "claude-opus-5": "2026-07-28"
         }
     },
     "google": {
@@ -1070,10 +1086,12 @@
             "gemini-2.5-pro",
             "gemini-2.5-flash",
             "gemini-3-pro-preview",
-            "gemini-3-flash",
+            "gemini-3-flash-preview",
             "gemini-3.1-pro-preview",
-            "gemini-3.1-flash-lite-preview",
+            "gemini-3.1-flash-lite",
             "gemini-3.5-flash",
+            "gemini-3.6-flash",
+            "gemini-3.5-flash-lite",
             "gemini-2.5-flash-image-preview",
             "gemini-3-pro-image-preview",
             "gemini-3.1-flash-image-preview",
@@ -1127,7 +1145,7 @@
                 "reasoning",
                 "video"
             ],
-            "gemini-3-flash": [
+            "gemini-3-flash-preview": [
                 "routing",
                 "image",
                 "search",
@@ -1143,7 +1161,7 @@
                 "video",
                 "agent-mode"
             ],
-            "gemini-3.1-flash-lite-preview": [
+            "gemini-3.1-flash-lite": [
                 "image",
                 "search",
                 "reasoning"
@@ -1154,6 +1172,18 @@
                 "search",
                 "reasoning",
                 "video"
+            ],
+            "gemini-3.6-flash": [
+                "image",
+                "pdf",
+                "search",
+                "reasoning",
+                "video"
+            ],
+            "gemini-3.5-flash-lite": [
+                "image",
+                "search",
+                "reasoning"
             ],
             "gemini-2.5-flash-image-preview": [
                 "image",
@@ -1180,10 +1210,12 @@
             "gemini-2.5-pro": "google/gemini-2.5-pro",
             "gemini-2.5-flash": "google/gemini-2.5-flash",
             "gemini-3-pro-preview": "google/gemini-3-pro-preview",
-            "gemini-3-flash": "google/gemini-3-flash-preview",
+            "gemini-3-flash-preview": "google/gemini-3-flash-preview",
             "gemini-3.1-pro-preview": "google/gemini-3.1-pro-preview",
-            "gemini-3.1-flash-lite-preview": "google/gemini-3.1-flash-lite-preview",
+            "gemini-3.1-flash-lite": "google/gemini-3.1-flash-lite-preview",
             "gemini-3.5-flash": "google/gemini-3.5-flash",
+            "gemini-3.6-flash": "google/gemini-3.6-flash",
+            "gemini-3.5-flash-lite": "google/gemini-3.5-flash-lite",
             "gemini-2.5-flash-image-preview": "google/gemini-2.5-flash-image",
             "gemini-3-pro-image-preview": "google/gemini-3-pro-image-preview",
             "gemini-3.1-flash-image-preview": "google/gemini-3.1-flash-image-preview",
@@ -1218,7 +1250,7 @@
                 "input": 2,
                 "output": 12
             },
-            "gemini-3-flash": {
+            "gemini-3-flash-preview": {
                 "input": 0.5,
                 "output": 3
             },
@@ -1226,13 +1258,21 @@
                 "input": 2,
                 "output": 12
             },
-            "gemini-3.1-flash-lite-preview": {
+            "gemini-3.1-flash-lite": {
                 "input": 0.25,
                 "output": 1.5
             },
             "gemini-3.5-flash": {
                 "input": 1.5,
                 "output": 9
+            },
+            "gemini-3.6-flash": {
+                "input": 1.5,
+                "output": 7.5
+            },
+            "gemini-3.5-flash-lite": {
+                "input": 0.3,
+                "output": 2.5
             },
             "gemini-2.5-flash-image-preview": {
                 "input": 0.15,
@@ -1258,20 +1298,24 @@
             "gemini-2.5-pro": "Gemini-2.5 Pro",
             "gemini-2.5-flash": "Gemini-2.5 Flash",
             "gemini-3-pro-preview": "Gemini-3 Pro",
-            "gemini-3-flash": "Gemini-3 Flash",
+            "gemini-3-flash-preview": "Gemini-3 Flash",
             "gemini-3.1-pro-preview": "Gemini-3.1 Pro",
-            "gemini-3.1-flash-lite-preview": "Gemini-3.1 Flash Lite",
+            "gemini-3.1-flash-lite": "Gemini-3.1 Flash Lite",
             "gemini-3.5-flash": "Gemini-3.5 Flash",
+            "gemini-3.6-flash": "Gemini-3.6 Flash",
+            "gemini-3.5-flash-lite": "Gemini-3.5 Flash Lite",
             "gemini-2.5-flash-image-preview": "Nano Banana",
             "gemini-3-pro-image-preview": "Nano Banana Pro",
             "gemini-3.1-flash-image-preview": "Nano Banana 2",
             "gemini-3.1-flash-lite-image": "Nano Banana 2 Lite"
         },
         "availableForChatApp": {
-            "gemini-3-flash": "Free",
+            "gemini-3-flash-preview": "Free",
             "gemini-3.1-pro-preview": "Pro",
-            "gemini-3.1-flash-lite-preview": "Free",
+            "gemini-3.1-flash-lite": "Free",
             "gemini-3.5-flash": "Pro",
+            "gemini-3.6-flash": "Pro",
+            "gemini-3.5-flash-lite": "Free",
             "gemini-2.5-flash-image-preview": "Pro",
             "gemini-3-pro-image-preview": "Pro",
             "gemini-3.1-flash-image-preview": "Pro",
@@ -1284,10 +1328,12 @@
             "gemini-2.5-pro": "Google's newest experimental model",
             "gemini-2.5-flash": "Google's latest fastest model",
             "gemini-3-pro-preview": "Google\u2019s latest flagship Gemini model with advanced reasoning",
-            "gemini-3-flash": "Fast and lightweight Gemini 3 model optimized for low latency",
+            "gemini-3-flash-preview": "Fast and lightweight Gemini 3 model optimized for low latency",
             "gemini-3.1-pro-preview": "Google's latest and most advanced Gemini model with improved reasoning and creativity",
-            "gemini-3.1-flash-lite-preview": "Google's lightweight Gemini 3.1 Flash model optimized for speed and efficiency",
+            "gemini-3.1-flash-lite": "Google's lightweight Gemini 3.1 Flash model optimized for speed and efficiency",
             "gemini-3.5-flash": "Google's flash-tier model optimized for coding and parallel agentic execution loops",
+            "gemini-3.6-flash": "Google's latest flash-tier Gemini model with improved multimodal reasoning and agentic performance",
+            "gemini-3.5-flash-lite": "Google's lightweight Gemini 3.5 Flash Lite model optimized for speed and cost efficiency",
             "gemini-2.5-flash-image-preview": "Google's newest img model (Nano Banana)",
             "gemini-3-pro-image-preview": "Google's latest Pro image model (Nano Banana Pro)",
             "gemini-3.1-flash-image-preview": "Google's latest fast image model (Nano Banana 2)",
@@ -1310,10 +1356,12 @@
             "gemini-3-pro-preview": "2026-06-30"
         },
         "release_date": {
-            "gemini-3-flash": "2025-12-17",
+            "gemini-3-flash-preview": "2025-12-17",
             "gemini-3.1-pro-preview": "2026-02-19",
-            "gemini-3.1-flash-lite-preview": "2026-03-03",
+            "gemini-3.1-flash-lite": "2026-03-03",
             "gemini-3.5-flash": "2026-05-19",
+            "gemini-3.6-flash": "2026-07-28",
+            "gemini-3.5-flash-lite": "2026-07-28",
             "gemini-2.5-flash-image-preview": "2025-10-08",
             "gemini-3-pro-image-preview": "2025-11-20",
             "gemini-3.1-flash-image-preview": "2026-02-26"
@@ -1584,36 +1632,51 @@
             "https://platform.moonshot.ai/docs/pricing"
         ],
         "models": [
-            "Kimi-K2.6"
+            "kimi-k2.6",
+            "kimi-k3"
         ],
         "api_key": "MOONSHOT_API_KEY",
         "capabilities": {
-            "Kimi-K2.6": [
+            "kimi-k2.6": [
                 "image",
                 "pdf",
                 "reasoning"
+            ],
+            "kimi-k3": [
+                "reasoning",
+                "image",
+                "pdf"
             ]
         },
         "openrouter_identifier": {
-            "Kimi-K2.6": "moonshotai/kimi-k2.6"
+            "kimi-k2.6": "moonshotai/kimi-k2.6",
+            "kimi-k3": "moonshotai/kimi-k3"
         },
         "price": {
-            "Kimi-K2.6": {
+            "kimi-k2.6": {
                 "input": 0.68,
                 "output": 3.41
+            },
+            "kimi-k3": {
+                "input": 3,
+                "output": 15
             }
         },
         "name": {
-            "Kimi-K2.6": "Kimi K2.6"
+            "kimi-k2.6": "Kimi K2.6",
+            "kimi-k3": "Kimi K3"
         },
         "availableForChatApp": {
-            "Kimi-K2.6": "Pro"
+            "kimi-k2.6": "Pro",
+            "kimi-k3": "Pro"
         },
         "descriptions": {
-            "Kimi-K2.6": "Moonshot's multimodal model for long-horizon coding, UI/UX generation from visuals, and multi-agent orchestration"
+            "kimi-k2.6": "Moonshot's multimodal model for long-horizon coding, UI/UX generation from visuals, and multi-agent orchestration",
+            "kimi-k3": "Moonshot's 2.8T-parameter open-weight multimodal reasoning model for complex coding, knowledge work, and long-horizon agentic workflows"
         },
         "release_date": {
-            "Kimi-K2.6": "2026-04-20"
+            "kimi-k2.6": "2026-04-20",
+            "kimi-k3": "2026-07-20"
         }
     },
     "deepseek": {
@@ -1623,47 +1686,47 @@
             "https://api-docs.deepseek.com/quick_start/pricing"
         ],
         "models": [
-            "DeepSeek-V4-Flash",
-            "DeepSeek-V4-Pro"
+            "deepseek-v4-flash",
+            "deepseek-v4-pro"
         ],
         "api_key": "DEEPSEEK_API_KEY",
         "capabilities": {
-            "DeepSeek-V4-Flash": [
+            "deepseek-v4-flash": [
                 "reasoning"
             ],
-            "DeepSeek-V4-Pro": [
+            "deepseek-v4-pro": [
                 "reasoning"
             ]
         },
         "openrouter_identifier": {
-            "DeepSeek-V4-Flash": "deepseek/deepseek-v4-flash",
-            "DeepSeek-V4-Pro": "deepseek/deepseek-v4-pro"
+            "deepseek-v4-flash": "deepseek/deepseek-v4-flash-0731",
+            "deepseek-v4-pro": "deepseek/deepseek-v4-pro"
         },
         "price": {
-            "DeepSeek-V4-Flash": {
+            "deepseek-v4-flash": {
                 "input": 0.14,
                 "output": 0.28
             },
-            "DeepSeek-V4-Pro": {
+            "deepseek-v4-pro": {
                 "input": 0.435,
                 "output": 0.87
             }
         },
         "name": {
-            "DeepSeek-V4-Flash": "DeepSeek-V4 Flash",
-            "DeepSeek-V4-Pro": "DeepSeek-V4 Pro"
+            "deepseek-v4-flash": "DeepSeek-V4 Flash",
+            "deepseek-v4-pro": "DeepSeek-V4 Pro"
         },
         "availableForChatApp": {
-            "DeepSeek-V4-Flash": "Free",
-            "DeepSeek-V4-Pro": "Free"
+            "deepseek-v4-flash": "Free",
+            "deepseek-v4-pro": "Free"
         },
         "descriptions": {
-            "DeepSeek-V4-Flash": "DeepSeek's efficient MoE model (284B/13B active) with 1M context optimized for fast reasoning and coding",
-            "DeepSeek-V4-Pro": "DeepSeek's flagship 1.6T-parameter MoE for complex reasoning, full-codebase analysis, and agentic workflows"
+            "deepseek-v4-flash": "DeepSeek's efficient MoE model (284B/13B active) with 1M context optimized for fast reasoning and coding. Serves the 0731 re-post-trained revision.",
+            "deepseek-v4-pro": "DeepSeek's flagship 1.6T-parameter MoE for complex reasoning, full-codebase analysis, and agentic workflows"
         },
         "release_date": {
-            "DeepSeek-V4-Flash": "2026-04-24",
-            "DeepSeek-V4-Pro": "2026-04-24"
+            "deepseek-v4-flash": "2026-07-31",
+            "deepseek-v4-pro": "2026-04-24"
         }
     },
     "xiaomi": {
@@ -1674,49 +1737,49 @@
             "https://vercel.com/ai-gateway/models/mimo-v2-flash"
         ],
         "models": [
-            "MiMo-V2.5",
-            "MiMo-V2.5-Pro"
+            "mimo-v2.5",
+            "mimo-v2.5-pro"
         ],
         "api_key": "XIAOMI_API_KEY",
         "capabilities": {
-            "MiMo-V2.5": [
+            "mimo-v2.5": [
                 "image",
                 "reasoning"
             ],
-            "MiMo-V2.5-Pro": [
+            "mimo-v2.5-pro": [
                 "image",
                 "reasoning"
             ]
         },
         "openrouter_identifier": {
-            "MiMo-V2.5": "xiaomi/mimo-v2.5",
-            "MiMo-V2.5-Pro": "xiaomi/mimo-v2.5-pro"
+            "mimo-v2.5": "xiaomi/mimo-v2.5",
+            "mimo-v2.5-pro": "xiaomi/mimo-v2.5-pro"
         },
         "price": {
-            "MiMo-V2.5": {
+            "mimo-v2.5": {
                 "input": 0.14,
                 "output": 0.28
             },
-            "MiMo-V2.5-Pro": {
+            "mimo-v2.5-pro": {
                 "input": 0.435,
                 "output": 0.87
             }
         },
         "name": {
-            "MiMo-V2.5": "MiMo-V2.5",
-            "MiMo-V2.5-Pro": "MiMo-V2.5 Pro"
+            "mimo-v2.5": "MiMo-V2.5",
+            "mimo-v2.5-pro": "MiMo-V2.5 Pro"
         },
         "availableForChatApp": {
-            "MiMo-V2.5": "Free",
-            "MiMo-V2.5-Pro": "Free"
+            "mimo-v2.5": "Free",
+            "mimo-v2.5-pro": "Free"
         },
         "descriptions": {
-            "MiMo-V2.5": "Xiaomi's omnimodal model (image + video) with 1M context, delivering Pro-level agentic performance at roughly half the cost",
-            "MiMo-V2.5-Pro": "Xiaomi's flagship model with 1M context, optimized for agentic tasks, complex software engineering, and long-horizon workflows"
+            "mimo-v2.5": "Xiaomi's omnimodal model (image + video) with 1M context, delivering Pro-level agentic performance at roughly half the cost",
+            "mimo-v2.5-pro": "Xiaomi's flagship model with 1M context, optimized for agentic tasks, complex software engineering, and long-horizon workflows"
         },
         "release_date": {
-            "MiMo-V2.5": "2026-04-22",
-            "MiMo-V2.5-Pro": "2026-04-22"
+            "mimo-v2.5": "2026-04-22",
+            "mimo-v2.5-pro": "2026-04-22"
         }
     },
     "perplexity": {
@@ -1744,12 +1807,13 @@
         "name": {
             "sonar": "Perplexity"
         },
-        "availableForChatApp": {
-            "sonar": "Free"
-        },
+        "availableForChatApp": {},
         "descriptions": {
             "sonar": "Perplexity's latest reasoning & search Model"
         },
+        "deprecated": [
+            "sonar"
+        ],
         "release_date": {
             "sonar": "2025-01-28"
         }
@@ -1842,8 +1906,8 @@
             "grok-4-fast",
             "grok-imagine-video",
             "grok-imagine-image-quality",
-            "grok-4.3",
-            "grok-4.5"
+            "grok-4-3",
+            "grok-4-5"
         ],
         "api_key": "XAI_API_KEY",
         "capabilities": {
@@ -1875,13 +1939,13 @@
                 "image",
                 "image-gen"
             ],
-            "grok-4.3": [
+            "grok-4-3": [
                 "image",
                 "search",
                 "reasoning",
                 "xSearch"
             ],
-            "grok-4.5": [
+            "grok-4-5": [
                 "reasoning",
                 "image",
                 "search",
@@ -1896,8 +1960,8 @@
             "grok-4-fast": "x-ai/grok-4-fast",
             "grok-imagine-video": "x-ai/grok-imagine-video",
             "grok-imagine-image-quality": "x-ai/grok-imagine-image-quality",
-            "grok-4.3": "x-ai/grok-4.3",
-            "grok-4.5": "x-ai/grok-4.5"
+            "grok-4-3": "x-ai/grok-4.3",
+            "grok-4-5": "x-ai/grok-4.5"
         },
         "price": {
             "grok-3": {
@@ -1930,11 +1994,11 @@
                 "image_output_1k_per_image": 0.05,
                 "image_output_2k_per_image": 0.07
             },
-            "grok-4.3": {
+            "grok-4-3": {
                 "input": 1.25,
                 "output": 2.5
             },
-            "grok-4.5": {
+            "grok-4-5": {
                 "input": 2,
                 "output": 6
             }
@@ -1944,8 +2008,8 @@
             "grok-3-mini": "Grok 3 Mini",
             "grok-4": "Grok 4",
             "grok-4-fast": "Grok 4 Fast",
-            "grok-4.3": "Grok 4.3",
-            "grok-4.5": "Grok 4.5",
+            "grok-4-3": "Grok 4.3",
+            "grok-4-5": "Grok 4.5",
             "grok-imagine-video": "Grok Imagine Video",
             "grok-imagine-image-quality": "Grok Imagine Image Quality"
         },
@@ -1953,8 +2017,8 @@
             "grok-4-fast": "Free",
             "grok-imagine-video": "Pro",
             "grok-imagine-image-quality": "Pro",
-            "grok-4.3": "Pro",
-            "grok-4.5": "Pro"
+            "grok-4-3": "Pro",
+            "grok-4-5": "Pro"
         },
         "descriptions": {
             "grok-3": "Previous flagship model from xAI",
@@ -1963,8 +2027,8 @@
             "grok-imagine-image-quality": "Fast, high-fidelity photorealistic image generation and editing",
             "grok-4": "Latest reasoning model from xAI",
             "grok-4-fast": "Low-latency, cost-efficient variant of Grok 4 optimized for speed",
-            "grok-4.3": "xAI's flagship reasoning model with strong agentic tool calling and 1M context",
-            "grok-4.5": "SpaceXAI's Opus-class flagship for frontier coding, agentic work, and STEM reasoning"
+            "grok-4-3": "xAI's flagship reasoning model with strong agentic tool calling and 1M context",
+            "grok-4-5": "SpaceXAI's Opus-class flagship for frontier coding, agentic work, and STEM reasoning"
         },
         "deprecated": [
             "grok-3",
@@ -1972,8 +2036,8 @@
             "grok-4"
         ],
         "release_date": {
-            "grok-4.3": "2026-05-01",
-            "grok-4.5": "2026-07-09"
+            "grok-4-3": "2026-05-01",
+            "grok-4-5": "2026-07-09"
         }
     },
     "kwaivgi": {
@@ -2109,40 +2173,41 @@
             "https://docs.z.ai"
         ],
         "models": [
-            "GLM-5.2"
+            "glm-5.2"
         ],
         "api_key": "ZAI_API_KEY",
         "capabilities": {
-            "GLM-5.2": [
+            "glm-5.2": [
                 "reasoning"
             ]
         },
         "openrouter_identifier": {
-            "GLM-5.2": "z-ai/glm-5.2"
+            "glm-5.2": "z-ai/glm-5.2"
         },
         "price": {
-            "GLM-5.2": {
+            "glm-5.2": {
                 "input": 1.4,
                 "output": 4.4
             }
         },
         "name": {
-            "GLM-5.2": "GLM 5.2"
+            "glm-5.2": "GLM 5.2"
         },
         "availableForChatApp": {
-            "GLM-5.2": "Pro"
+            "glm-5.2": "Pro"
         },
         "descriptions": {
-            "GLM-5.2": "Z.ai's large-scale reasoning model with 1M-token context, suited for long-horizon agent workflows and project-level software engineering."
+            "glm-5.2": "Z.ai's large-scale reasoning model with 1M-token context, suited for long-horizon agent workflows and project-level software engineering."
         },
         "release_date": {
-            "GLM-5.2": "2026-06-16"
+            "glm-5.2": "2026-06-16"
         }
     },
     "meta": {
         "icon": "https://svgl.app/library/meta.svg",
         "sources": [
             "https://llmgateway.io/models/muse-spark-1.1",
+            "https://openrouter.ai/meta/muse-spark-1.1",
             "https://dev.meta.ai/docs/getting-started/pricing-rate-limits"
         ],
         "models": [
@@ -2158,6 +2223,9 @@
                 "search",
                 "agent-mode"
             ]
+        },
+        "openrouter_identifier": {
+            "muse-spark-1.1": "meta/muse-spark-1.1"
         },
         "price": {
             "muse-spark-1.1": {
