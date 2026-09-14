@@ -1091,6 +1091,7 @@
             "gemini-3.1-flash-lite",
             "gemini-3.5-flash",
             "gemini-3.6-flash",
+            "gemini-3.8-flash",
             "gemini-3.5-flash-lite",
             "gemini-2.5-flash-image-preview",
             "gemini-3-pro-image-preview",
@@ -1180,6 +1181,13 @@
                 "reasoning",
                 "video"
             ],
+            "gemini-3.8-flash": [
+                "image",
+                "pdf",
+                "search",
+                "reasoning",
+                "video"
+            ],
             "gemini-3.5-flash-lite": [
                 "image",
                 "search",
@@ -1215,6 +1223,7 @@
             "gemini-3.1-flash-lite": "google/gemini-3.1-flash-lite-preview",
             "gemini-3.5-flash": "google/gemini-3.5-flash",
             "gemini-3.6-flash": "google/gemini-3.6-flash",
+            "gemini-3.8-flash": "google/gemini-3.8-flash",
             "gemini-3.5-flash-lite": "google/gemini-3.5-flash-lite",
             "gemini-2.5-flash-image-preview": "google/gemini-2.5-flash-image",
             "gemini-3-pro-image-preview": "google/gemini-3-pro-image-preview",
@@ -1270,6 +1279,11 @@
                 "input": 1.5,
                 "output": 7.5
             },
+            "gemini-3.8-flash": {
+                "input": 1.35,
+                "output": 6.75,
+                "cache": 0.135
+            },
             "gemini-3.5-flash-lite": {
                 "input": 0.3,
                 "output": 2.5
@@ -1303,6 +1317,7 @@
             "gemini-3.1-flash-lite": "Gemini-3.1 Flash Lite",
             "gemini-3.5-flash": "Gemini-3.5 Flash",
             "gemini-3.6-flash": "Gemini-3.6 Flash",
+            "gemini-3.8-flash": "Gemini-3.8 Flash",
             "gemini-3.5-flash-lite": "Gemini-3.5 Flash Lite",
             "gemini-2.5-flash-image-preview": "Nano Banana",
             "gemini-3-pro-image-preview": "Nano Banana Pro",
@@ -1315,6 +1330,7 @@
             "gemini-3.1-flash-lite": "Free",
             "gemini-3.5-flash": "Pro",
             "gemini-3.6-flash": "Pro",
+            "gemini-3.8-flash": "Pro",
             "gemini-3.5-flash-lite": "Free",
             "gemini-2.5-flash-image-preview": "Pro",
             "gemini-3-pro-image-preview": "Pro",
@@ -1333,6 +1349,7 @@
             "gemini-3.1-flash-lite": "Google's lightweight Gemini 3.1 Flash model optimized for speed and efficiency",
             "gemini-3.5-flash": "Google's flash-tier model optimized for coding and parallel agentic execution loops",
             "gemini-3.6-flash": "Google's latest flash-tier Gemini model with improved multimodal reasoning and agentic performance",
+            "gemini-3.8-flash": "Google's most intelligent Flash model with gains across software engineering, agentic tasks, and multi-step reasoning",
             "gemini-3.5-flash-lite": "Google's lightweight Gemini 3.5 Flash Lite model optimized for speed and cost efficiency",
             "gemini-2.5-flash-image-preview": "Google's newest img model (Nano Banana)",
             "gemini-3-pro-image-preview": "Google's latest Pro image model (Nano Banana Pro)",
@@ -1361,10 +1378,17 @@
             "gemini-3.1-flash-lite": "2026-03-03",
             "gemini-3.5-flash": "2026-05-19",
             "gemini-3.6-flash": "2026-07-28",
+            "gemini-3.8-flash": "2026-09-02",
             "gemini-3.5-flash-lite": "2026-07-28",
             "gemini-2.5-flash-image-preview": "2025-10-08",
             "gemini-3-pro-image-preview": "2025-11-20",
             "gemini-3.1-flash-image-preview": "2026-02-26"
+        },
+        "ZDRSupport": {
+            "gemini-3.8-flash": true
+        },
+        "canonicalName": {
+            "gemini-3.8-flash": "google/gemini-3.8-flash"
         }
     },
     "cohere": {
@@ -2266,6 +2290,85 @@
         },
         "release_date": {
             "muse-spark-1.1": "2026-07-13"
+        }
+    },
+    "baseten": {
+        "icon": "https://unpkg.com/@lobehub/icons-static-svg@latest/icons/baseten.svg",
+        "sources": [
+            "https://openrouter.ai/provider/baseten",
+            "https://www.baseten.co/pricing"
+        ],
+        "models": [
+            "deepseek-v4-flash-0731"
+        ],
+        "api_key": "BASETEN_API_KEY",
+        "model_prefix": {
+            "deepseek-v4-flash-0731": "deepseek-ai"
+        },
+        "openrouter_identifier": {
+            "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        },
+        "price": {
+            "deepseek-v4-flash-0731": {
+                "input": 0.13,
+                "output": 0.26,
+                "cache": 0.028
+            }
+        },
+        "name": {
+            "deepseek-v4-flash-0731": "DeepSeek V4 Flash"
+        },
+        "descriptions": {
+            "deepseek-v4-flash-0731": "DeepSeek's flash model with 13B active parameters"
+        },
+        "ZDRSupport": {
+            "deepseek-v4-flash-0731": true
+        },
+        "canonicalName":{
+            "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        }
+    },
+    "azure": {
+        "icon": "https://svgl.app/library/azure.svg",
+        "sources": [
+            "https://openrouter.ai/provider/azure"
+        ],
+        "models": [
+            "gpt-5.6-luna"
+        ],
+        "api_key": "AZURE_API_KEY",
+        "model_prefix": {
+            "gpt-5.6-luna": "openai"
+        },
+        "capabilities": {
+            "gpt-5.6-luna": [
+                "image",
+                "pdf",
+                "reasoning",
+                "search"
+            ]
+        },
+        "openrouter_identifier": {
+            "gpt-5.6-luna": "openai/gpt-5.6-luna"
+        },
+        "price": {
+            "gpt-5.6-luna": {
+                "input": 0.2,
+                "output": 1.2,
+                "cache": 0.02
+            }
+        },
+        "name": {
+            "gpt-5.6-luna": "GPT-5.6 Luna"
+        },
+        "descriptions": {
+            "gpt-5.6-luna": "OpenAI's fastest, most cost-efficient GPT-5.6 model for high-volume tasks, served via Azure"
+        },
+        "ZDRSupport": {
+            "gpt-5.6-luna": true
+        },
+        "canonicalName": {
+            "gpt-5.6-luna": "openai/gpt-5.6-luna"
         }
     }
 }
