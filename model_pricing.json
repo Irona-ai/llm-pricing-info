@@ -641,7 +641,7 @@
             "gpt-5.6-terra": "OpenAI's balanced GPT-5.6 model with strong reasoning at lower cost",
             "gpt-5.6-luna": "OpenAI's fastest, most cost-efficient GPT-5.6 model for high-volume tasks",
             "gpt-image-1": "OpenAI's Latest Image-Creating Model",
-            "gpt-image-1.5": "OpenAI\u2019s latest image generation model with improved instruction following, higher fidelity, and faster performance",
+            "gpt-image-1.5": "OpenAI’s latest image generation model with improved instruction following, higher fidelity, and faster performance",
             "gpt-image-2": "OpenAI's frontier reasoning image generation model",
             "gpt-5-image": "OpenAI's GPT-5 class image generation model with high fidelity and creative capabilities",
             "gpt-5-image-mini": "OpenAI's GPT-5 class image generation model optimized for speed and cost efficiency"
@@ -1045,7 +1045,7 @@
             "claude-sonnet-4-20250514": "Anthropic's Flagship Model",
             "claude-haiku-4-5-20251001": "Fast and affordable Claude 4.5 model for lightweight tasks",
             "claude-sonnet-4-5-20250929": "Balanced Claude 4.5 model optimized for reasoning and reliability",
-            "claude-opus-4-5-20251101": "Anthropic\u2019s most powerful Claude model for complex reasoning",
+            "claude-opus-4-5-20251101": "Anthropic’s most powerful Claude model for complex reasoning",
             "claude-sonnet-4-6": "The best combination of speed and intelligence",
             "claude-opus-4-6": "The most intelligent model for building agents and coding",
             "claude-opus-4-7": "Highly autonomous Claude model for long-horizon agentic work and coding",
@@ -1343,7 +1343,7 @@
             "gemini-2.0-flash": "Google's latest stable model",
             "gemini-2.5-pro": "Google's newest experimental model",
             "gemini-2.5-flash": "Google's latest fastest model",
-            "gemini-3-pro-preview": "Google\u2019s latest flagship Gemini model with advanced reasoning",
+            "gemini-3-pro-preview": "Google’s latest flagship Gemini model with advanced reasoning",
             "gemini-3-flash-preview": "Fast and lightweight Gemini 3 model optimized for low latency",
             "gemini-3.1-pro-preview": "Google's latest and most advanced Gemini model with improved reasoning and creativity",
             "gemini-3.1-flash-lite": "Google's lightweight Gemini 3.1 Flash model optimized for speed and efficiency",
@@ -1522,10 +1522,12 @@
             "Qwen3-30B-A3B",
             "DeepSeek-R1",
             "Kimi-K2-Thinking",
-            "Qwen-Image"
+            "Qwen-Image",
+            "deepseek-v4-flash-0731"
         ],
         "api_key": "TOGETHER_AI_API_KEY",
         "model_prefix": {
+            "deepseek-v4-flash-0731": "deepseek-ai",
             "Mistral-7B-Instruct-v0.2": "mistralai",
             "Mixtral-8x7B-Instruct-v0.1": "mistralai",
             "Mixtral-8x22B-Instruct-v0.1": "mistralai",
@@ -1557,9 +1559,13 @@
             ],
             "Qwen-Image": [
                 "image-gen"
+            ],
+            "deepseek-v4-flash-0731": [
+                "reasoning"
             ]
         },
         "openrouter_identifier": {
+            "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731",
             "Mistral-7B-Instruct-v0.2": "mistralai/mistral-7b-instruct",
             "Mixtral-8x7B-Instruct-v0.1": "mistralai/mixtral-8x7b",
             "Mixtral-8x22B-Instruct-v0.1": "mistralai/mixtral-8x22b-instruct",
@@ -1626,6 +1632,11 @@
             "Qwen-Image": {
                 "input": 0,
                 "output": 75
+            },
+            "deepseek-v4-flash-0731": {
+                "input": 0.14,
+                "output": 0.28,
+                "cache": 0.03
             }
         },
         "name": {
@@ -1633,7 +1644,8 @@
             "Qwen3-30B-A3B": "Qwen-3-30B",
             "DeepSeek-R1": "DeepSeek-R1",
             "Kimi-K2-Thinking": "Kimi-K2-Thinking",
-            "Qwen-Image": "Qwen-Image"
+            "Qwen-Image": "Qwen-Image",
+            "deepseek-v4-flash-0731": "DeepSeek V4 Flash 0731"
         },
         "availableForChatApp": {},
         "descriptions": {
@@ -1641,13 +1653,20 @@
             "Qwen3-30B-A3B": "Qwen3 hybrid reasoning model with large context and multilingual support",
             "DeepSeek-R1": "DeepSeek's Reasoning Model",
             "Kimi-K2-Thinking": "Open-source agentic reasoning model with deep multi-step planning and tool use",
-            "Qwen-Image": "A 20B MMDiT image foundation model that achieves significant advances in complex text rendering and precise image editing."
+            "Qwen-Image": "A 20B MMDiT image foundation model that achieves significant advances in complex text rendering and precise image editing.",
+            "deepseek-v4-flash-0731": "DeepSeek's flash model with 13B active parameters"
         },
         "deprecated": [
             "Meta-Llama-3.1-70B-Instruct-Turbo",
             "Qwen3-30B-A3B",
             "Kimi-K2-Thinking"
-        ]
+        ],
+        "ZDRSupport": {
+            "deepseek-v4-flash-0731": true
+        },
+        "canonicalName": {
+            "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        }
     },
     "moonshotai": {
         "icon": "https://svgl.app/library/kimi-icon.svg",
@@ -2324,7 +2343,7 @@
         "ZDRSupport": {
             "deepseek-v4-flash-0731": true
         },
-        "canonicalName":{
+        "canonicalName": {
             "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
         }
     },
@@ -2369,6 +2388,765 @@
         },
         "canonicalName": {
             "gpt-5.6-luna": "openai/gpt-5.6-luna"
+        }
+    },
+    "makora": {
+        "icon": null,
+        "sources": [
+            "https://openrouter.ai/deepseek/deepseek-v4-flash-0731#providers"
+        ],
+        "models": [
+            "deepseek-v4-flash-0731"
+        ],
+        "api_key": "MAKORA_API_KEY",
+        "model_prefix": {
+            "deepseek-v4-flash-0731": "deepseek-ai"
+        },
+        "capabilities": {
+            "deepseek-v4-flash-0731": [
+                "reasoning"
+            ]
+        },
+        "openrouter_identifier": {
+            "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        },
+        "price": {
+            "deepseek-v4-flash-0731": {
+                "input": 0.09,
+                "output": 0.195,
+                "cache": 0.0196
+            }
+        },
+        "name": {
+            "deepseek-v4-flash-0731": "DeepSeek V4 Flash 0731"
+        },
+        "descriptions": {
+            "deepseek-v4-flash-0731": "DeepSeek's flash model with 13B active parameters"
+        },
+        "ZDRSupport": {
+            "deepseek-v4-flash-0731": true
+        },
+        "canonicalName": {
+            "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        }
+    },
+    "reka": {
+        "icon": null,
+        "sources": [
+            "https://openrouter.ai/deepseek/deepseek-v4-flash-0731#providers"
+        ],
+        "models": [
+            "deepseek-v4-flash-0731"
+        ],
+        "api_key": "REKA_API_KEY",
+        "model_prefix": {
+            "deepseek-v4-flash-0731": "deepseek-ai"
+        },
+        "capabilities": {
+            "deepseek-v4-flash-0731": [
+                "reasoning"
+            ]
+        },
+        "openrouter_identifier": {
+            "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        },
+        "price": {
+            "deepseek-v4-flash-0731": {
+                "input": 0.11,
+                "output": 0.66,
+                "cache": 0.007
+            }
+        },
+        "name": {
+            "deepseek-v4-flash-0731": "DeepSeek V4 Flash 0731"
+        },
+        "descriptions": {
+            "deepseek-v4-flash-0731": "DeepSeek's flash model with 13B active parameters"
+        },
+        "ZDRSupport": {
+            "deepseek-v4-flash-0731": true
+        },
+        "canonicalName": {
+            "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        }
+    },
+    "nextbit": {
+        "icon": null,
+        "sources": [
+            "https://openrouter.ai/deepseek/deepseek-v4-flash-0731#providers"
+        ],
+        "models": [
+            "deepseek-v4-flash-0731"
+        ],
+        "api_key": "NEXTBIT_API_KEY",
+        "model_prefix": {
+            "deepseek-v4-flash-0731": "deepseek-ai"
+        },
+        "capabilities": {
+            "deepseek-v4-flash-0731": [
+                "reasoning"
+            ]
+        },
+        "openrouter_identifier": {
+            "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        },
+        "price": {
+            "deepseek-v4-flash-0731": {
+                "input": 0.352,
+                "output": 1.056,
+                "cache": 0.012
+            }
+        },
+        "name": {
+            "deepseek-v4-flash-0731": "DeepSeek V4 Flash 0731"
+        },
+        "descriptions": {
+            "deepseek-v4-flash-0731": "DeepSeek's flash model with 13B active parameters"
+        },
+        "ZDRSupport": {
+            "deepseek-v4-flash-0731": true
+        },
+        "canonicalName": {
+            "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        }
+    },
+    "openinference": {
+        "icon": null,
+        "sources": [
+            "https://openrouter.ai/deepseek/deepseek-v4-flash-0731#providers"
+        ],
+        "models": [
+            "deepseek-v4-flash-0731"
+        ],
+        "api_key": "OPENINFERENCE_API_KEY",
+        "model_prefix": {
+            "deepseek-v4-flash-0731": "deepseek-ai"
+        },
+        "capabilities": {
+            "deepseek-v4-flash-0731": [
+                "reasoning"
+            ]
+        },
+        "openrouter_identifier": {
+            "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        },
+        "price": {
+            "deepseek-v4-flash-0731": {
+                "input": 0.04,
+                "output": 0.1,
+                "cache": 0.01
+            }
+        },
+        "name": {
+            "deepseek-v4-flash-0731": "DeepSeek V4 Flash 0731"
+        },
+        "descriptions": {
+            "deepseek-v4-flash-0731": "DeepSeek's flash model with 13B active parameters"
+        },
+        "ZDRSupport": {
+            "deepseek-v4-flash-0731": true
+        },
+        "canonicalName": {
+            "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        }
+    },
+    "inceptron": {
+        "icon": null,
+        "sources": [
+            "https://openrouter.ai/deepseek/deepseek-v4-flash-0731#providers"
+        ],
+        "models": [
+            "deepseek-v4-flash-0731"
+        ],
+        "api_key": "INCEPTRON_API_KEY",
+        "model_prefix": {
+            "deepseek-v4-flash-0731": "deepseek-ai"
+        },
+        "capabilities": {
+            "deepseek-v4-flash-0731": [
+                "reasoning"
+            ]
+        },
+        "openrouter_identifier": {
+            "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        },
+        "price": {
+            "deepseek-v4-flash-0731": {
+                "input": 0.0619,
+                "output": 0.1521,
+                "cache": 0.0073
+            }
+        },
+        "name": {
+            "deepseek-v4-flash-0731": "DeepSeek V4 Flash 0731"
+        },
+        "descriptions": {
+            "deepseek-v4-flash-0731": "DeepSeek's flash model with 13B active parameters"
+        },
+        "ZDRSupport": {
+            "deepseek-v4-flash-0731": true
+        },
+        "canonicalName": {
+            "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        }
+    },
+    "wafer": {
+        "icon": null,
+        "sources": [
+            "https://openrouter.ai/deepseek/deepseek-v4-flash-0731#providers"
+        ],
+        "models": [
+            "deepseek-v4-flash-0731"
+        ],
+        "api_key": "WAFER_API_KEY",
+        "model_prefix": {
+            "deepseek-v4-flash-0731": "deepseek-ai"
+        },
+        "capabilities": {
+            "deepseek-v4-flash-0731": [
+                "reasoning"
+            ]
+        },
+        "openrouter_identifier": {
+            "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        },
+        "price": {
+            "deepseek-v4-flash-0731": {
+                "input": 0.1,
+                "output": 0.25,
+                "cache": 0.05
+            }
+        },
+        "name": {
+            "deepseek-v4-flash-0731": "DeepSeek V4 Flash 0731"
+        },
+        "descriptions": {
+            "deepseek-v4-flash-0731": "DeepSeek's flash model with 13B active parameters"
+        },
+        "ZDRSupport": {
+            "deepseek-v4-flash-0731": true
+        },
+        "canonicalName": {
+            "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        }
+    },
+    "relace": {
+        "icon": "https://unpkg.com/@lobehub/icons-static-svg@latest/icons/relace.svg",
+        "sources": [
+            "https://openrouter.ai/deepseek/deepseek-v4-flash-0731#providers"
+        ],
+        "models": [
+            "deepseek-v4-flash-0731"
+        ],
+        "api_key": "RELACE_API_KEY",
+        "model_prefix": {
+            "deepseek-v4-flash-0731": "deepseek-ai"
+        },
+        "capabilities": {
+            "deepseek-v4-flash-0731": [
+                "reasoning"
+            ]
+        },
+        "openrouter_identifier": {
+            "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        },
+        "price": {
+            "deepseek-v4-flash-0731": {
+                "input": 0.06,
+                "output": 0.12,
+                "cache": 0.012
+            }
+        },
+        "name": {
+            "deepseek-v4-flash-0731": "DeepSeek V4 Flash 0731"
+        },
+        "descriptions": {
+            "deepseek-v4-flash-0731": "DeepSeek's flash model with 13B active parameters"
+        },
+        "ZDRSupport": {
+            "deepseek-v4-flash-0731": true
+        },
+        "canonicalName": {
+            "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        }
+    },
+    "fireworks": {
+        "icon": "https://unpkg.com/@lobehub/icons-static-svg@latest/icons/fireworks.svg",
+        "sources": [
+            "https://openrouter.ai/deepseek/deepseek-v4-flash-0731#providers"
+        ],
+        "models": [
+            "deepseek-v4-flash-0731"
+        ],
+        "api_key": "FIREWORKS_API_KEY",
+        "model_prefix": {
+            "deepseek-v4-flash-0731": "deepseek-ai"
+        },
+        "capabilities": {
+            "deepseek-v4-flash-0731": [
+                "reasoning"
+            ]
+        },
+        "openrouter_identifier": {
+            "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        },
+        "price": {
+            "deepseek-v4-flash-0731": {
+                "input": 0.22,
+                "output": 0.66,
+                "cache": 0.007
+            }
+        },
+        "name": {
+            "deepseek-v4-flash-0731": "DeepSeek V4 Flash 0731"
+        },
+        "descriptions": {
+            "deepseek-v4-flash-0731": "DeepSeek's flash model with 13B active parameters"
+        },
+        "ZDRSupport": {
+            "deepseek-v4-flash-0731": true
+        },
+        "canonicalName": {
+            "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        }
+    },
+    "venice": {
+        "icon": "https://unpkg.com/@lobehub/icons-static-svg@latest/icons/venice.svg",
+        "sources": [
+            "https://openrouter.ai/deepseek/deepseek-v4-flash-0731#providers"
+        ],
+        "models": [
+            "deepseek-v4-flash-0731"
+        ],
+        "api_key": "VENICE_API_KEY",
+        "model_prefix": {
+            "deepseek-v4-flash-0731": "deepseek-ai"
+        },
+        "capabilities": {
+            "deepseek-v4-flash-0731": [
+                "reasoning"
+            ]
+        },
+        "openrouter_identifier": {
+            "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        },
+        "price": {
+            "deepseek-v4-flash-0731": {
+                "input": 0.175,
+                "output": 0.35,
+                "cache": 0.035
+            }
+        },
+        "name": {
+            "deepseek-v4-flash-0731": "DeepSeek V4 Flash 0731"
+        },
+        "descriptions": {
+            "deepseek-v4-flash-0731": "DeepSeek's flash model with 13B active parameters"
+        },
+        "ZDRSupport": {
+            "deepseek-v4-flash-0731": true
+        },
+        "canonicalName": {
+            "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        }
+    },
+    "deepinfra": {
+        "icon": "https://unpkg.com/@lobehub/icons-static-svg@latest/icons/deepinfra.svg",
+        "sources": [
+            "https://openrouter.ai/deepseek/deepseek-v4-flash-0731#providers"
+        ],
+        "models": [
+            "deepseek-v4-flash-0731"
+        ],
+        "api_key": "DEEPINFRA_API_KEY",
+        "model_prefix": {
+            "deepseek-v4-flash-0731": "deepseek-ai"
+        },
+        "capabilities": {
+            "deepseek-v4-flash-0731": [
+                "reasoning"
+            ]
+        },
+        "openrouter_identifier": {
+            "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        },
+        "price": {
+            "deepseek-v4-flash-0731": {
+                "input": 0.06,
+                "output": 0.18,
+                "cache": 0.015
+            }
+        },
+        "name": {
+            "deepseek-v4-flash-0731": "DeepSeek V4 Flash 0731"
+        },
+        "descriptions": {
+            "deepseek-v4-flash-0731": "DeepSeek's flash model with 13B active parameters"
+        },
+        "ZDRSupport": {
+            "deepseek-v4-flash-0731": true
+        },
+        "canonicalName": {
+            "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        }
+    },
+    "parasail": {
+        "icon": "https://unpkg.com/@lobehub/icons-static-svg@latest/icons/parasail.svg",
+        "sources": [
+            "https://openrouter.ai/deepseek/deepseek-v4-flash-0731#providers"
+        ],
+        "models": [
+            "deepseek-v4-flash-0731"
+        ],
+        "api_key": "PARASAIL_API_KEY",
+        "model_prefix": {
+            "deepseek-v4-flash-0731": "deepseek-ai"
+        },
+        "capabilities": {
+            "deepseek-v4-flash-0731": [
+                "reasoning"
+            ]
+        },
+        "openrouter_identifier": {
+            "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        },
+        "price": {
+            "deepseek-v4-flash-0731": {
+                "input": 0.14,
+                "output": 0.28,
+                "cache": 0.05
+            }
+        },
+        "name": {
+            "deepseek-v4-flash-0731": "DeepSeek V4 Flash 0731"
+        },
+        "descriptions": {
+            "deepseek-v4-flash-0731": "DeepSeek's flash model with 13B active parameters"
+        },
+        "ZDRSupport": {
+            "deepseek-v4-flash-0731": true
+        },
+        "canonicalName": {
+            "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        }
+    },
+    "siliconflow": {
+        "icon": "https://unpkg.com/@lobehub/icons-static-svg@latest/icons/siliconcloud.svg",
+        "sources": [
+            "https://openrouter.ai/deepseek/deepseek-v4-flash-0731#providers"
+        ],
+        "models": [
+            "deepseek-v4-flash-0731"
+        ],
+        "api_key": "SILICONFLOW_API_KEY",
+        "model_prefix": {
+            "deepseek-v4-flash-0731": "deepseek-ai"
+        },
+        "capabilities": {
+            "deepseek-v4-flash-0731": [
+                "reasoning"
+            ]
+        },
+        "openrouter_identifier": {
+            "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        },
+        "price": {
+            "deepseek-v4-flash-0731": {
+                "input": 0.22,
+                "output": 0.66,
+                "cache": 0.028
+            }
+        },
+        "name": {
+            "deepseek-v4-flash-0731": "DeepSeek V4 Flash 0731"
+        },
+        "descriptions": {
+            "deepseek-v4-flash-0731": "DeepSeek's flash model with 13B active parameters"
+        },
+        "ZDRSupport": {
+            "deepseek-v4-flash-0731": true
+        },
+        "canonicalName": {
+            "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        }
+    },
+    "novita": {
+        "icon": "https://unpkg.com/@lobehub/icons-static-svg@latest/icons/novita.svg",
+        "sources": [
+            "https://openrouter.ai/deepseek/deepseek-v4-flash-0731#providers"
+        ],
+        "models": [
+            "deepseek-v4-flash-0731"
+        ],
+        "api_key": "NOVITA_API_KEY",
+        "model_prefix": {
+            "deepseek-v4-flash-0731": "deepseek-ai"
+        },
+        "capabilities": {
+            "deepseek-v4-flash-0731": [
+                "reasoning"
+            ]
+        },
+        "openrouter_identifier": {
+            "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        },
+        "price": {
+            "deepseek-v4-flash-0731": {
+                "input": 0.4092,
+                "output": 1.2276,
+                "cache": 0.02604
+            }
+        },
+        "name": {
+            "deepseek-v4-flash-0731": "DeepSeek V4 Flash 0731"
+        },
+        "descriptions": {
+            "deepseek-v4-flash-0731": "DeepSeek's flash model with 13B active parameters"
+        },
+        "ZDRSupport": {
+            "deepseek-v4-flash-0731": true
+        },
+        "canonicalName": {
+            "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        }
+    },
+    "sailresearch": {
+        "icon": null,
+        "sources": [
+            "https://openrouter.ai/deepseek/deepseek-v4-flash-0731#providers"
+        ],
+        "models": [
+            "deepseek-v4-flash-0731"
+        ],
+        "api_key": "SAILRESEARCH_API_KEY",
+        "model_prefix": {
+            "deepseek-v4-flash-0731": "deepseek-ai"
+        },
+        "capabilities": {
+            "deepseek-v4-flash-0731": [
+                "reasoning"
+            ]
+        },
+        "openrouter_identifier": {
+            "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        },
+        "price": {
+            "deepseek-v4-flash-0731": {
+                "input": 0.078,
+                "output": 0.36,
+                "cache": 0.024
+            }
+        },
+        "name": {
+            "deepseek-v4-flash-0731": "DeepSeek V4 Flash 0731"
+        },
+        "descriptions": {
+            "deepseek-v4-flash-0731": "DeepSeek's flash model with 13B active parameters"
+        },
+        "ZDRSupport": {
+            "deepseek-v4-flash-0731": true
+        },
+        "canonicalName": {
+            "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        }
+    },
+    "coreweave": {
+        "icon": null,
+        "sources": [
+            "https://openrouter.ai/deepseek/deepseek-v4-flash-0731#providers"
+        ],
+        "models": [
+            "deepseek-v4-flash-0731"
+        ],
+        "api_key": "COREWEAVE_API_KEY",
+        "model_prefix": {
+            "deepseek-v4-flash-0731": "deepseek-ai"
+        },
+        "capabilities": {
+            "deepseek-v4-flash-0731": [
+                "reasoning"
+            ]
+        },
+        "openrouter_identifier": {
+            "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        },
+        "price": {
+            "deepseek-v4-flash-0731": {
+                "input": 0.13,
+                "output": 0.28,
+                "cache": 0.07
+            }
+        },
+        "name": {
+            "deepseek-v4-flash-0731": "DeepSeek V4 Flash 0731"
+        },
+        "descriptions": {
+            "deepseek-v4-flash-0731": "DeepSeek's flash model with 13B active parameters"
+        },
+        "ZDRSupport": {
+            "deepseek-v4-flash-0731": true
+        },
+        "canonicalName": {
+            "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        }
+    },
+    "morph": {
+        "icon": "https://unpkg.com/@lobehub/icons-static-svg@latest/icons/morph.svg",
+        "sources": [
+            "https://openrouter.ai/deepseek/deepseek-v4-flash-0731#providers"
+        ],
+        "models": [
+            "deepseek-v4-flash-0731"
+        ],
+        "api_key": "MORPH_API_KEY",
+        "model_prefix": {
+            "deepseek-v4-flash-0731": "deepseek-ai"
+        },
+        "capabilities": {
+            "deepseek-v4-flash-0731": [
+                "reasoning"
+            ]
+        },
+        "openrouter_identifier": {
+            "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        },
+        "price": {
+            "deepseek-v4-flash-0731": {
+                "input": 0.123438,
+                "output": 0.3475,
+                "cache": 0.03125
+            }
+        },
+        "name": {
+            "deepseek-v4-flash-0731": "DeepSeek V4 Flash 0731"
+        },
+        "descriptions": {
+            "deepseek-v4-flash-0731": "DeepSeek's flash model with 13B active parameters"
+        },
+        "ZDRSupport": {
+            "deepseek-v4-flash-0731": true
+        },
+        "canonicalName": {
+            "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        }
+    },
+    "mancer2": {
+        "icon": null,
+        "sources": [
+            "https://openrouter.ai/deepseek/deepseek-v4-flash-0731#providers"
+        ],
+        "models": [
+            "deepseek-v4-flash-0731"
+        ],
+        "api_key": "MANCER2_API_KEY",
+        "model_prefix": {
+            "deepseek-v4-flash-0731": "deepseek-ai"
+        },
+        "capabilities": {
+            "deepseek-v4-flash-0731": [
+                "reasoning"
+            ]
+        },
+        "openrouter_identifier": {
+            "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        },
+        "price": {
+            "deepseek-v4-flash-0731": {
+                "input": 0.2,
+                "output": 0.6
+            }
+        },
+        "name": {
+            "deepseek-v4-flash-0731": "DeepSeek V4 Flash 0731"
+        },
+        "descriptions": {
+            "deepseek-v4-flash-0731": "DeepSeek's flash model with 13B active parameters"
+        },
+        "ZDRSupport": {
+            "deepseek-v4-flash-0731": true
+        },
+        "canonicalName": {
+            "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        }
+    },
+    "phala": {
+        "icon": null,
+        "sources": [
+            "https://openrouter.ai/deepseek/deepseek-v4-flash-0731#providers"
+        ],
+        "models": [
+            "deepseek-v4-flash-0731"
+        ],
+        "api_key": "PHALA_API_KEY",
+        "model_prefix": {
+            "deepseek-v4-flash-0731": "deepseek-ai"
+        },
+        "capabilities": {
+            "deepseek-v4-flash-0731": [
+                "reasoning"
+            ]
+        },
+        "openrouter_identifier": {
+            "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        },
+        "price": {
+            "deepseek-v4-flash-0731": {
+                "input": 0.44,
+                "output": 1.32,
+                "cache": 0.028
+            }
+        },
+        "name": {
+            "deepseek-v4-flash-0731": "DeepSeek V4 Flash 0731"
+        },
+        "descriptions": {
+            "deepseek-v4-flash-0731": "DeepSeek's flash model with 13B active parameters"
+        },
+        "ZDRSupport": {
+            "deepseek-v4-flash-0731": true
+        },
+        "canonicalName": {
+            "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        }
+    },
+    "digitalocean": {
+        "icon": "https://svgl.app/library/digitalocean.svg",
+        "sources": [
+            "https://openrouter.ai/deepseek/deepseek-v4-flash-0731#providers"
+        ],
+        "models": [
+            "deepseek-v4-flash-0731"
+        ],
+        "api_key": "DIGITALOCEAN_API_KEY",
+        "model_prefix": {
+            "deepseek-v4-flash-0731": "deepseek-ai"
+        },
+        "capabilities": {
+            "deepseek-v4-flash-0731": [
+                "reasoning"
+            ]
+        },
+        "openrouter_identifier": {
+            "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        },
+        "price": {
+            "deepseek-v4-flash-0731": {
+                "input": 0.079996,
+                "output": 0.252,
+                "cache": 0.0252
+            }
+        },
+        "name": {
+            "deepseek-v4-flash-0731": "DeepSeek V4 Flash 0731"
+        },
+        "descriptions": {
+            "deepseek-v4-flash-0731": "DeepSeek's flash model with 13B active parameters"
+        },
+        "ZDRSupport": {
+            "deepseek-v4-flash-0731": true
+        },
+        "canonicalName": {
+            "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
         }
     }
 }
