@@ -1669,6 +1669,9 @@
         },
         "native_model_id": {
             "deepseek-v4-flash-0731": "togetherai/deepseek/deepseek-v4-flash-0731"
+        },
+        "gateway": {
+            "deepseek-v4-flash-0731": "openrouter"
         }
     },
     "moonshotai": {
@@ -2351,6 +2354,9 @@
         },
         "native_model_id": {
             "deepseek-v4-flash-0731": "baseten/deepseek/deepseek-v4-flash-0731"
+        },
+        "gateway": {
+            "deepseek-v4-flash-0731": "openrouter"
         }
     },
     "azure": {
@@ -2437,6 +2443,9 @@
         },
         "native_model_id": {
             "deepseek-v4-flash-0731": "makora/deepseek/deepseek-v4-flash-0731"
+        },
+        "gateway": {
+            "deepseek-v4-flash-0731": "openrouter"
         }
     },
     "reka": {
@@ -2480,6 +2489,9 @@
         },
         "native_model_id": {
             "deepseek-v4-flash-0731": "reka/deepseek/deepseek-v4-flash-0731"
+        },
+        "gateway": {
+            "deepseek-v4-flash-0731": "openrouter"
         }
     },
     "nextbit": {
@@ -2523,6 +2535,9 @@
         },
         "native_model_id": {
             "deepseek-v4-flash-0731": "nextbit/deepseek/deepseek-v4-flash-0731"
+        },
+        "gateway": {
+            "deepseek-v4-flash-0731": "openrouter"
         }
     },
     "openinference": {
@@ -2566,6 +2581,9 @@
         },
         "native_model_id": {
             "deepseek-v4-flash-0731": "openinference/deepseek/deepseek-v4-flash-0731"
+        },
+        "gateway": {
+            "deepseek-v4-flash-0731": "openrouter"
         }
     },
     "inceptron": {
@@ -2609,6 +2627,9 @@
         },
         "native_model_id": {
             "deepseek-v4-flash-0731": "inceptron/deepseek/deepseek-v4-flash-0731"
+        },
+        "gateway": {
+            "deepseek-v4-flash-0731": "openrouter"
         }
     },
     "wafer": {
@@ -2652,6 +2673,9 @@
         },
         "native_model_id": {
             "deepseek-v4-flash-0731": "wafer/deepseek/deepseek-v4-flash-0731"
+        },
+        "gateway": {
+            "deepseek-v4-flash-0731": "openrouter"
         }
     },
     "relace": {
@@ -2695,6 +2719,9 @@
         },
         "native_model_id": {
             "deepseek-v4-flash-0731": "relace/deepseek/deepseek-v4-flash-0731"
+        },
+        "gateway": {
+            "deepseek-v4-flash-0731": "openrouter"
         }
     },
     "fireworks": {
@@ -2738,6 +2765,9 @@
         },
         "native_model_id": {
             "deepseek-v4-flash-0731": "fireworks/deepseek/deepseek-v4-flash-0731"
+        },
+        "gateway": {
+            "deepseek-v4-flash-0731": "openrouter"
         }
     },
     "venice": {
@@ -2781,6 +2811,9 @@
         },
         "native_model_id": {
             "deepseek-v4-flash-0731": "venice/deepseek/deepseek-v4-flash-0731"
+        },
+        "gateway": {
+            "deepseek-v4-flash-0731": "openrouter"
         }
     },
     "deepinfra": {
@@ -2824,6 +2857,9 @@
         },
         "native_model_id": {
             "deepseek-v4-flash-0731": "deepinfra/deepseek/deepseek-v4-flash-0731"
+        },
+        "gateway": {
+            "deepseek-v4-flash-0731": "openrouter"
         }
     },
     "parasail": {
@@ -2867,6 +2903,9 @@
         },
         "native_model_id": {
             "deepseek-v4-flash-0731": "parasail/deepseek/deepseek-v4-flash-0731"
+        },
+        "gateway": {
+            "deepseek-v4-flash-0731": "openrouter"
         }
     },
     "siliconflow": {
@@ -2910,6 +2949,9 @@
         },
         "native_model_id": {
             "deepseek-v4-flash-0731": "siliconflow/deepseek/deepseek-v4-flash-0731"
+        },
+        "gateway": {
+            "deepseek-v4-flash-0731": "openrouter"
         }
     },
     "novita": {
@@ -2953,6 +2995,9 @@
         },
         "native_model_id": {
             "deepseek-v4-flash-0731": "novita/deepseek/deepseek-v4-flash-0731"
+        },
+        "gateway": {
+            "deepseek-v4-flash-0731": "openrouter"
         }
     },
     "sailresearch": {
@@ -2996,6 +3041,9 @@
         },
         "native_model_id": {
             "deepseek-v4-flash-0731": "sailresearch/deepseek/deepseek-v4-flash-0731"
+        },
+        "gateway": {
+            "deepseek-v4-flash-0731": "openrouter"
         }
     },
     "coreweave": {
@@ -3039,6 +3087,9 @@
         },
         "native_model_id": {
             "deepseek-v4-flash-0731": "coreweave/deepseek/deepseek-v4-flash-0731"
+        },
+        "gateway": {
+            "deepseek-v4-flash-0731": "openrouter"
         }
     },
     "morph": {
@@ -3082,6 +3133,9 @@
         },
         "native_model_id": {
             "deepseek-v4-flash-0731": "morph/deepseek/deepseek-v4-flash-0731"
+        },
+        "gateway": {
+            "deepseek-v4-flash-0731": "openrouter"
         }
     },
     "mancer2": {
@@ -3124,6 +3178,9 @@
         },
         "native_model_id": {
             "deepseek-v4-flash-0731": "mancer2/deepseek/deepseek-v4-flash-0731"
+        },
+        "gateway": {
+            "deepseek-v4-flash-0731": "openrouter"
         }
     },
     "phala": {
@@ -3167,6 +3224,9 @@
         },
         "native_model_id": {
             "deepseek-v4-flash-0731": "phala/deepseek/deepseek-v4-flash-0731"
+        },
+        "gateway": {
+            "deepseek-v4-flash-0731": "openrouter"
         }
     },
     "digitalocean": {
@@ -3210,6 +3270,9 @@
         },
         "native_model_id": {
             "deepseek-v4-flash-0731": "digitalocean/deepseek/deepseek-v4-flash-0731"
+        },
+        "gateway": {
+            "deepseek-v4-flash-0731": "openrouter"
         }
     }
 }

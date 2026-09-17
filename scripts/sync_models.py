@@ -182,6 +182,7 @@ def sync_model(sb: Client, provider_id: str, key: str, cfg: dict, models_filter:
         "ZDRSupport": cfg.get("ZDRSupport", {}).get(key, False),
         "CacheCost": price_info.get("cache", 0),
         "canonicalName": cfg.get("canonicalName", {}).get(key),
+        "gateway": cfg.get("gateway", {}).get(key),
     }
 
     # Fetch existing model
