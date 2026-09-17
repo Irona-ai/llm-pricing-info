@@ -1666,6 +1666,9 @@
         },
         "canonicalName": {
             "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        },
+        "native_model_id": {
+            "deepseek-v4-flash-0731": "togetherai/deepseek/deepseek-v4-flash-0731"
         }
     },
     "moonshotai": {
@@ -2345,6 +2348,9 @@
         },
         "canonicalName": {
             "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        },
+        "native_model_id": {
+            "deepseek-v4-flash-0731": "baseten/deepseek/deepseek-v4-flash-0731"
         }
     },
     "azure": {
@@ -2428,6 +2434,9 @@
         },
         "canonicalName": {
             "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        },
+        "native_model_id": {
+            "deepseek-v4-flash-0731": "makora/deepseek/deepseek-v4-flash-0731"
         }
     },
     "reka": {
@@ -2468,6 +2477,9 @@
         },
         "canonicalName": {
             "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        },
+        "native_model_id": {
+            "deepseek-v4-flash-0731": "reka/deepseek/deepseek-v4-flash-0731"
         }
     },
     "nextbit": {
@@ -2508,6 +2520,9 @@
         },
         "canonicalName": {
             "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        },
+        "native_model_id": {
+            "deepseek-v4-flash-0731": "nextbit/deepseek/deepseek-v4-flash-0731"
         }
     },
     "openinference": {
@@ -2548,6 +2563,9 @@
         },
         "canonicalName": {
             "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        },
+        "native_model_id": {
+            "deepseek-v4-flash-0731": "openinference/deepseek/deepseek-v4-flash-0731"
         }
     },
     "inceptron": {
@@ -2588,6 +2606,9 @@
         },
         "canonicalName": {
             "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        },
+        "native_model_id": {
+            "deepseek-v4-flash-0731": "inceptron/deepseek/deepseek-v4-flash-0731"
         }
     },
     "wafer": {
@@ -2628,6 +2649,9 @@
         },
         "canonicalName": {
             "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        },
+        "native_model_id": {
+            "deepseek-v4-flash-0731": "wafer/deepseek/deepseek-v4-flash-0731"
         }
     },
     "relace": {
@@ -2668,6 +2692,9 @@
         },
         "canonicalName": {
             "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        },
+        "native_model_id": {
+            "deepseek-v4-flash-0731": "relace/deepseek/deepseek-v4-flash-0731"
         }
     },
     "fireworks": {
@@ -2708,6 +2735,9 @@
         },
         "canonicalName": {
             "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        },
+        "native_model_id": {
+            "deepseek-v4-flash-0731": "fireworks/deepseek/deepseek-v4-flash-0731"
         }
     },
     "venice": {
@@ -2748,6 +2778,9 @@
         },
         "canonicalName": {
             "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        },
+        "native_model_id": {
+            "deepseek-v4-flash-0731": "venice/deepseek/deepseek-v4-flash-0731"
         }
     },
     "deepinfra": {
@@ -2788,6 +2821,9 @@
         },
         "canonicalName": {
             "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        },
+        "native_model_id": {
+            "deepseek-v4-flash-0731": "deepinfra/deepseek/deepseek-v4-flash-0731"
         }
     },
     "parasail": {
@@ -2828,6 +2864,9 @@
         },
         "canonicalName": {
             "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        },
+        "native_model_id": {
+            "deepseek-v4-flash-0731": "parasail/deepseek/deepseek-v4-flash-0731"
         }
     },
     "siliconflow": {
@@ -2868,6 +2907,9 @@
         },
         "canonicalName": {
             "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        },
+        "native_model_id": {
+            "deepseek-v4-flash-0731": "siliconflow/deepseek/deepseek-v4-flash-0731"
         }
     },
     "novita": {
@@ -2908,6 +2950,9 @@
         },
         "canonicalName": {
             "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        },
+        "native_model_id": {
+            "deepseek-v4-flash-0731": "novita/deepseek/deepseek-v4-flash-0731"
         }
     },
     "sailresearch": {
@@ -2948,6 +2993,9 @@
         },
         "canonicalName": {
             "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        },
+        "native_model_id": {
+            "deepseek-v4-flash-0731": "sailresearch/deepseek/deepseek-v4-flash-0731"
         }
     },
     "coreweave": {
@@ -2988,6 +3036,9 @@
         },
         "canonicalName": {
             "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        },
+        "native_model_id": {
+            "deepseek-v4-flash-0731": "coreweave/deepseek/deepseek-v4-flash-0731"
         }
     },
     "morph": {
@@ -3028,6 +3079,9 @@
         },
         "canonicalName": {
             "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        },
+        "native_model_id": {
+            "deepseek-v4-flash-0731": "morph/deepseek/deepseek-v4-flash-0731"
         }
     },
     "mancer2": {
@@ -3067,6 +3121,9 @@
         },
         "canonicalName": {
             "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        },
+        "native_model_id": {
+            "deepseek-v4-flash-0731": "mancer2/deepseek/deepseek-v4-flash-0731"
         }
     },
     "phala": {
@@ -3107,6 +3164,9 @@
         },
         "canonicalName": {
             "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        },
+        "native_model_id": {
+            "deepseek-v4-flash-0731": "phala/deepseek/deepseek-v4-flash-0731"
         }
     },
     "digitalocean": {
@@ -3147,6 +3207,9 @@
         },
         "canonicalName": {
             "deepseek-v4-flash-0731": "deepseek/deepseek-v4-flash-0731"
+        },
+        "native_model_id": {
+            "deepseek-v4-flash-0731": "digitalocean/deepseek/deepseek-v4-flash-0731"
         }
     }
 }

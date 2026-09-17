@@ -81,7 +81,7 @@ def upsert_provider(sb: Client, provider_name: str, cfg: dict):
         logger.error(f"Error querying Provider '{provider_name}': {e}")
         existing = None
 
-    icon_url = cfg.get("icon", "")
+    icon_url = cfg.get("icon") or ""
     endpoint = os.getenv(f"{provider_name.upper()}_API_ENDPOINT", "")
 
     if existing:
@@ -158,8 +158,8 @@ def sync_model(sb: Client, provider_id: str, key: str, cfg: dict, models_filter:
     rec = {
         "id": model_id,  # Ensure ID is always new for this initial build
         "apiString": (
-            cfg.get("openrouter_identifier", {}).get(key)
-            or cfg.get("native_model_id", {}).get(key)
+            cfg.get("native_model_id", {}).get(key)
+            or cfg.get("openrouter_identifier", {}).get(key)
             or key
         ),
         "providerId": provider_id,
