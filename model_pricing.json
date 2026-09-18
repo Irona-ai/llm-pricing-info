@@ -700,9 +700,20 @@
             "o1-mini": true,
             "o1-mini-2024-09-12": true,
             "gpt-5.1-chat-latest": true,
-            "gpt-image-1.5": true,
             "gpt-image-1": true,
             "gpt-5.2-chat-latest": true
+        },
+        "depreciationDate": {
+            "gpt-4-turbo-preview": "2026-09-18",
+            "gpt-4-1106-vision-preview": "2026-09-18",
+            "chatgpt-4o-latest": "2026-09-18",
+            "o1-preview": "2026-09-18",
+            "o1-preview-2024-09-12": "2026-09-18",
+            "o1-mini": "2026-09-18",
+            "o1-mini-2024-09-12": "2026-09-18",
+            "gpt-5.1-chat-latest": "2026-09-18",
+            "gpt-image-1": "2026-09-18",
+            "gpt-5.2-chat-latest": "2026-09-18"
         }
     },
     "anthropic": {
@@ -1094,6 +1105,18 @@
             "claude-3-7-sonnet-latest": true,
             "claude-3-haiku-20240307": true,
             "claude-sonnet-4-20250514": true
+        },
+        "depreciationDate": {
+            "claude-2.1": "2026-09-18",
+            "claude-3-opus-20240229": "2026-09-18",
+            "claude-3-sonnet-20240229": "2026-09-18",
+            "claude-3-5-haiku-20241022": "2026-09-18",
+            "claude-3-5-sonnet-20240620": "2026-09-18",
+            "claude-3-5-sonnet-latest": "2026-09-18",
+            "claude-3-7-sonnet-20250219": "2026-09-18",
+            "claude-3-7-sonnet-latest": "2026-09-18",
+            "claude-3-haiku-20240307": "2026-09-18",
+            "claude-sonnet-4-20250514": "2026-09-18"
         }
     },
     "google": {
@@ -1395,7 +1418,11 @@
             "gemini-3-pro-preview"
         ],
         "depreciationDate": {
-            "gemini-3-pro-preview": "2026-06-30"
+            "gemini-3-pro-preview": "2026-06-30",
+            "gemini-1.5-pro-latest": "2026-09-18",
+            "gemini-1.5-flash-latest": "2026-09-18",
+            "gemini-2.0-flash": "2026-09-18",
+            "gemini-2.0-flash-001": "2026-09-18"
         },
         "release_date": {
             "gemini-3-flash-preview": "2025-12-17",
@@ -1447,10 +1474,6 @@
                 "input": 3,
                 "output": 15
             }
-        },
-        "isArchived": {
-            "command-r": true,
-            "command-r-plus": true
         }
     },
     "mistral": {
@@ -1541,6 +1564,10 @@
         "isArchived": {
             "open-mistral-7b": true,
             "open-mixtral-8x7b": true
+        },
+        "depreciationDate": {
+            "open-mistral-7b": "2026-09-18",
+            "open-mixtral-8x7b": "2026-09-18"
         }
     },
     "togetherai": {
@@ -1724,6 +1751,18 @@
             "Meta-Llama-3.1-70B-Instruct-Turbo": true,
             "Qwen3-30B-A3B": true,
             "Kimi-K2-Thinking": true
+        },
+        "depreciationDate": {
+            "Mistral-7B-Instruct-v0.2": "2026-09-18",
+            "Mixtral-8x7B-Instruct-v0.1": "2026-09-18",
+            "Llama-3-8b-chat-hf": "2026-09-18",
+            "Llama-3-70b-chat-hf": "2026-09-18",
+            "Meta-Llama-3.1-405B-Instruct-Turbo": "2026-09-18",
+            "Qwen2-72B-Instruct": "2026-09-18",
+            "Qwen-Image": "2026-09-18",
+            "Meta-Llama-3.1-70B-Instruct-Turbo": "2026-09-18",
+            "Qwen3-30B-A3B": "2026-09-18",
+            "Kimi-K2-Thinking": "2026-09-18"
         }
     },
     "moonshotai": {
@@ -1972,6 +2011,13 @@
             "meta-llama-3-8b-instruct": true,
             "meta-llama-3-70b-instruct": true,
             "meta-llama-3.1-405b-instruct": true
+        },
+        "depreciationDate": {
+            "mistral-7b-instruct-v0.2": "2026-09-18",
+            "mixtral-8x7b-instruct-v0.1": "2026-09-18",
+            "meta-llama-3-8b-instruct": "2026-09-18",
+            "meta-llama-3-70b-instruct": "2026-09-18",
+            "meta-llama-3.1-405b-instruct": "2026-09-18"
         }
     },
     "bedrock": {
@@ -2001,6 +2047,9 @@
         },
         "isArchived": {
             "us.deepseek.r1-v1:0": true
+        },
+        "depreciationDate": {
+            "us.deepseek.r1-v1:0": "2026-09-18"
         }
     },
     "xai": {
@@ -2156,6 +2205,13 @@
             "grok-4-fast": true,
             "grok-imagine-video": true,
             "grok-imagine-image-quality": true
+        },
+        "depreciationDate": {
+            "grok-3": "2026-09-18",
+            "grok-3-mini": "2026-09-18",
+            "grok-4-fast": "2026-09-18",
+            "grok-imagine-video": "2026-09-18",
+            "grok-imagine-image-quality": "2026-09-18"
         }
     },
     "kwaivgi": {
@@ -2193,9 +2249,6 @@
         },
         "descriptions": {
             "kling-v3.0-pro": "Kuaishou's premium video generation model with text-to-video and image-to-video support, first/last-frame control, and optional native audio generation"
-        },
-        "isArchived": {
-            "kling-v3.0-pro": true
         }
     },
     "bytedance": {
@@ -2271,11 +2324,6 @@
         },
         "release_date": {
             "seedance-2.5": "2026-08-07"
-        },
-        "isArchived": {
-            "seedance-2.0": true,
-            "seedance-2.5": true,
-            "seedream-4.5": true
         }
     },
     "alibaba": {
@@ -2312,9 +2360,6 @@
         },
         "descriptions": {
             "happyhorse-1.1": "Alibaba's video generation model creating short videos up to 1080p (3-15s) with native audio and multilingual lip-sync"
-        },
-        "isArchived": {
-            "happyhorse-1.1": true
         }
     },
     "z-ai": {

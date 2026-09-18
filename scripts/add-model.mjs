@@ -8,6 +8,18 @@
  *   node scripts/add-model.mjs openai/gpt-5-2025-08-07 --apply     # Write directly to model_pricing.json
  *   node scripts/add-model.mjs openai/gpt-5-2025-08-07 --dry-run   # Preview only (default)
  *
+ *   node scripts/add-model.mjs --sync-archived              # Preview isArchived pushes to Supabase
+ *   node scripts/add-model.mjs --sync-archived --apply       # Actually PATCH the Model table
+ *
+ * --sync-archived mode:
+ *   Reads the per-provider "isArchived" maps in model_pricing.json (see
+ *   scripts/sync_models.py for how those get derived from "depreciationDate")
+ *   and PATCHes matching rows in the Supabase "Model" table by apiString,
+ *   using the same apiString precedence sync_models.py uses:
+ *     native_model_id[key] || openrouter_identifier[key] || key
+ *   Requires SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY in the environment.
+ *   Defaults to a dry run; pass --apply to actually write.
+ *
  * What it does:
  *   1. Fetches litellm pricing JSON (cached for 1hr in /tmp)
  *   2. Fetches OpenRouter model list (cached for 1hr in /tmp)
@@ -169,10 +181,107 @@ function detectAlias(model) {
   return null;
 }
 
+// ── Resolve a model's apiString the same way sync_models.py does ──────────
+function resolveApiString(cfg, key) {
+  return cfg.native_model_id?.[key] || cfg.openrouter_identifier?.[key] || key;
+}
+
+// ── Push isArchived flags from model_pricing.json into Supabase ───────────
+async function syncArchivedModels(applyMode) {
+  const supabaseUrl = process.env.SUPABASE_URL;
+  const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  if (!supabaseUrl || !serviceKey) {
+    console.error(
+      "✗ SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY must be set in the environment."
+    );
+    process.exit(1);
+  }
+
+  const pricing = JSON.parse(readFileSync(MODEL_PRICING_PATH, "utf8"));
+
+  const rows = [];
+  for (const [provider, cfg] of Object.entries(pricing)) {
+    if (!cfg || typeof cfg !== "object" || !cfg.isArchived) continue;
+    for (const [key, isArchived] of Object.entries(cfg.isArchived)) {
+      rows.push({ provider, key, apiString: resolveApiString(cfg, key), isArchived });
+    }
+  }
+
+  if (rows.length === 0) {
+    console.error("No isArchived entries found in model_pricing.json.");
+    return;
+  }
+
+  console.error(
+    `${applyMode ? "Applying" : "Dry run — would apply"} ${rows.length} isArchived update(s):\n`
+  );
+
+  const nowIso = new Date().toISOString();
+  let updated = 0;
+  let notFound = 0;
+  let failed = 0;
+
+  for (const row of rows) {
+    console.error(
+      `  ${row.provider}/${row.key}  (apiString="${row.apiString}")  → isArchived=${row.isArchived}`
+    );
+
+    if (!applyMode) continue;
+
+    try {
+      const res = await fetch(
+        `${supabaseUrl}/rest/v1/Model?apiString=eq.${encodeURIComponent(row.apiString)}`,
+        {
+          method: "PATCH",
+          headers: {
+            apikey: serviceKey,
+            Authorization: `Bearer ${serviceKey}`,
+            "Content-Type": "application/json",
+            Prefer: "return=representation",
+          },
+          body: JSON.stringify({ isArchived: row.isArchived, updatedAt: nowIso }),
+        }
+      );
+
+      if (!res.ok) {
+        failed++;
+        console.error(`    ✗ HTTP ${res.status}: ${await res.text()}`);
+        continue;
+      }
+
+      const body = await res.json();
+      if (Array.isArray(body) && body.length === 0) {
+        notFound++;
+        console.error(`    ⚠ No Model row found with that apiString.`);
+      } else {
+        updated++;
+        console.error(`    ✓ Updated.`);
+      }
+    } catch (e) {
+      failed++;
+      console.error(`    ✗ ${e.message}`);
+    }
+  }
+
+  if (applyMode) {
+    console.error(
+      `\n✓ Done. Updated: ${updated}, not found: ${notFound}, failed: ${failed}.`
+    );
+  } else {
+    console.error(`\nRe-run with --apply to write these to Supabase.`);
+  }
+}
+
 // ── Main ───────────────────────────────────────────────────────────────────
 async function main() {
   const args = process.argv.slice(2);
   const applyMode = args.includes("--apply");
+
+  if (args.includes("--sync-archived")) {
+    await syncArchivedModels(applyMode);
+    return;
+  }
+
   const models = args.filter((a) => !a.startsWith("--"));
 
   if (models.length === 0) {
